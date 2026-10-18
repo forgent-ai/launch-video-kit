@@ -1,0 +1,84 @@
+{
+ "about": "A v3: Astro home chain (Finden → Qualifizieren → Bewerben → 'Auftrag gewonnen.'), titles verbatim from home.ts chain; 2-line hook with Tom-cleared 42 % stat, resolved by the last line (Tom 2026-10-18: too much text at the start; steps must match the site tabs).",
+ "duration": 5.0,
+ "video": null,
+ "ground": "dark",
+ "push": true,
+ "voice": null,
+ "text": [
+  {
+   "words": [
+    [
+     "42 %",
+     0.35
+    ],
+    [
+     "der",
+     0.7
+    ],
+    [
+     "Ausschreibungen",
+     0.85
+    ],
+    [
+     "bekommen",
+     1.4
+    ],
+    [
+     "höchstens",
+     1.7
+    ],
+    [
+     "*ein",
+     2.05
+    ],
+    [
+     "Angebot.",
+     2.2
+    ]
+   ],
+   "out": 3.0,
+   "y": 520,
+   "size": 64
+  },
+  {
+   "words": [
+    [
+     "Weil",
+     3.2
+    ],
+    [
+     "niemand",
+     3.4
+    ],
+    [
+     "die",
+     3.75
+    ],
+    [
+     "*Zeit",
+     3.9
+    ],
+    [
+     "hat.",
+     4.15
+    ]
+   ],
+   "out": 6.0,
+   "y": 520,
+   "size": 110
+  }
+ ],
+ "sfx": [
+  {
+   "t": 0.35,
+   "sound": "felt_thump",
+   "gain_db": -18
+  },
+  {
+   "t": 3.2,
+   "sound": "felt_thump",
+   "gain_db": -18
+  }
+ ]
+}

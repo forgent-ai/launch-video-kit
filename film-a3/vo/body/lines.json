@@ -1,0 +1,262 @@
+{
+ "_meta": {
+  "aligned": "force"
+ },
+ "02": {
+  "text": "Forgent. Die KI-Plattform f\u00fcr \u00f6ffentliche Auftr\u00e4ge.",
+  "dur": 3.445,
+  "words": [
+   [
+    "Forgent.",
+    0.06,
+    0.621
+   ],
+   [
+    "Die",
+    1.022,
+    1.142
+   ],
+   [
+    "KI-Plattform",
+    1.162,
+    2.023
+   ],
+   [
+    "f\u00fcr",
+    2.083,
+    2.223
+   ],
+   [
+    "\u00f6ffentliche",
+    2.304,
+    2.704
+   ],
+   [
+    "Auftr\u00e4ge.",
+    2.804,
+    3.345
+   ]
+  ],
+  "aligned": "force"
+ },
+ "03": {
+  "text": "Forgent findet Ausschreibungen, die andere \u00fcbersehen.",
+  "dur": 3.103,
+  "words": [
+   [
+    "Forgent",
+    0.06,
+    0.645
+   ],
+   [
+    "findet",
+    0.846,
+    1.108
+   ],
+   [
+    "Ausschreibungen,",
+    1.189,
+    1.894
+   ],
+   [
+    "die",
+    1.934,
+    2.055
+   ],
+   [
+    "andere",
+    2.116,
+    2.519
+   ],
+   [
+    "\u00fcbersehen.",
+    2.539,
+    3.002
+   ]
+  ],
+  "aligned": "force"
+ },
+ "04": {
+  "text": "Sieht auf einen Blick, ob sich die Teilnahme lohnt.",
+  "dur": 2.749,
+  "words": [
+   [
+    "Sieht",
+    0.06,
+    0.221
+   ],
+   [
+    "auf",
+    0.281,
+    0.381
+   ],
+   [
+    "einen",
+    0.482,
+    0.682
+   ],
+   [
+    "Blick,",
+    0.722,
+    0.943
+   ],
+   [
+    "ob",
+    1.244,
+    1.325
+   ],
+   [
+    "sich",
+    1.385,
+    1.525
+   ],
+   [
+    "die",
+    1.565,
+    1.666
+   ],
+   [
+    "Teilnahme",
+    1.686,
+    2.208
+   ],
+   [
+    "lohnt.",
+    2.288,
+    2.609
+   ]
+  ],
+  "aligned": "force"
+ },
+ "05": {
+  "text": "Und schreibt ganze Konzepte. Aus Ihrem Wissen.",
+  "dur": 2.607,
+  "words": [
+   [
+    "Und",
+    0.02,
+    0.12
+   ],
+   [
+    "schreibt",
+    0.12,
+    0.421
+   ],
+   [
+    "ganze",
+    0.461,
+    0.702
+   ],
+   [
+    "Konzepte.",
+    0.762,
+    1.283
+   ],
+   [
+    "Aus",
+    1.765,
+    1.865
+   ],
+   [
+    "Ihrem",
+    1.965,
+    2.166
+   ],
+   [
+    "Wissen.",
+    2.206,
+    2.507
+   ]
+  ],
+  "aligned": "force"
+ },
+ "06": {
+  "text": "Finden, qualifizieren, bewerben. Der gesamte Prozess, eine Plattform.",
+  "dur": 5.244,
+  "words": [
+   [
+    "Finden,",
+    0.06,
+    0.442
+   ],
+   [
+    "qualifizieren,",
+    0.804,
+    1.668
+   ],
+   [
+    "bewerben.",
+    2.049,
+    2.572
+   ],
+   [
+    "Der",
+    2.954,
+    3.074
+   ],
+   [
+    "gesamte",
+    3.094,
+    3.516
+   ],
+   [
+    "Prozess,",
+    3.556,
+    4.039
+   ],
+   [
+    "eine",
+    4.481,
+    4.621
+   ],
+   [
+    "Plattform.",
+    4.682,
+    5.164
+   ]
+  ],
+  "aligned": "force"
+ },
+ "07": {
+  "text": "Auftrag gewonnen. Das eine Angebot ist Ihres.",
+  "dur": 3.277,
+  "words": [
+   [
+    "Auftrag",
+    0.04,
+    0.422
+   ],
+   [
+    "gewonnen.",
+    0.462,
+    0.824
+   ],
+   [
+    "Das",
+    1.246,
+    1.367
+   ],
+   [
+    "eine",
+    1.468,
+    1.628
+   ],
+   [
+    "Angebot",
+    1.709,
+    2.171
+   ],
+   [
+    "ist",
+    2.573,
+    2.714
+   ],
+   [
+    "Ihres.",
+    2.814,
+    3.156
+   ]
+  ],
+  "aligned": "force"
+ }
+}

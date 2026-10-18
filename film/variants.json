@@ -633,5 +633,138 @@
    "merge_at": "eine",
    "label": "Eine *Plattform."
   }
+ },
+ "a3": {
+  "about": "A v3: Astro home chain (Finden → Qualifizieren → Bewerben → 'Auftrag gewonnen.'), titles verbatim from home.ts chain; 2-line hook with Tom-cleared 42 % stat, resolved by the last line (Tom 2026-10-18: too much text at the start; steps must match the site tabs).",
+  "hook": {
+   "duration": 5.0,
+   "text": [
+    {
+     "words": [
+      [
+       "42 %",
+       0.35
+      ],
+      [
+       "der",
+       0.7
+      ],
+      [
+       "Ausschreibungen",
+       0.85
+      ],
+      [
+       "bekommen",
+       1.4
+      ],
+      [
+       "höchstens",
+       1.7
+      ],
+      [
+       "*ein",
+       2.05
+      ],
+      [
+       "Angebot.",
+       2.2
+      ]
+     ],
+     "out": 3.0,
+     "y": 520,
+     "size": 64
+    },
+    {
+     "words": [
+      [
+       "Weil",
+       3.2
+      ],
+      [
+       "niemand",
+       3.4
+      ],
+      [
+       "die",
+       3.75
+      ],
+      [
+       "*Zeit",
+       3.9
+      ],
+      [
+       "hat.",
+       4.15
+      ]
+     ],
+     "out": 6.0,
+     "y": 520,
+     "size": 110
+    }
+   ]
+  },
+  "lines": {
+   "02": "Forgent. Die KI-Plattform für öffentliche Aufträge.",
+   "03": "Forgent findet Ausschreibungen, die andere übersehen.",
+   "04": "Sieht auf einen Blick, ob sich die Teilnahme lohnt.",
+   "05": "Und schreibt ganze Konzepte. Aus Ihrem Wissen.",
+   "06": "Finden, qualifizieren, bewerben. Der gesamte Prozess, eine Plattform.",
+   "07": "Auftrag gewonnen. Das eine Angebot ist Ihres."
+  },
+  "segments": {
+   "02": [
+    [
+     "en",
+     "FOR-jent."
+    ],
+    [
+     "de",
+     "Die KI-Plattform für öffentliche Aufträge."
+    ]
+   ],
+   "03": [
+    [
+     "en",
+     "FOR-jent"
+    ],
+    [
+     "de",
+     "findet Ausschreibungen, die andere übersehen."
+    ]
+   ]
+  },
+  "tagline": "Die KI-Plattform für *öffentliche *Aufträge.",
+  "heroes": [
+   {
+    "text": "*Finden.",
+    "until": "findet+0.35"
+   },
+   {
+    "text": "Auf einen *Blick.",
+    "until": "blick+0.3"
+   },
+   {
+    "text": "Ganze *Konzepte.",
+    "until": "konzepte+0.3"
+   },
+   {
+    "text": "Auftrag gewonnen. *Ihres.",
+    "until": "ihres+0.8"
+   }
+  ],
+  "push_at": [
+   "andere",
+   "ob",
+   "aus"
+  ],
+  "blocks": {
+   "items": [
+    "Finden",
+    "Qualifizieren",
+    "Bewerben"
+   ],
+   "merge_at": "eine",
+   "label": "Eine *Plattform."
+  }
  }
 }
