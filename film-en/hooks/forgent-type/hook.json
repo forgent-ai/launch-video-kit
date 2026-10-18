@@ -1,0 +1,72 @@
+{
+ "about": "Forgent EN hook, type-only. Line 1 = Tom's 'Von der Suche bis zum Zuschlag' in English.",
+ "duration": 5.0,
+ "video": null,
+ "ground": "dark",
+ "push": true,
+ "voice": null,
+ "text": [
+  {
+   "words": [
+    [
+     "From",
+     0.35
+    ],
+    [
+     "search",
+     0.55
+    ],
+    [
+     "to",
+     0.85
+    ],
+    [
+     "*award.",
+     1.0
+    ]
+   ],
+   "out": 2.45,
+   "y": 520,
+   "size": 108
+  },
+  {
+   "words": [
+    [
+     "Bid",
+     2.75
+    ],
+    [
+     "teams",
+     2.95
+    ],
+    [
+     "do",
+     3.2
+    ],
+    [
+     "it",
+     3.35
+    ],
+    [
+     "*all.",
+     3.5
+    ]
+   ],
+   "out": 6.0,
+   "y": 520,
+   "size": 118
+  }
+ ],
+ "sfx": [
+  {
+   "t": 0.35,
+   "sound": "felt_thump",
+   "gain_db": -18
+  },
+  {
+   "t": 2.75,
+   "sound": "felt_thump",
+   "gain_db": -18
+  }
+ ]
+}

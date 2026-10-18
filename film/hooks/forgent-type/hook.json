@@ -1,0 +1,76 @@
+{
+ "about": "Forgent DE hook, type-only. Line 1 by Tom 2026-10-16: 'Von der Suche bis zum Zuschlag.'",
+ "duration": 5.0,
+ "video": null,
+ "ground": "dark",
+ "push": true,
+ "voice": null,
+ "text": [
+  {
+   "words": [
+    [
+     "Von",
+     0.35
+    ],
+    [
+     "der",
+     0.5
+    ],
+    [
+     "Suche",
+     0.65
+    ],
+    [
+     "bis",
+     0.98
+    ],
+    [
+     "zum",
+     1.1
+    ],
+    [
+     "*Zuschlag.",
+     1.25
+    ]
+   ],
+   "out": 2.45,
+   "y": 520,
+   "size": 108
+  },
+  {
+   "words": [
+    [
+     "Bid-Teams",
+     2.75
+    ],
+    [
+     "machen",
+     3.1
+    ],
+    [
+     "heute",
+     3.35
+    ],
+    [
+     "*alles.",
+     3.6
+    ]
+   ],
+   "out": 6.0,
+   "y": 520,
+   "size": 118
+  }
+ ],
+ "sfx": [
+  {
+   "t": 0.35,
+   "sound": "felt_thump",
+   "gain_db": -18
+  },
+  {
+   "t": 2.75,
+   "sound": "felt_thump",
+   "gain_db": -18
+  }
+ ]
+}

@@ -1,0 +1,136 @@
+{
+ "about": "A v2: Kapazität + Tom-cleared outbound stats (42 % ≤1 bid; 3–5 Personentage per Angebot, Tom 2026-10-18). Hook pain, last line resolves it.",
+ "duration": 9.5,
+ "video": null,
+ "ground": "dark",
+ "push": true,
+ "voice": null,
+ "text": [
+  {
+   "words": [
+    [
+     "Genug",
+     0.35
+    ],
+    [
+     "Ausschreibungen",
+     0.6
+    ],
+    [
+     "gibt",
+     1.05
+    ],
+    [
+     "es.",
+     1.25
+    ]
+   ],
+   "out": 2.25,
+   "y": 520,
+   "size": 104
+  },
+  {
+   "words": [
+    [
+     "42 %",
+     2.5
+    ],
+    [
+     "bekommen",
+     2.9
+    ],
+    [
+     "höchstens",
+     3.25
+    ],
+    [
+     "*ein",
+     3.7
+    ],
+    [
+     "Angebot.",
+     3.9
+    ]
+   ],
+   "out": 4.6,
+   "y": 520,
+   "size": 100
+  },
+  {
+   "words": [
+    [
+     "Pro",
+     4.85
+    ],
+    [
+     "Angebot:",
+     5.05
+    ],
+    [
+     "3–5",
+     5.55
+    ],
+    [
+     "*Personentage.",
+     5.85
+    ]
+   ],
+   "out": 7.0,
+   "y": 520,
+   "size": 100
+  },
+  {
+   "words": [
+    [
+     "Neben",
+     7.25
+    ],
+    [
+     "dem",
+     7.5
+    ],
+    [
+     "Tagesgeschäft?",
+     7.65
+    ],
+    [
+     "Kaum",
+     8.3
+    ],
+    [
+     "zu",
+     8.5
+    ],
+    [
+     "*schaffen.",
+     8.65
+    ]
+   ],
+   "out": 10.5,
+   "y": 520,
+   "size": 78
+  }
+ ],
+ "sfx": [
+  {
+   "t": 0.35,
+   "sound": "felt_thump",
+   "gain_db": -18
+  },
+  {
+   "t": 2.5,
+   "sound": "felt_thump",
+   "gain_db": -18
+  },
+  {
+   "t": 4.85,
+   "sound": "felt_thump",
+   "gain_db": -18
+  },
+  {
+   "t": 7.25,
+   "sound": "felt_thump",
+   "gain_db": -18
+  }
+ ]
+}

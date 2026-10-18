@@ -1,0 +1,41 @@
+{
+ "a": {
+  "about": "Kapazität (winning Smartlead body 3975439 B: 'Suche, Unterlagen und Angebot neben dem Tagesgeschäft kaum zu schaffen'). Hook pain, last line resolves it.",
+  "hook": {"duration": 7.0, "text": [
+    {"words": [["Genug", 0.35], ["Ausschreibungen", 0.6], ["gibt", 1.05], ["es.", 1.25]], "out": 2.2, "y": 520, "size": 104},
+    {"words": [["Suche,", 2.45], ["Unterlagen,", 2.85], ["*Angebot.", 3.35]], "out": 4.4, "y": 520, "size": 104},
+    {"words": [["Neben", 4.65], ["dem", 4.9], ["Tagesgeschäft", 5.05], ["kaum", 5.6], ["zu", 5.8], ["*schaffen.", 5.95]], "out": 8.0, "y": 520, "size": 96}]},
+  "lines": {"02": "Forgent. Die KI-Plattform für öffentliche Aufträge.", "03": "Forgent findet die passenden Ausschreibungen.", "04": "Bewertet Bid, No-Bid in Minuten.", "05": "Und schreibt konforme Angebote aus Ihrem Wissen.", "06": "Suche, Unterlagen, Angebot. Eine Plattform.", "07": "Mehr Ausschreibungen. Neben dem Tagesgeschäft."},
+  "segments": {"02": [["en", "FOR-jent."], ["de", "Die KI-Plattform für öffentliche Aufträge."]], "03": [["en", "FOR-jent"], ["de", "findet die passenden Ausschreibungen."]], "04": [["de", "Bewertet"], ["en", "bid, no-bid"], ["de", "in Minuten."]]},
+  "tagline": "Die KI-Plattform für *öffentliche *Aufträge.",
+  "heroes": [{"text": "*Finden.", "until": "findet+0.35"}, {"text": "Bid. *No-Bid.", "until": "nobid+0.3"}, {"text": "Konforme *Angebote.", "until": "angebote+0.3"}, {"text": "Neben dem *Tagesgeschäft.", "until": "tagesgeschaft+0.9"}],
+  "push_at": ["passenden", "in", "aus"],
+  "blocks": {"items": ["Suche", "Unterlagen", "Angebot"], "merge_at": "eine", "label": "Eine *Plattform."}
+ },
+ "b": {
+  "about": "Montag 8 Uhr: one inbox (mock count 512), one tender (Stadt Bonn, the mock world). Last line closes the morning.",
+  "hook": {"duration": 7.0, "text": [
+    {"words": [["Montag,", 0.35], ["*8", 0.75], ["Uhr.", 0.95]], "out": 2.2, "y": 520, "size": 118},
+    {"words": [["512", 2.45], ["neue", 2.8], ["*Ausschreibungen.", 3.0]], "out": 4.4, "y": 520, "size": 108},
+    {"words": [["Eine", 4.65], ["davon", 4.9], ["ist", 5.2], ["*Ihre.", 5.4]], "out": 8.0, "y": 520, "size": 118}]},
+  "lines": {"02": "Forgent. Die KI-Plattform für öffentliche Aufträge.", "03": "Forgent findet sie: Stadt Bonn, hundert Prozent passend.", "04": "Prüft alle Kriterien. Bid.", "05": "Und schreibt das Angebot aus Ihrem Wissen.", "06": "Finden, bewerten, schreiben. Eine Plattform.", "07": "Montag, neun Uhr. Die eine gefunden."},
+  "segments": {"02": [["en", "FOR-jent."], ["de", "Die KI-Plattform für öffentliche Aufträge."]], "03": [["en", "FOR-jent"], ["de", "findet sie: Stadt Bonn, hundert Prozent passend."]], "04": [["de", "Prüft alle Kriterien."], ["en", "Bid."]]},
+  "tagline": "Die KI-Plattform für *öffentliche *Aufträge.",
+  "heroes": [{"text": "Stadt *Bonn.", "until": "bonn+0.35"}, {"text": "Alle *Kriterien.", "until": "kriterien+0.3"}, {"text": "Das *Angebot.", "until": "angebot+0.3"}, {"text": "Die eine. *Gefunden.", "until": "gefunden+0.9"}],
+  "push_at": ["hundert", "bid", "ihrem"],
+  "blocks": {"items": ["Finden", "Bewerten", "Schreiben"], "merge_at": "eine", "label": "Eine *Plattform."}
+ },
+ "c": {
+  "about": "Market: BMWE Vergabestatistik 2024 (199,334 awards, EUR 135.2bn). Hook asks 'which are yours', last line answers with the winning CTA shape ('zeigen, welche passen').",
+  "hook": {"duration": 7.0, "text": [
+    {"words": [["Fast", 0.35], ["200.000", 0.6], ["öffentliche", 1.1], ["*Aufträge.", 1.5]], "out": 2.4, "y": 520, "size": 100},
+    {"words": [["Jedes", 2.65], ["*Jahr.", 2.95]], "out": 4.4, "y": 520, "size": 118},
+    {"words": [["Welche", 4.65], ["davon", 4.95], ["sind", 5.25], ["*Ihre?", 5.45]], "out": 8.0, "y": 520, "size": 118}]},
+  "lines": {"02": "Forgent. Die KI-Plattform für öffentliche Aufträge.", "03": "Forgent findet die passenden Ausschreibungen.", "04": "Bewertet Bid, No-Bid in Minuten.", "05": "Und schreibt konforme Angebote aus Ihrem Wissen.", "06": "Finden, bewerten, schreiben. Eine Plattform.", "07": "Welche davon Ihre sind? Wir zeigen es Ihnen."},
+  "segments": {"02": [["en", "FOR-jent."], ["de", "Die KI-Plattform für öffentliche Aufträge."]], "03": [["en", "FOR-jent"], ["de", "findet die passenden Ausschreibungen."]], "04": [["de", "Bewertet"], ["en", "bid, no-bid"], ["de", "in Minuten."]]},
+  "tagline": "Die KI-Plattform für *öffentliche *Aufträge.",
+  "heroes": [{"text": "*Finden.", "until": "findet+0.35"}, {"text": "Bid. *No-Bid.", "until": "nobid+0.3"}, {"text": "Konforme *Angebote.", "until": "angebote+0.3"}, {"text": "Welche davon *Ihre sind.", "until": "zeigen-0.1"}],
+  "push_at": ["passenden", "in", "aus"],
+  "blocks": {"items": ["Finden", "Bewerten", "Schreiben"], "merge_at": "eine", "label": "Eine *Plattform."}
+ }
+}

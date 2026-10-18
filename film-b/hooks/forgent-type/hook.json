@@ -1,0 +1,88 @@
+{
+ "about": "Montag 8 Uhr: one inbox (mock count 512), one tender (Stadt Bonn, the mock world). Last line closes the morning.",
+ "duration": 7.0,
+ "video": null,
+ "ground": "dark",
+ "push": true,
+ "voice": null,
+ "text": [
+  {
+   "words": [
+    [
+     "Montag,",
+     0.35
+    ],
+    [
+     "*8",
+     0.75
+    ],
+    [
+     "Uhr.",
+     0.95
+    ]
+   ],
+   "out": 2.2,
+   "y": 520,
+   "size": 118
+  },
+  {
+   "words": [
+    [
+     "512",
+     2.45
+    ],
+    [
+     "neue",
+     2.8
+    ],
+    [
+     "*Ausschreibungen.",
+     3.0
+    ]
+   ],
+   "out": 4.4,
+   "y": 520,
+   "size": 108
+  },
+  {
+   "words": [
+    [
+     "Eine",
+     4.65
+    ],
+    [
+     "davon",
+     4.9
+    ],
+    [
+     "ist",
+     5.2
+    ],
+    [
+     "*Ihre.",
+     5.4
+    ]
+   ],
+   "out": 8.0,
+   "y": 520,
+   "size": 118
+  }
+ ],
+ "sfx": [
+  {
+   "t": 0.35,
+   "sound": "felt_thump",
+   "gain_db": -18
+  },
+  {
+   "t": 2.45,
+   "sound": "felt_thump",
+   "gain_db": -18
+  },
+  {
+   "t": 4.65,
+   "sound": "felt_thump",
+   "gain_db": -18
+  }
+ ]
+}

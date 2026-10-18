@@ -1,0 +1,227 @@
+{
+ "_meta": {
+  "aligned": "force"
+ },
+ "02": {
+  "text": "Forgent. Die KI-Plattform f\u00fcr \u00f6ffentliche Auftr\u00e4ge.",
+  "dur": 3.359,
+  "words": [
+   [
+    "Forgent.",
+    0.06,
+    0.603
+   ],
+   [
+    "Die",
+    1.026,
+    1.126
+   ],
+   [
+    "KI-Plattform",
+    1.146,
+    1.991
+   ],
+   [
+    "f\u00fcr",
+    2.072,
+    2.192
+   ],
+   [
+    "\u00f6ffentliche",
+    2.273,
+    2.675
+   ],
+   [
+    "Auftr\u00e4ge.",
+    2.775,
+    3.258
+   ]
+  ],
+  "aligned": "force"
+ },
+ "03": {
+  "text": "Forgent findet die passenden Ausschreibungen.",
+  "dur": 2.669,
+  "words": [
+   [
+    "Forgent",
+    0.06,
+    0.602
+   ],
+   [
+    "findet",
+    0.823,
+    1.144
+   ],
+   [
+    "die",
+    1.184,
+    1.285
+   ],
+   [
+    "passenden",
+    1.325,
+    1.766
+   ],
+   [
+    "Ausschreibungen.",
+    1.867,
+    2.589
+   ]
+  ],
+  "aligned": "force"
+ },
+ "04": {
+  "text": "Bewertet Bid, No-Bid in Minuten.",
+  "dur": 2.578,
+  "words": [
+   [
+    "Bewertet",
+    0.02,
+    0.524
+   ],
+   [
+    "Bid,",
+    0.705,
+    0.927
+   ],
+   [
+    "No-Bid",
+    1.309,
+    1.752
+   ],
+   [
+    "in",
+    1.914,
+    2.014
+   ],
+   [
+    "Minuten.",
+    2.055,
+    2.478
+   ]
+  ],
+  "aligned": "force"
+ },
+ "05": {
+  "text": "Und schreibt konforme Angebote aus Ihrem Wissen.",
+  "dur": 2.986,
+  "words": [
+   [
+    "Und",
+    0.02,
+    0.12
+   ],
+   [
+    "schreibt",
+    0.14,
+    0.441
+   ],
+   [
+    "konforme",
+    0.501,
+    0.982
+   ],
+   [
+    "Angebote",
+    1.082,
+    1.623
+   ],
+   [
+    "aus",
+    2.104,
+    2.224
+   ],
+   [
+    "Ihrem",
+    2.345,
+    2.545
+   ],
+   [
+    "Wissen.",
+    2.605,
+    2.886
+   ]
+  ],
+  "aligned": "force"
+ },
+ "06": {
+  "text": "Finden, bewerten, schreiben. Eine Plattform.",
+  "dur": 2.57,
+  "words": [
+   [
+    "Finden,",
+    0.06,
+    0.402
+   ],
+   [
+    "bewerten,",
+    0.462,
+    0.903
+   ],
+   [
+    "schreiben.",
+    0.944,
+    1.345
+   ],
+   [
+    "Eine",
+    1.787,
+    1.927
+   ],
+   [
+    "Plattform.",
+    1.968,
+    2.449
+   ]
+  ],
+  "aligned": "force"
+ },
+ "07": {
+  "text": "Welche davon Ihre sind? Wir zeigen es Ihnen.",
+  "dur": 2.551,
+  "words": [
+   [
+    "Welche",
+    0.02,
+    0.241
+   ],
+   [
+    "davon",
+    0.281,
+    0.542
+   ],
+   [
+    "Ihre",
+    0.623,
+    0.804
+   ],
+   [
+    "sind?",
+    0.864,
+    1.085
+   ],
+   [
+    "Wir",
+    1.607,
+    1.708
+   ],
+   [
+    "zeigen",
+    1.768,
+    2.069
+   ],
+   [
+    "es",
+    2.089,
+    2.17
+   ],
+   [
+    "Ihnen.",
+    2.27,
+    2.471
+   ]
+  ],
+  "aligned": "force"
+ }
+}

@@ -30,3 +30,26 @@ film/score/bed.json
 
 # local private-term list for scripts/check-template.py
 scripts/private-terms.txt
+
+# Forgent fork: never publish these. Fonts = licensed GT Alpina/GT America; screens = unreleased Astro-draft mocks;
+# voice = ElevenLabs free tier (non-commercial). No trailing comments: git treats them as part of the pattern.
+brand/fonts/
+brand-*/fonts/
+film*/assets/screens/*.mp4
+film*/assets/screens/*.webm
+film*/assets/screens/finden.png
+film*/assets/screens/qualifizieren.png
+film*/assets/screens/schreiben.png
+film*/assets/screens/radar.png
+film*/vo/body/*.wav
+film*/score/*.wav
+film*/renders/
+film*/review/
+film*/compositions/
+film*/index*.html
+film*/timing-*.json
+film*/mix/
+film*/sfx/
+film*/assets/brand/
+models/
+brand/evidence.json

@@ -1,0 +1,91 @@
+{
+  "_source": "~/forgent-website/src/data/home.ts (Astro revamp, EN pages exist at src/pages/en but are not live; www.forgent.ai is Framer, DE-only) + stageLabels. Verbatim, 2026-10-16.",
+  "en": {
+    "eyebrow": "For public-sector bid teams",
+    "titleLine1": "Win more tenders.",
+    "titleLine2": "The AI platform for public contracts.",
+    "lead": "Forgent finds the right tenders, decides bid/no-bid in minutes and writes compliant bids from your own knowledge. Every statement with a visible source.",
+    "leadShort": "From tender search to strategy – public sector teams do everything today. Forgent now takes over the detail work. So you can focus on what matters.",
+    "ctaPrimary": "Book a demo",
+    "stages": {
+      "foresee": "Foresee contracts",
+      "find": "Find more tenders",
+      "decide": "Decide bid/no-bid with confidence",
+      "write": "Write compelling bids"
+    },
+    "trusted": "Trusted by leading bid teams across DACH"
+  },
+  "de": {
+    "eyebrow": "Für Bid-Teams im öffentlichen Sektor",
+    "titleLine1": "Mehr Ausschreibungen gewinnen.",
+    "titleLine2": "Die KI-Plattform für öffentliche Aufträge.",
+    "lead": "Forgent findet die passenden Ausschreibungen, bewertet Bid/No-Bid in Minuten und schreibt konforme Angebote aus Ihrem Wissen. Jede Aussage mit sichtbarer Quelle.",
+    "leadShort": "Von der Ausschreibungssuche bis zur Strategie – Public Sector Teams machen heute alles. Forgent übernimmt jetzt die Arbeit im Detail. Damit Sie sich auf das Wesentliche konzentrieren können.",
+    "ctaPrimary": "Demo buchen",
+    "stages": {
+      "foresee": "Aufträge vorhersehen",
+      "find": "Mehr Ausschreibungen finden",
+      "decide": "Bid/No-Bid sicher entscheiden",
+      "write": "Überzeugende Angebote schreiben"
+    },
+    "live_site": {
+      "tagline": "KI-Agenten für öffentliche Ausschreibungen",
+      "h1": "Ausschreibungen gewinnen.",
+      "subhead": "Forgent findet die passenden Ausschreibungen, entwirft konforme Angebote und hält jedes Angebot bis zur Abgabe im Fluss.",
+      "h2": [
+        "Ausschreibungen gewinnen.",
+        "Mit AI Agenten.",
+        "Mehr Angebote gewinnen",
+        "für Ihr Unternehmen."
+      ]
+    }
+  },
+  "claims": {
+    "_source": "~/forgent-website/src/data/claims.ts — the ONLY numbers allowed in the film; scope must match the copy's geography",
+    "moreTendersAvgPct": {
+      "value": 30,
+      "scope": "global",
+      "footnote_en": "Average across 25 customer projects in 2026, measured against each customer's previous solution."
+    },
+    "lessScreeningPct": {
+      "value": 90,
+      "scope": "global"
+    },
+    "fasterFactor": {
+      "value": "6–7×",
+      "scope": "global"
+    },
+    "winRateUpliftPp": {
+      "value": 10,
+      "scope": "global"
+    },
+    "coveragePct": {
+      "value": 99.9,
+      "scope": "DE only — never pair with Europe"
+    },
+    "earlierDays": {
+      "value": "1–5",
+      "scope": "global"
+    },
+    "portals": {
+      "value": "180+",
+      "scope": "DACH only"
+    },
+    "randstadMoreTendersPct": {
+      "value": 150,
+      "scope": "customer, deck S.60"
+    },
+    "arsipaWinRatePct": {
+      "value": 78,
+      "scope": "customer, deck S.59"
+    },
+    "yerFasterBidDecisionPct": {
+      "value": 87.5,
+      "scope": "customer"
+    },
+    "qualifyingTendersPerYear": {
+      "value": 50,
+      "scope": "global"
+    }
+  }
+}

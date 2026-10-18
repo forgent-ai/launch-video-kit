@@ -1,0 +1,88 @@
+{
+ "about": "Market: BMWE Vergabestatistik 2024 (199,334 awards, EUR 135.2bn). Hook asks 'which are yours', last line answers with the winning CTA shape ('zeigen, welche passen').",
+ "duration": 7.0,
+ "video": null,
+ "ground": "dark",
+ "push": true,
+ "voice": null,
+ "text": [
+  {
+   "words": [
+    [
+     "Fast",
+     0.35
+    ],
+    [
+     "200.000",
+     0.6
+    ],
+    [
+     "öffentliche",
+     1.1
+    ],
+    [
+     "*Aufträge.",
+     1.5
+    ]
+   ],
+   "out": 2.4,
+   "y": 520,
+   "size": 100
+  },
+  {
+   "words": [
+    [
+     "Jedes",
+     2.65
+    ],
+    [
+     "*Jahr.",
+     2.95
+    ]
+   ],
+   "out": 4.4,
+   "y": 520,
+   "size": 118
+  },
+  {
+   "words": [
+    [
+     "Welche",
+     4.65
+    ],
+    [
+     "davon",
+     4.95
+    ],
+    [
+     "sind",
+     5.25
+    ],
+    [
+     "*Ihre?",
+     5.45
+    ]
+   ],
+   "out": 8.0,
+   "y": 520,
+   "size": 118
+  }
+ ],
+ "sfx": [
+  {
+   "t": 0.35,
+   "sound": "felt_thump",
+   "gain_db": -18
+  },
+  {
+   "t": 2.65,
+   "sound": "felt_thump",
+   "gain_db": -18
+  },
+  {
+   "t": 4.65,
+   "sound": "felt_thump",
+   "gain_db": -18
+  }
+ ]
+}

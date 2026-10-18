@@ -1,0 +1,232 @@
+{
+ "_meta": {
+  "aligned": "force"
+ },
+ "02": {
+  "text": "Forgent. The AI platform for public contracts.",
+  "dur": 3.75,
+  "words": [
+   [
+    "Forgent.",
+    0.06,
+    0.521
+   ],
+   [
+    "The",
+    1.043,
+    1.123
+   ],
+   [
+    "AI",
+    1.263,
+    1.604
+   ],
+   [
+    "platform",
+    1.664,
+    2.166
+   ],
+   [
+    "for",
+    2.246,
+    2.346
+   ],
+   [
+    "public",
+    2.386,
+    2.687
+   ],
+   [
+    "contracts.",
+    2.727,
+    3.369
+   ]
+  ],
+  "aligned": "force"
+ },
+ "03": {
+  "text": "Forgent finds the right tenders.",
+  "dur": 2.136,
+  "words": [
+   [
+    "Forgent",
+    0.06,
+    0.423
+   ],
+   [
+    "finds",
+    0.504,
+    0.806
+   ],
+   [
+    "the",
+    0.846,
+    0.927
+   ],
+   [
+    "right",
+    0.967,
+    1.209
+   ],
+   [
+    "tenders.",
+    1.25,
+    1.733
+   ]
+  ],
+  "aligned": "force"
+ },
+ "04": {
+  "text": "Decides bid or no-bid in minutes.",
+  "dur": 2.879,
+  "words": [
+   [
+    "Decides",
+    0.06,
+    0.564
+   ],
+   [
+    "bid",
+    0.624,
+    0.846
+   ],
+   [
+    "or",
+    1.047,
+    1.148
+   ],
+   [
+    "no-bid",
+    1.208,
+    1.691
+   ],
+   [
+    "in",
+    1.973,
+    2.054
+   ],
+   [
+    "minutes.",
+    2.134,
+    2.517
+   ]
+  ],
+  "aligned": "force"
+ },
+ "05": {
+  "text": "And writes compliant bids from your own knowledge.",
+  "dur": 3.344,
+  "words": [
+   [
+    "And",
+    0.081,
+    0.181
+   ],
+   [
+    "writes",
+    0.201,
+    0.504
+   ],
+   [
+    "compliant",
+    0.544,
+    1.108
+   ],
+   [
+    "bids",
+    1.168,
+    1.491
+   ],
+   [
+    "from",
+    1.873,
+    2.014
+   ],
+   [
+    "your",
+    2.055,
+    2.196
+   ],
+   [
+    "own",
+    2.296,
+    2.457
+   ],
+   [
+    "knowledge.",
+    2.498,
+    2.981
+   ]
+  ],
+  "aligned": "force"
+ },
+ "06": {
+  "text": "Find, decide, write. The whole process, one platform.",
+  "dur": 5.248,
+  "words": [
+   [
+    "Find,",
+    0.06,
+    0.481
+   ],
+   [
+    "decide,",
+    0.801,
+    1.402
+   ],
+   [
+    "write.",
+    1.723,
+    2.083
+   ],
+   [
+    "The",
+    2.544,
+    2.624
+   ],
+   [
+    "whole",
+    2.684,
+    2.904
+   ],
+   [
+    "process,",
+    2.944,
+    3.485
+   ],
+   [
+    "one",
+    4.046,
+    4.206
+   ],
+   [
+    "platform.",
+    4.266,
+    4.827
+   ]
+  ],
+  "aligned": "force"
+ },
+ "07": {
+  "text": "Win more tenders.",
+  "dur": 1.44,
+  "words": [
+   [
+    "Win",
+    0.081,
+    0.243
+   ],
+   [
+    "more",
+    0.304,
+    0.487
+   ],
+   [
+    "tenders.",
+    0.547,
+    1.014
+   ]
+  ],
+  "aligned": "force"
+ }
+}

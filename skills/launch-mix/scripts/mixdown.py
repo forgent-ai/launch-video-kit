@@ -142,7 +142,7 @@ def main(cfg_path: str) -> None:
     master = Pedalboard([Compressor(threshold_db=-14, ratio=1.8, attack_ms=25, release_ms=180)])(mix, SR)
     meter = pyln.Meter(SR)
     target = cfg.get("target_lufs", -14.0)
-    ceil_db = cfg.get("ceiling_dbtp", -1.0) - 0.3  # margin for inter-sample peaks
+    ceil_db = cfg.get("ceiling_dbtp", -1.0) - 1.0  # margin for inter-sample peaks + AAC overshoot (0.3 left -0.5 dBTP after encode)
     for _ in range(3):  # gain to target, limit, re-measure: converges in 2 or 3 passes
         loud = meter.integrated_loudness(np.ascontiguousarray(master.T, dtype=np.float64))
         print(f"  pass: {loud:.2f} LUFS, peak {20 * np.log10(np.abs(master).max() + 1e-12):.2f} dBFS, shape {master.shape}, dtype {master.dtype}")

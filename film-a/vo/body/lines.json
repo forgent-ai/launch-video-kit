@@ -1,0 +1,212 @@
+{
+ "_meta": {
+  "aligned": "force"
+ },
+ "02": {
+  "text": "Forgent. Die KI-Plattform f\u00fcr \u00f6ffentliche Auftr\u00e4ge.",
+  "dur": 3.552,
+  "words": [
+   [
+    "Forgent.",
+    0.04,
+    0.602
+   ],
+   [
+    "Die",
+    1.063,
+    1.164
+   ],
+   [
+    "KI-Plattform",
+    1.184,
+    2.007
+   ],
+   [
+    "f\u00fcr",
+    2.267,
+    2.408
+   ],
+   [
+    "\u00f6ffentliche",
+    2.468,
+    2.889
+   ],
+   [
+    "Auftr\u00e4ge.",
+    2.99,
+    3.471
+   ]
+  ],
+  "aligned": "force"
+ },
+ "03": {
+  "text": "Forgent findet die passenden Ausschreibungen.",
+  "dur": 2.704,
+  "words": [
+   [
+    "Forgent",
+    0.061,
+    0.625
+   ],
+   [
+    "findet",
+    0.888,
+    1.19
+   ],
+   [
+    "die",
+    1.251,
+    1.352
+   ],
+   [
+    "passenden",
+    1.392,
+    1.836
+   ],
+   [
+    "Ausschreibungen.",
+    1.937,
+    2.643
+   ]
+  ],
+  "aligned": "force"
+ },
+ "04": {
+  "text": "Bewertet Bid, No-Bid in Minuten.",
+  "dur": 2.547,
+  "words": [
+   [
+    "Bewertet",
+    0.0,
+    0.541
+   ],
+   [
+    "Bid,",
+    0.742,
+    0.963
+   ],
+   [
+    "No-Bid",
+    1.284,
+    1.705
+   ],
+   [
+    "in",
+    1.905,
+    1.985
+   ],
+   [
+    "Minuten.",
+    2.026,
+    2.447
+   ]
+  ],
+  "aligned": "force"
+ },
+ "05": {
+  "text": "Und schreibt konforme Angebote aus Ihrem Wissen.",
+  "dur": 2.854,
+  "words": [
+   [
+    "Und",
+    0.02,
+    0.121
+   ],
+   [
+    "schreibt",
+    0.141,
+    0.442
+   ],
+   [
+    "konforme",
+    0.482,
+    0.945
+   ],
+   [
+    "Angebote",
+    1.025,
+    1.588
+   ],
+   [
+    "aus",
+    2.01,
+    2.131
+   ],
+   [
+    "Ihrem",
+    2.231,
+    2.432
+   ],
+   [
+    "Wissen.",
+    2.472,
+    2.774
+   ]
+  ],
+  "aligned": "force"
+ },
+ "06": {
+  "text": "Suche, Unterlagen, Angebot. Eine Plattform.",
+  "dur": 3.658,
+  "words": [
+   [
+    "Suche,",
+    0.06,
+    0.362
+   ],
+   [
+    "Unterlagen,",
+    0.864,
+    1.447
+   ],
+   [
+    "Angebot.",
+    1.849,
+    2.392
+   ],
+   [
+    "Eine",
+    2.914,
+    3.055
+   ],
+   [
+    "Plattform.",
+    3.115,
+    3.598
+   ]
+  ],
+  "aligned": "force"
+ },
+ "07": {
+  "text": "Mehr Ausschreibungen. Neben dem Tagesgesch\u00e4ft.",
+  "dur": 2.807,
+  "words": [
+   [
+    "Mehr",
+    0.04,
+    0.16
+   ],
+   [
+    "Ausschreibungen.",
+    0.241,
+    0.962
+   ],
+   [
+    "Neben",
+    1.504,
+    1.724
+   ],
+   [
+    "dem",
+    1.764,
+    1.885
+   ],
+   [
+    "Tagesgesch\u00e4ft.",
+    1.945,
+    2.747
+   ]
+  ],
+  "aligned": "force"
+ }
+}

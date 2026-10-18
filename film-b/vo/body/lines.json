@@ -1,0 +1,227 @@
+{
+ "_meta": {
+  "aligned": "force"
+ },
+ "02": {
+  "text": "Forgent. Die KI-Plattform f\u00fcr \u00f6ffentliche Auftr\u00e4ge.",
+  "dur": 3.271,
+  "words": [
+   [
+    "Forgent.",
+    0.04,
+    0.602
+   ],
+   [
+    "Die",
+    1.044,
+    1.164
+   ],
+   [
+    "KI-Plattform",
+    1.184,
+    1.967
+   ],
+   [
+    "f\u00fcr",
+    2.027,
+    2.167
+   ],
+   [
+    "\u00f6ffentliche",
+    2.228,
+    2.629
+   ],
+   [
+    "Auftr\u00e4ge.",
+    2.709,
+    3.171
+   ]
+  ],
+  "aligned": "force"
+ },
+ "03": {
+  "text": "Forgent findet sie: Stadt Bonn, hundert Prozent passend.",
+  "dur": 4.044,
+  "words": [
+   [
+    "Forgent",
+    0.06,
+    0.604
+   ],
+   [
+    "findet",
+    0.825,
+    1.127
+   ],
+   [
+    "sie:",
+    1.167,
+    1.308
+   ],
+   [
+    "Stadt",
+    1.911,
+    2.132
+   ],
+   [
+    "Bonn,",
+    2.193,
+    2.414
+   ],
+   [
+    "hundert",
+    2.837,
+    3.118
+   ],
+   [
+    "Prozent",
+    3.158,
+    3.521
+   ],
+   [
+    "passend.",
+    3.561,
+    3.963
+   ]
+  ],
+  "aligned": "force"
+ },
+ "04": {
+  "text": "Pr\u00fcft alle Kriterien. Bid.",
+  "dur": 2.068,
+  "words": [
+   [
+    "Pr\u00fcft",
+    0.0,
+    0.341
+   ],
+   [
+    "alle",
+    0.522,
+    0.683
+   ],
+   [
+    "Kriterien.",
+    0.743,
+    1.345
+   ],
+   [
+    "Bid.",
+    1.747,
+    1.968
+   ]
+  ],
+  "aligned": "force"
+ },
+ "05": {
+  "text": "Und schreibt das Angebot aus Ihrem Wissen.",
+  "dur": 2.457,
+  "words": [
+   [
+    "Und",
+    0.02,
+    0.121
+   ],
+   [
+    "schreibt",
+    0.141,
+    0.423
+   ],
+   [
+    "das",
+    0.443,
+    0.564
+   ],
+   [
+    "Angebot",
+    0.665,
+    1.168
+   ],
+   [
+    "aus",
+    1.611,
+    1.732
+   ],
+   [
+    "Ihrem",
+    1.833,
+    2.034
+   ],
+   [
+    "Wissen.",
+    2.075,
+    2.377
+   ]
+  ],
+  "aligned": "force"
+ },
+ "06": {
+  "text": "Finden, bewerten, schreiben. Eine Plattform.",
+  "dur": 2.498,
+  "words": [
+   [
+    "Finden,",
+    0.06,
+    0.403
+   ],
+   [
+    "bewerten,",
+    0.463,
+    0.906
+   ],
+   [
+    "schreiben.",
+    0.967,
+    1.37
+   ],
+   [
+    "Eine",
+    1.753,
+    1.894
+   ],
+   [
+    "Plattform.",
+    1.934,
+    2.437
+   ]
+  ],
+  "aligned": "force"
+ },
+ "07": {
+  "text": "Montag, neun Uhr. Die eine gefunden.",
+  "dur": 2.64,
+  "words": [
+   [
+    "Montag,",
+    0.04,
+    0.504
+   ],
+   [
+    "neun",
+    0.766,
+    0.987
+   ],
+   [
+    "Uhr.",
+    1.108,
+    1.249
+   ],
+   [
+    "Die",
+    1.693,
+    1.814
+   ],
+   [
+    "eine",
+    1.874,
+    2.035
+   ],
+   [
+    "gefunden.",
+    2.096,
+    2.559
+   ]
+  ],
+  "aligned": "force"
+ }
+}

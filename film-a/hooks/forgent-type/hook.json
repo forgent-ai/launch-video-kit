@@ -1,0 +1,100 @@
+{
+ "about": "Kapazität (winning Smartlead body 3975439 B: 'Suche, Unterlagen und Angebot neben dem Tagesgeschäft kaum zu schaffen'). Hook pain, last line resolves it.",
+ "duration": 7.0,
+ "video": null,
+ "ground": "dark",
+ "push": true,
+ "voice": null,
+ "text": [
+  {
+   "words": [
+    [
+     "Genug",
+     0.35
+    ],
+    [
+     "Ausschreibungen",
+     0.6
+    ],
+    [
+     "gibt",
+     1.05
+    ],
+    [
+     "es.",
+     1.25
+    ]
+   ],
+   "out": 2.2,
+   "y": 520,
+   "size": 104
+  },
+  {
+   "words": [
+    [
+     "Suche,",
+     2.45
+    ],
+    [
+     "Unterlagen,",
+     2.85
+    ],
+    [
+     "*Angebot.",
+     3.35
+    ]
+   ],
+   "out": 4.4,
+   "y": 520,
+   "size": 104
+  },
+  {
+   "words": [
+    [
+     "Neben",
+     4.65
+    ],
+    [
+     "dem",
+     4.9
+    ],
+    [
+     "Tagesgeschäft",
+     5.05
+    ],
+    [
+     "kaum",
+     5.6
+    ],
+    [
+     "zu",
+     5.8
+    ],
+    [
+     "*schaffen.",
+     5.95
+    ]
+   ],
+   "out": 8.0,
+   "y": 520,
+   "size": 96
+  }
+ ],
+ "sfx": [
+  {
+   "t": 0.35,
+   "sound": "felt_thump",
+   "gain_db": -18
+  },
+  {
+   "t": 2.45,
+   "sound": "felt_thump",
+   "gain_db": -18
+  },
+  {
+   "t": 4.65,
+   "sound": "felt_thump",
+   "gain_db": -18
+  }
+ ]
+}

@@ -124,7 +124,7 @@ PALETTE = {
     "label": [("glass_tick", -18, {"degree": 7})],
     "card": [("felt_thump", -14, {})],
     "flip": [("press", -8, {}), ("lock", -14, {})],
-    "logo": [("logo_sting", -8, {})],
+    "logo": [("sub_drop", -12, {})],   # Forgent: one soft low hit, no bell (Tom 2026-10-16)
     "hookword": [],
 }
 KIT_OF = {"felt_thump": "felt", "sub_drop": "sub", "glass_tick": "glass", "press": "click", "air": "air", "arrive": "marimba",

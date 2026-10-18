@@ -13,8 +13,8 @@
         /* the hook: its own picture (or a ground), its lines, a push into the cut */
         .hook { position: absolute; inset: 0; transform-origin: 50% 50%; }
         .hookg { position: absolute; inset: 0; }
-        .hookg.hg-dark { background: radial-gradient(1400px 800px at 50% 115%, var(--acc-a2), transparent 70%), var(--dark); }
-        .hookg.hg-accent { background: radial-gradient(140% 110% at 50% 118%, var(--acc-glow) 0%, var(--accent) 36%, var(--acc-deep) 78%, var(--dark) 100%); }
+        .hookg.hg-dark { background: var(--dark); }
+        .hookg.hg-accent { background: var(--accent); }
         .hookg.hg-light { background: radial-gradient(1200px 700px at 50% 50%, var(--ground-hi), transparent 70%), var(--ground); }
         .hookv { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; object-fit: cover; }
         .hooktext { position: absolute; inset: 0; }
@@ -25,10 +25,10 @@
         .hk-dark .hw.k { color: var(--acc-dark); }
         .hk-accent .hw, .hk-accent .hw.k { color: var(--accent-ink); text-shadow: 0 2px 30px rgba(0, 0, 0, 0.18); }
         .hk-light .hw { color: var(--ink-soft); }
-        .hk-light .hw.k { color: var(--ink); }
+        .hk-light .hw.k { color: var(--accent); }
         .hk-light .hw.k::before, .nw.k::before, .bw.k::before, .cw.k::before, .hg-clear .hp.k::before, .hg-light .hp.k::before {
           content: ""; position: absolute; left: -0.06em; right: -0.06em; top: 0.14em; bottom: -0.03em; border-radius: 0.08em;
-          background: var(--hl); transform-origin: 0 50%; transform: scaleX(var(--hlp, 0)); z-index: -1; }
+          background: transparent; transform-origin: 0 50%; /* Forgent: no pale highlight box (Tom 2026-10-16) */ transform: scaleX(var(--hlp, 0)); z-index: -1; }
 
         /* the world under every light scene: the ground, a soft bloom in the accent, fine grain */
         .world { position: absolute; inset: 0; background: var(--ground); overflow: hidden; }
@@ -48,14 +48,14 @@
           font-weight: var(--weight); letter-spacing: -0.035em; line-height: 1.1; white-space: nowrap; }
         .nw, .bw, .cw { position: relative; display: inline-block; isolation: isolate; }
         .nw { opacity: 0; color: var(--ink-soft); }
-        .nw.k { color: var(--ink); }
+        .nw.k { color: var(--accent); }
         .scr { position: absolute; left: 0; top: 0; white-space: nowrap; }
 
         /* hero cards: 1 line, full frame, the ground is the colour; exit by dive, collapse or cut */
         .hero { z-index: 20; }
         .hbg { position: absolute; inset: 0; }
-        .hg-dark .hbg { background: radial-gradient(1200px 700px at 50% 122%, var(--acc-a1), transparent 70%), var(--dark); }
-        .hg-accent .hbg { background: radial-gradient(140% 110% at 50% 118%, var(--acc-glow) 0%, var(--accent) 36%, var(--acc-deep) 78%, var(--dark) 100%); }
+        .hg-dark .hbg { background: var(--dark); }
+        .hg-accent .hbg { background: var(--accent); } /* Forgent: flat brand green, no glow */
         .hg-light .hbg { background: radial-gradient(900px 600px at 50% 50%, var(--ground-hi), transparent 70%), var(--ground); }
         .hl { position: absolute; left: 0; right: 0; top: 50%; height: 1em; margin-top: -0.5em; display: flex; justify-content: center; align-items: center;
           gap: 0.22em; white-space: nowrap; font-weight: var(--weight); letter-spacing: var(--tracking); line-height: 1; transform-origin: 50% 50%; }
@@ -64,7 +64,7 @@
         .hg-dark .hp.k { color: var(--acc-dark); }
         .hg-accent .hp { color: var(--accent-ink); opacity: 0; }
         .hg-light .hp { color: var(--ink-soft); }
-        .hg-light .hp.k { color: var(--ink); }
+        .hg-light .hp.k { color: var(--accent); }
         .hg-clear { z-index: 30; }
         .hg-clear .hl { top: 140px; margin-top: 0; }
         .hg-clear .hp { color: var(--ink); }
@@ -90,12 +90,12 @@
         .blk { position: relative; width: 310px; height: 310px; background: var(--surface); display: flex; flex-direction: column; align-items: center; justify-content: center;
           gap: 22px; opacity: 0; box-shadow: 0 34px 80px -40px var(--shadow), 0 0 0 1px var(--line); }
         .blk img { width: 104px; height: 104px; object-fit: contain; }
-        .blk span { font-size: 46px; font-weight: var(--weight); letter-spacing: -0.03em; color: var(--ink); white-space: nowrap; }
+        .blk span { font-size: 66px; font-weight: var(--weight); letter-spacing: -0.03em; color: var(--ink); white-space: nowrap; }
         .blk .div { position: absolute; right: 0; top: 44px; bottom: 44px; width: 2px; background: var(--line); opacity: 0; }
         .blab { position: absolute; left: 0; right: 0; top: 215px; display: flex; justify-content: center; gap: 0.24em; font-size: 88px;
           font-weight: var(--weight); letter-spacing: var(--tracking); line-height: 1.05; white-space: nowrap; opacity: 0; transform-origin: 50% 50%; }
         .bw { color: var(--ink-soft); }
-        .bw.k { color: var(--ink); }
+        .bw.k { color: var(--accent); }
 
         /* switch: a card that turns on */
         .switch { z-index: 5; }
@@ -128,8 +128,8 @@
         </div>
         <div class="world late">
           <div class="blob" style="width:1500px;height:1500px;background:radial-gradient(circle, var(--ground-hi) 0%, transparent 60%)"></div>
-          <div class="blob" style="width:1100px;height:1100px;background:radial-gradient(circle, var(--acc-a1) 0%, var(--acc-a2) 30%, transparent 58%)"></div>
-          <div class="blob" style="width:900px;height:900px;background:radial-gradient(circle, var(--acc-a2) 0%, transparent 60%)"></div>
+          <div class="blob" style="width:1100px;height:1100px;background:radial-gradient(circle, var(--ground-hi) 0%, transparent 58%)"></div>
+          <div class="blob" style="width:900px;height:900px;background:radial-gradient(circle, var(--ground-hi) 0%, transparent 60%)"></div>
           <div class="blob" style="width:1300px;height:1300px;background:radial-gradient(circle, var(--ground-hi) 0%, transparent 58%)"></div>
           <div class="sweep"></div>
           <div class="grain"></div>
@@ -151,7 +151,7 @@
           function in3(u) { return u * u * u; }
           function io(u) { return u < 0.5 ? 4 * u * u * u : 1 - Math.pow(-2 * u + 2, 3) / 2; }
           function mix(a, b, u) { return a + (b - a) * u; }
-          function blur(v) { return v > 0.01 ? "blur(" + v.toFixed(2) + "px)" : "none"; }
+          function blur(v) { return "none"; } // Forgent: no blur-ins (Tom 2026-10-16)
           function hash(a, b) { var h = (a * 374761393 + b * 668265263) | 0; h = (h ^ (h >>> 13)) * 1274126177 | 0; return Math.abs(h ^ (h >>> 16)); }
           var ABC = "abcdefghijklmnopqrstuvwxyz0123456789";
           function scramble(text, p, f, seed) {
@@ -191,8 +191,8 @@
             w.el.style.transform = "translateY(" + (8 * (1 - e)).toFixed(2) + "px)";
             if (!w.k) return;
             var p = cl((t - w.at) / 0.3);
-            w.k.real.style.opacity = p >= 1 ? 1 : 0;
-            w.k.scr.textContent = p >= 1 ? "" : scramble(w.k.text, p, Math.floor(t * 30), seed);
+            w.k.real.style.opacity = 1; // Forgent: no scramble (Tom 2026-10-16), the real word fades in
+            w.k.scr.textContent = "";
             w.el.style.setProperty("--hlp", io(cl((t - w.at - 0.2) / 0.3)).toFixed(3));
           }
 
@@ -215,7 +215,7 @@
               d.row = el.querySelector(".brow"); d.blks = Array.prototype.slice.call(el.querySelectorAll(".blk")); d.lab = el.querySelector(".blab");
               d.divs = d.blks.map(function (b) { return b.querySelector(".div"); });
               d.words = Array.prototype.map.call(el.querySelectorAll(".bw"), function (w, wi) { return { el: w, at: d.label + 0.05 * wi, k: w.classList.contains("k") ? keyWord(w) : null }; });
-              var n = d.blks.length, size = n > 4 ? 250 : 310;
+              var n = d.blks.length, size = n > 4 ? 320 : 440;
               d.blks.forEach(function (b) { b.style.width = b.style.height = size + "px"; });
             } else if (d.type === "switch") {
               d.card = el.querySelector(".card"); d.knob = el.querySelector(".knob"); d.sw = el.querySelector(".sw");
@@ -268,7 +268,7 @@
               var e = out4(cl((t - p.at) / (p.first ? 0.4 : 0.26)));
               p.el.style.opacity = t < p.at ? 0 : Math.min(1, e * 3).toFixed(3);
               p.el.style.filter = blur(12 * (1 - e));
-              p.el.style.transform = "scale(" + (p.first ? mix(2.4, 1, e) : mix(1.3, 1, e)).toFixed(4) + ")";
+              p.el.style.transform = "scale(" + (p.first ? mix(1.12, 1, e) : mix(1.06, 1, e)).toFixed(4) + ")";
               if (p.key) p.el.style.setProperty("--hlp", io(cl((t - p.at - 0.15) / 0.3)).toFixed(3));
             });
           }

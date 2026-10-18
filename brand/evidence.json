@@ -1,44 +1,47 @@
 {
-  "url": "http://localhost:5199/",
-  "title": "Acme | The feedback inbox for product teams",
+  "url": "https://www.forgent.ai/de/",
+  "title": "Forgent AI | KI-Agenten für öffentliche Ausschreibungen",
   "meta": {
-    "description": "Acme collects customer feedback from support, sales and calls, tags it automatically and shows your team what to build next.",
-    "ogTitle": "Acme: every customer request, in one inbox",
-    "ogDescription": "The feedback inbox for product teams. Collect, tag and prioritise every request.",
-    "ogSiteName": "Acme",
-    "ogImage": "",
-    "themeColor": "#ff5b35",
+    "description": "Forgent verwendet KI-Agenten, um relevante Ausschreibungen zu finden und bewerten und Angebotsentwürfe zu erstellen.",
+    "ogTitle": "Forgent AI | KI-Agenten für öffentliche Ausschreibungen",
+    "ogDescription": "Forgent verwendet KI-Agenten, um relevante Ausschreibungen zu finden und bewerten und Angebotsentwürfe zu erstellen.",
+    "ogSiteName": "",
+    "ogImage": "https://framerusercontent.com/images/UzzBG5aCB2iAj0ibUiFUG5KiCww.jpg",
+    "themeColor": "",
     "applicationName": ""
   },
   "page": {
     "width": 1920,
-    "height": 4320,
-    "url": "http://localhost:5199/"
+    "height": 8341,
+    "url": "https://www.forgent.ai/de/"
   },
   "mode": "light",
-  "notes": [],
+  "notes": [
+    "monochrome brand: the accent is the primary button colour; consider a signature colour by hand",
+    "no header logo found; used the site icon. Replace it with the real logo file if you have one"
+  ],
   "decisions": {
-    "ground": "most common page colour (64 % of the full page)",
-    "accent": "most saturated brand colour by weighted use (button background, theme-color, hero pixels, page pixels, logo colour)",
-    "accent_ink": "text on the Start free button",
+    "ground": "most common page colour (49 % of the full page)",
+    "accent": "no saturated brand colour found; the primary button colour (Demo buchen)",
+    "accent_ink": "best contrast on the accent",
     "ink": "h1 colour",
     "ink_secondary": "paragraph colour",
     "dark": "darkest large area on the page",
-    "surface": "most common card background"
+    "surface": "ground lifted toward white"
   },
-  "monochrome": false,
+  "monochrome": true,
   "styles": {
     "html": {
       "tag": "html",
-      "text": "Acme Product Inbox Board Roadmap Pricing Sign in Start free New Automatic tagging for every request Every customer request, in one inbox. Ac",
+      "text": "KI PLATTFORM FÜR AUSSCHREIBUNGEN Ausschreibungen gewinnen. Mit AI Agenten. Forgent findet die passenden Ausschreibungen, entwirft konforme A",
       "rect": {
         "x": 0,
         "y": 0,
         "w": 1920,
-        "h": 4320
+        "h": 8341
       },
       "color": "rgb(0, 0, 0)",
-      "background": "rgb(250, 247, 242)",
+      "background": "rgba(0, 0, 0, 0)",
       "backgroundImage": null,
       "textFill": "rgb(0, 0, 0)",
       "fontFamily": "Times",
@@ -57,23 +60,23 @@
     },
     "body": {
       "tag": "body",
-      "text": "Acme Product Inbox Board Roadmap Pricing Sign in Start free New Automatic tagging for every request Every customer request, in one inbox. Ac",
+      "text": "KI PLATTFORM FÜR AUSSCHREIBUNGEN Ausschreibungen gewinnen. Mit AI Agenten. Forgent findet die passenden Ausschreibungen, entwirft konforme A",
       "rect": {
         "x": 0,
         "y": 0,
         "w": 1920,
-        "h": 4320
+        "h": 8341
       },
-      "color": "rgb(27, 23, 19)",
-      "background": "rgb(250, 247, 242)",
+      "color": "rgb(0, 0, 0)",
+      "background": "rgb(254, 252, 251)",
       "backgroundImage": null,
-      "textFill": "rgb(27, 23, 19)",
-      "fontFamily": "\"Plus Jakarta Sans\", system-ui, sans-serif",
+      "textFill": "rgb(0, 0, 0)",
+      "fontFamily": "sans-serif",
       "fontWeight": "400",
-      "fontSize": 18,
+      "fontSize": 12,
       "letterSpacing": "normal",
-      "lineHeight": "27.9px",
-      "borderColor": "rgb(27, 23, 19)",
+      "lineHeight": "normal",
+      "borderColor": "rgb(0, 0, 0)",
       "borderWidth": 0,
       "radius": 0,
       "padding": [
@@ -83,24 +86,24 @@
       "position": "static"
     },
     "h1": {
-      "tag": "h1",
-      "text": "Every customer request, in one inbox.",
+      "tag": "h2",
+      "text": "Ausschreibungen gewinnen.",
       "rect": {
-        "x": 470,
-        "y": 237,
-        "w": 980,
-        "h": 171
+        "x": 320,
+        "y": 419,
+        "w": 525,
+        "h": 48
       },
-      "color": "rgb(27, 23, 19)",
+      "color": "rgb(27, 25, 23)",
       "background": "rgba(0, 0, 0, 0)",
       "backgroundImage": null,
-      "textFill": "rgb(27, 23, 19)",
-      "fontFamily": "\"Plus Jakarta Sans\", system-ui, sans-serif",
-      "fontWeight": "800",
-      "fontSize": 84,
-      "letterSpacing": "-3.78px",
-      "lineHeight": "85.68px",
-      "borderColor": "rgb(27, 23, 19)",
+      "textFill": "rgb(27, 25, 23)",
+      "fontFamily": "\"GT Alpina Light\", \"GT Alpina Light Placeholder\", sans-serif",
+      "fontWeight": "300",
+      "fontSize": 48,
+      "letterSpacing": "-2.4px",
+      "lineHeight": "48px",
+      "borderColor": "rgb(27, 25, 23)",
       "borderWidth": 0,
       "radius": 0,
       "padding": [
@@ -112,23 +115,23 @@
     "h2": [
       {
         "tag": "h2",
-        "text": "Everything customers say, captured.",
+        "text": "Ausschreibungen gewinnen.",
         "rect": {
-          "x": 360,
-          "y": 1610,
-          "w": 501,
-          "h": 102
+          "x": 320,
+          "y": 419,
+          "w": 525,
+          "h": 48
         },
-        "color": "rgb(27, 23, 19)",
+        "color": "rgb(27, 25, 23)",
         "background": "rgba(0, 0, 0, 0)",
         "backgroundImage": null,
-        "textFill": "rgb(27, 23, 19)",
-        "fontFamily": "\"Plus Jakarta Sans\", system-ui, sans-serif",
-        "fontWeight": "800",
+        "textFill": "rgb(27, 25, 23)",
+        "fontFamily": "\"GT Alpina Light\", \"GT Alpina Light Placeholder\", sans-serif",
+        "fontWeight": "300",
         "fontSize": 48,
-        "letterSpacing": "-1.92px",
-        "lineHeight": "50.88px",
-        "borderColor": "rgb(27, 23, 19)",
+        "letterSpacing": "-2.4px",
+        "lineHeight": "48px",
+        "borderColor": "rgb(27, 25, 23)",
         "borderWidth": 0,
         "radius": 0,
         "padding": [
@@ -139,23 +142,23 @@
       },
       {
         "tag": "h2",
-        "text": "See what matters, sorted by demand.",
+        "text": "Mit AI Agenten.",
         "rect": {
-          "x": 1059,
-          "y": 2243,
-          "w": 501,
-          "h": 102
+          "x": 320,
+          "y": 467,
+          "w": 525,
+          "h": 48
         },
-        "color": "rgb(27, 23, 19)",
+        "color": "rgba(27, 25, 23, 0.5)",
         "background": "rgba(0, 0, 0, 0)",
         "backgroundImage": null,
-        "textFill": "rgb(27, 23, 19)",
-        "fontFamily": "\"Plus Jakarta Sans\", system-ui, sans-serif",
-        "fontWeight": "800",
+        "textFill": "rgba(27, 25, 23, 0.5)",
+        "fontFamily": "\"GT Alpina Light\", \"GT Alpina Light Placeholder\", sans-serif",
+        "fontWeight": "300",
         "fontSize": 48,
-        "letterSpacing": "-1.92px",
-        "lineHeight": "50.88px",
-        "borderColor": "rgb(27, 23, 19)",
+        "letterSpacing": "-2.4px",
+        "lineHeight": "48px",
+        "borderColor": "rgba(27, 25, 23, 0.5)",
         "borderWidth": 0,
         "radius": 0,
         "padding": [
@@ -166,23 +169,23 @@
       },
       {
         "tag": "h2",
-        "text": "A roadmap that writes itself.",
+        "text": "Mehr Angebote gewinnen",
         "rect": {
-          "x": 360,
-          "y": 2861,
-          "w": 501,
-          "h": 102
+          "x": 320,
+          "y": 6789,
+          "w": 564,
+          "h": 53
         },
-        "color": "rgb(27, 23, 19)",
+        "color": "rgb(254, 252, 251)",
         "background": "rgba(0, 0, 0, 0)",
         "backgroundImage": null,
-        "textFill": "rgb(27, 23, 19)",
-        "fontFamily": "\"Plus Jakarta Sans\", system-ui, sans-serif",
-        "fontWeight": "800",
-        "fontSize": 48,
-        "letterSpacing": "-1.92px",
-        "lineHeight": "50.88px",
-        "borderColor": "rgb(27, 23, 19)",
+        "textFill": "rgb(254, 252, 251)",
+        "fontFamily": "\"GT Alpina Light\", \"GT Alpina Light Placeholder\", sans-serif",
+        "fontWeight": "300",
+        "fontSize": 56,
+        "letterSpacing": "-2.8px",
+        "lineHeight": "53.2px",
+        "borderColor": "rgb(254, 252, 251)",
         "borderWidth": 0,
         "radius": 0,
         "padding": [
@@ -195,23 +198,23 @@
     "p": [
       {
         "tag": "p",
-        "text": "Acme collects feedback from support, sales and calls, tags it automatically and shows your team what to build next.",
+        "text": "Forgent findet die passenden Ausschreibungen, entwirft konforme Angebote und hält jedes Angebot bis zur Abgabe im Fluss.",
         "rect": {
-          "x": 620,
-          "y": 430,
-          "w": 680,
-          "h": 65
+          "x": 320,
+          "y": 539,
+          "w": 399,
+          "h": 63
         },
-        "color": "rgb(107, 100, 92)",
+        "color": "rgba(27, 25, 23, 0.8)",
         "background": "rgba(0, 0, 0, 0)",
         "backgroundImage": null,
-        "textFill": "rgb(107, 100, 92)",
-        "fontFamily": "\"Plus Jakarta Sans\", system-ui, sans-serif",
+        "textFill": "rgba(27, 25, 23, 0.8)",
+        "fontFamily": "\"GT America Regular\", \"GT America Regular Placeholder\", sans-serif",
         "fontWeight": "400",
-        "fontSize": 21,
-        "letterSpacing": "normal",
-        "lineHeight": "32.55px",
-        "borderColor": "rgb(107, 100, 92)",
+        "fontSize": 15,
+        "letterSpacing": "-0.15px",
+        "lineHeight": "21px",
+        "borderColor": "rgba(27, 25, 23, 0.8)",
         "borderWidth": 0,
         "radius": 0,
         "padding": [
@@ -222,23 +225,23 @@
       },
       {
         "tag": "p",
-        "text": "Forward emails, connect your chat and drop in call notes. Acme keeps the customer, the company and the exact words together.",
+        "text": "Mehr relevante Ausschreibungen im Vergleich zu Altanbietern finden",
         "rect": {
-          "x": 360,
-          "y": 1730,
-          "w": 501,
-          "h": 84
+          "x": 775,
+          "y": 1280,
+          "w": 232,
+          "h": 39
         },
-        "color": "rgb(107, 100, 92)",
+        "color": "rgba(27, 25, 23, 0.6)",
         "background": "rgba(0, 0, 0, 0)",
         "backgroundImage": null,
-        "textFill": "rgb(107, 100, 92)",
-        "fontFamily": "\"Plus Jakarta Sans\", system-ui, sans-serif",
+        "textFill": "rgba(27, 25, 23, 0.6)",
+        "fontFamily": "\"GT America Regular\", \"GT America Regular Placeholder\", sans-serif",
         "fontWeight": "400",
-        "fontSize": 18,
-        "letterSpacing": "normal",
-        "lineHeight": "27.9px",
-        "borderColor": "rgb(107, 100, 92)",
+        "fontSize": 14,
+        "letterSpacing": "-0.14px",
+        "lineHeight": "19.6px",
+        "borderColor": "rgba(27, 25, 23, 0.6)",
         "borderWidth": 0,
         "radius": 0,
         "padding": [
@@ -249,23 +252,23 @@
       },
       {
         "tag": "p",
-        "text": "Requests roll up into ideas on a shared board. Votes, revenue and urgency tell you which ones to pick up first.",
+        "text": "Gesparter Aufwand bei der Erstellung von Angeboten",
         "rect": {
-          "x": 1059,
-          "y": 2362,
-          "w": 501,
-          "h": 56
+          "x": 1071,
+          "y": 1280,
+          "w": 232,
+          "h": 39
         },
-        "color": "rgb(107, 100, 92)",
+        "color": "rgba(27, 25, 23, 0.6)",
         "background": "rgba(0, 0, 0, 0)",
         "backgroundImage": null,
-        "textFill": "rgb(107, 100, 92)",
-        "fontFamily": "\"Plus Jakarta Sans\", system-ui, sans-serif",
+        "textFill": "rgba(27, 25, 23, 0.6)",
+        "fontFamily": "\"GT America Regular\", \"GT America Regular Placeholder\", sans-serif",
         "fontWeight": "400",
-        "fontSize": 18,
-        "letterSpacing": "normal",
-        "lineHeight": "27.9px",
-        "borderColor": "rgb(107, 100, 92)",
+        "fontSize": 14,
+        "letterSpacing": "-0.14px",
+        "lineHeight": "19.6px",
+        "borderColor": "rgba(27, 25, 23, 0.6)",
         "borderWidth": 0,
         "radius": 0,
         "padding": [
@@ -276,23 +279,23 @@
       },
       {
         "tag": "p",
-        "text": "Plan the quarter from real demand. When an idea ships, everyone who asked for it hears about it.",
+        "text": "Starten Sie direkt mit einer priorisierten Auswahl, statt mit manueller Portalsuche.",
         "rect": {
-          "x": 360,
-          "y": 2981,
-          "w": 501,
-          "h": 56
+          "x": 320,
+          "y": 2545,
+          "w": 620,
+          "h": 20
         },
-        "color": "rgb(107, 100, 92)",
+        "color": "rgb(27, 25, 23)",
         "background": "rgba(0, 0, 0, 0)",
         "backgroundImage": null,
-        "textFill": "rgb(107, 100, 92)",
-        "fontFamily": "\"Plus Jakarta Sans\", system-ui, sans-serif",
+        "textFill": "rgb(27, 25, 23)",
+        "fontFamily": "\"GT America Regular\", \"GT America Regular Placeholder\", sans-serif",
         "fontWeight": "400",
-        "fontSize": 18,
-        "letterSpacing": "normal",
-        "lineHeight": "27.9px",
-        "borderColor": "rgb(107, 100, 92)",
+        "fontSize": 14,
+        "letterSpacing": "-0.14px",
+        "lineHeight": "19.6px",
+        "borderColor": "rgb(27, 25, 23)",
         "borderWidth": 0,
         "radius": 0,
         "padding": [
@@ -303,23 +306,23 @@
       },
       {
         "tag": "p",
-        "text": "Email, chat, calls and sales notes land in 1 inbox.",
+        "text": "Forgent erstellt basierend auf tausenden öffentlichen und b2b Ausschreibungsportalen eine tägliche Prio-Liste an Geschäftsmöglichkeiten, die",
         "rect": {
-          "x": 391,
-          "y": 3571,
-          "w": 325,
-          "h": 50
+          "x": 320,
+          "y": 2584,
+          "w": 383,
+          "h": 98
         },
-        "color": "rgb(107, 100, 92)",
+        "color": "rgba(27, 25, 23, 0.7)",
         "background": "rgba(0, 0, 0, 0)",
         "backgroundImage": null,
-        "textFill": "rgb(107, 100, 92)",
-        "fontFamily": "\"Plus Jakarta Sans\", system-ui, sans-serif",
+        "textFill": "rgba(27, 25, 23, 0.7)",
+        "fontFamily": "\"GT America Regular\", \"GT America Regular Placeholder\", sans-serif",
         "fontWeight": "400",
-        "fontSize": 16,
-        "letterSpacing": "normal",
-        "lineHeight": "24.8px",
-        "borderColor": "rgb(107, 100, 92)",
+        "fontSize": 14,
+        "letterSpacing": "-0.14px",
+        "lineHeight": "19.6px",
+        "borderColor": "rgba(27, 25, 23, 0.7)",
         "borderWidth": 0,
         "radius": 0,
         "padding": [
@@ -330,23 +333,23 @@
       },
       {
         "tag": "p",
-        "text": "Every request is tagged by theme, product area and urgency.",
+        "text": "Erweiterung eines 6-klassigen Kindergartens im Riverbend-Viertel",
         "rect": {
-          "x": 798,
-          "y": 3571,
-          "w": 325,
-          "h": 50
+          "x": 1460,
+          "y": 2512,
+          "w": 386,
+          "h": 18
         },
-        "color": "rgb(107, 100, 92)",
+        "color": "rgb(0, 0, 0)",
         "background": "rgba(0, 0, 0, 0)",
         "backgroundImage": null,
-        "textFill": "rgb(107, 100, 92)",
-        "fontFamily": "\"Plus Jakarta Sans\", system-ui, sans-serif",
+        "textFill": "rgb(0, 0, 0)",
+        "fontFamily": "Inter, \"Inter Placeholder\", sans-serif",
         "fontWeight": "400",
-        "fontSize": 16,
+        "fontSize": 12.741,
         "letterSpacing": "normal",
-        "lineHeight": "24.8px",
-        "borderColor": "rgb(107, 100, 92)",
+        "lineHeight": "18.2px",
+        "borderColor": "rgb(0, 0, 0)",
         "borderWidth": 0,
         "radius": 0,
         "padding": [
@@ -357,23 +360,23 @@
       },
       {
         "tag": "p",
-        "text": "Plan with the numbers behind every idea, not the loudest voice.",
+        "text": "Amt für öffentliche Dienste der Innenstadt",
         "rect": {
-          "x": 1204,
-          "y": 3571,
-          "w": 325,
-          "h": 50
+          "x": 1799,
+          "y": 2568,
+          "w": 521,
+          "h": 18
         },
-        "color": "rgb(107, 100, 92)",
+        "color": "rgb(0, 0, 0)",
         "background": "rgba(0, 0, 0, 0)",
         "backgroundImage": null,
-        "textFill": "rgb(107, 100, 92)",
-        "fontFamily": "\"Plus Jakarta Sans\", system-ui, sans-serif",
+        "textFill": "rgb(0, 0, 0)",
+        "fontFamily": "Inter, \"Inter Placeholder\", sans-serif",
         "fontWeight": "400",
-        "fontSize": 16,
+        "fontSize": 12.741,
         "letterSpacing": "normal",
-        "lineHeight": "24.8px",
-        "borderColor": "rgb(107, 100, 92)",
+        "lineHeight": "18.2px",
+        "borderColor": "rgb(0, 0, 0)",
         "borderWidth": 0,
         "radius": 0,
         "padding": [
@@ -384,23 +387,131 @@
       },
       {
         "tag": "p",
-        "text": "Set up Acme in 10 minutes. Free for teams of up to 5.",
+        "text": "Planung und schlüsselfertiger Neubau einer 5-gruppigen Kindertagesstätte für 90 Kinder (unter und über 3 Jahren) inklusive Küche, Mehrzweckr",
         "rect": {
-          "x": 360,
-          "y": 3990,
-          "w": 1200,
-          "h": 31
+          "x": 1606,
+          "y": 2748,
+          "w": 713,
+          "h": 73
         },
-        "color": "rgb(185, 177, 166)",
+        "color": "rgb(0, 0, 0)",
         "background": "rgba(0, 0, 0, 0)",
         "backgroundImage": null,
-        "textFill": "rgb(185, 177, 166)",
-        "fontFamily": "\"Plus Jakarta Sans\", system-ui, sans-serif",
+        "textFill": "rgb(0, 0, 0)",
+        "fontFamily": "Inter, \"Inter Placeholder\", sans-serif",
         "fontWeight": "400",
-        "fontSize": 20,
+        "fontSize": 12.741,
         "letterSpacing": "normal",
-        "lineHeight": "31px",
-        "borderColor": "rgb(185, 177, 166)",
+        "lineHeight": "18.2px",
+        "borderColor": "rgb(0, 0, 0)",
+        "borderWidth": 0,
+        "radius": 0,
+        "padding": [
+          0,
+          0
+        ],
+        "position": "static"
+      },
+      {
+        "tag": "p",
+        "text": "Führen Sie einen Grey-Box-Penetrationstest durch",
+        "rect": {
+          "x": 1606,
+          "y": 2911,
+          "w": 713,
+          "h": 18
+        },
+        "color": "rgba(0, 0, 0, 0.5)",
+        "background": "rgba(0, 0, 0, 0)",
+        "backgroundImage": null,
+        "textFill": "rgba(0, 0, 0, 0.5)",
+        "fontFamily": "Inter, \"Inter Placeholder\", sans-serif",
+        "fontWeight": "400",
+        "fontSize": 12.74,
+        "letterSpacing": "-0.1274px",
+        "lineHeight": "18.2px",
+        "borderColor": "rgba(0, 0, 0, 0.5)",
+        "borderWidth": 0,
+        "radius": 0,
+        "padding": [
+          0,
+          0
+        ],
+        "position": "static"
+      },
+      {
+        "tag": "p",
+        "text": "Führen Sie Social-Engineering-Tests durch",
+        "rect": {
+          "x": 1606,
+          "y": 2971,
+          "w": 713,
+          "h": 18
+        },
+        "color": "rgba(0, 0, 0, 0.5)",
+        "background": "rgba(0, 0, 0, 0)",
+        "backgroundImage": null,
+        "textFill": "rgba(0, 0, 0, 0.5)",
+        "fontFamily": "Inter, \"Inter Placeholder\", sans-serif",
+        "fontWeight": "400",
+        "fontSize": 12.74,
+        "letterSpacing": "-0.1274px",
+        "lineHeight": "18.2px",
+        "borderColor": "rgba(0, 0, 0, 0.5)",
+        "borderWidth": 0,
+        "radius": 0,
+        "padding": [
+          0,
+          0
+        ],
+        "position": "static"
+      },
+      {
+        "tag": "p",
+        "text": "Das Bestreben der Meridian Healthcare Group, die Cloud-Einführung zu beschleunigen, stellt einen entscheidenden Moment auf Ihrer Reise der d",
+        "rect": {
+          "x": -92,
+          "y": 3479,
+          "w": 622,
+          "h": 112
+        },
+        "color": "rgb(0, 0, 0)",
+        "background": "rgba(0, 0, 0, 0)",
+        "backgroundImage": null,
+        "textFill": "rgb(0, 0, 0)",
+        "fontFamily": "Inter, \"Inter Placeholder\", sans-serif",
+        "fontWeight": "400",
+        "fontSize": 14,
+        "letterSpacing": "normal",
+        "lineHeight": "22.44px",
+        "borderColor": "rgb(0, 0, 0)",
+        "borderWidth": 0,
+        "radius": 0,
+        "padding": [
+          0,
+          0
+        ],
+        "position": "static"
+      },
+      {
+        "tag": "p",
+        "text": "Unser Ansatz basiert auf einem grundlegenden Prinzip: Die Cloud-Migration im Gesundheitswesen erfordert spezifisches Fachwissen für diese Br",
+        "rect": {
+          "x": -92,
+          "y": 3638,
+          "w": 622,
+          "h": 112
+        },
+        "color": "rgb(0, 0, 0)",
+        "background": "rgba(0, 0, 0, 0)",
+        "backgroundImage": null,
+        "textFill": "rgb(0, 0, 0)",
+        "fontFamily": "Inter, \"Inter Placeholder\", sans-serif",
+        "fontWeight": "400",
+        "fontSize": 14,
+        "letterSpacing": "normal",
+        "lineHeight": "22.44px",
+        "borderColor": "rgb(0, 0, 0)",
         "borderWidth": 0,
         "radius": 0,
         "padding": [
@@ -410,514 +521,499 @@
         "position": "static"
       }
     ],
-    "header": {
-      "tag": "header",
-      "text": "Acme Product Inbox Board Roadmap Pricing Sign in Start free",
-      "rect": {
-        "x": 0,
-        "y": 0,
-        "w": 1920,
-        "h": 77
-      },
-      "color": "rgb(27, 23, 19)",
-      "background": "rgba(250, 247, 242, 0.92)",
-      "backgroundImage": null,
-      "textFill": "rgb(27, 23, 19)",
-      "fontFamily": "\"Plus Jakarta Sans\", system-ui, sans-serif",
-      "fontWeight": "400",
-      "fontSize": 18,
-      "letterSpacing": "normal",
-      "lineHeight": "27.9px",
-      "borderColor": "rgb(27, 23, 19)",
-      "borderWidth": 0,
-      "radius": 0,
-      "padding": [
-        0,
-        0
-      ],
-      "position": "sticky"
-    },
-    "footer": {
-      "tag": "footer",
-      "text": "Acme is a fictional product made for the launch-video-kit example. Privacy Terms Status",
-      "rect": {
-        "x": 0,
-        "y": 4202,
-        "w": 1920,
-        "h": 119
-      },
-      "color": "rgb(143, 135, 124)",
-      "background": "rgba(0, 0, 0, 0)",
-      "backgroundImage": null,
-      "textFill": "rgb(143, 135, 124)",
-      "fontFamily": "\"Plus Jakarta Sans\", system-ui, sans-serif",
-      "fontWeight": "400",
-      "fontSize": 14,
-      "letterSpacing": "normal",
-      "lineHeight": "21.7px",
-      "borderColor": "rgb(44, 38, 31)",
-      "borderWidth": 1,
-      "radius": 0,
-      "padding": [
-        40,
-        0
-      ],
-      "position": "static"
-    },
+    "header": null,
+    "footer": null,
     "mono": null
   },
   "ctas": [
     {
       "tag": "a",
-      "text": "Start free",
-      "color": "rgb(255, 255, 255)",
-      "background": "rgb(255, 91, 53)",
+      "text": "Demo buchen",
+      "color": "rgb(0, 0, 238)",
+      "background": "rgb(27, 25, 23)",
       "backgroundImage": null,
-      "textFill": "rgb(255, 255, 255)",
-      "fontFamily": "\"Plus Jakarta Sans\", system-ui, sans-serif",
-      "fontWeight": "700",
-      "fontSize": 16,
-      "letterSpacing": "-0.16px",
-      "lineHeight": "24.8px",
-      "borderColor": "rgb(255, 255, 255)",
+      "textFill": "rgb(0, 0, 238)",
+      "fontFamily": "sans-serif",
+      "fontWeight": "400",
+      "fontSize": 12,
+      "letterSpacing": "normal",
+      "lineHeight": "normal",
+      "borderColor": "rgb(0, 0, 238)",
       "borderWidth": 0,
-      "radius": 14,
+      "radius": 99,
       "padding": [
-        12,
-        22
+        8,
+        16
       ],
-      "position": "static",
-      "filled": true,
-      "outlined": false,
-      "inHeader": true,
-      "y": 14
-    },
-    {
-      "tag": "a",
-      "text": "Start free",
-      "color": "rgb(255, 255, 255)",
-      "background": "rgb(255, 91, 53)",
-      "backgroundImage": null,
-      "textFill": "rgb(255, 255, 255)",
-      "fontFamily": "\"Plus Jakarta Sans\", system-ui, sans-serif",
-      "fontWeight": "700",
-      "fontSize": 16,
-      "letterSpacing": "-0.16px",
-      "lineHeight": "24.8px",
-      "borderColor": "rgb(255, 255, 255)",
-      "borderWidth": 0,
-      "radius": 14,
-      "padding": [
-        12,
-        22
-      ],
-      "position": "static",
+      "position": "relative",
       "filled": true,
       "outlined": false,
       "inHeader": false,
-      "y": 531
+      "y": 642
     },
     {
       "tag": "a",
-      "text": "Book a demo",
-      "color": "rgb(27, 23, 19)",
-      "background": "rgba(0, 0, 0, 0)",
+      "text": "Kundenberichte",
+      "color": "rgb(0, 0, 238)",
+      "background": "rgba(67, 37, 14, 0.02)",
       "backgroundImage": null,
-      "textFill": "rgb(27, 23, 19)",
-      "fontFamily": "\"Plus Jakarta Sans\", system-ui, sans-serif",
-      "fontWeight": "700",
-      "fontSize": 16,
-      "letterSpacing": "-0.16px",
-      "lineHeight": "24.8px",
-      "borderColor": "rgb(27, 23, 19)",
-      "borderWidth": 1,
-      "radius": 14,
+      "textFill": "rgb(0, 0, 238)",
+      "fontFamily": "sans-serif",
+      "fontWeight": "400",
+      "fontSize": 12,
+      "letterSpacing": "normal",
+      "lineHeight": "normal",
+      "borderColor": "rgb(0, 0, 238)",
+      "borderWidth": 0,
+      "radius": 99,
       "padding": [
-        12,
-        22
+        8,
+        14
       ],
-      "position": "static",
-      "filled": false,
-      "outlined": true,
+      "position": "relative",
+      "filled": true,
+      "outlined": false,
       "inHeader": false,
-      "y": 531
+      "y": 1010
+    },
+    {
+      "tag": "a",
+      "text": "Mehr lesen",
+      "color": "rgb(0, 0, 238)",
+      "background": "rgba(67, 37, 14, 0.02)",
+      "backgroundImage": null,
+      "textFill": "rgb(0, 0, 238)",
+      "fontFamily": "sans-serif",
+      "fontWeight": "400",
+      "fontSize": 12,
+      "letterSpacing": "normal",
+      "lineHeight": "normal",
+      "borderColor": "rgb(0, 0, 238)",
+      "borderWidth": 0,
+      "radius": 99,
+      "padding": [
+        8,
+        14
+      ],
+      "position": "relative",
+      "filled": true,
+      "outlined": false,
+      "inHeader": false,
+      "y": 2124
+    },
+    {
+      "tag": "a",
+      "text": "Mehr erfahren",
+      "color": "rgb(0, 0, 238)",
+      "background": "rgb(27, 25, 23)",
+      "backgroundImage": null,
+      "textFill": "rgb(0, 0, 238)",
+      "fontFamily": "sans-serif",
+      "fontWeight": "400",
+      "fontSize": 12,
+      "letterSpacing": "normal",
+      "lineHeight": "normal",
+      "borderColor": "rgb(0, 0, 238)",
+      "borderWidth": 0,
+      "radius": 99,
+      "padding": [
+        8,
+        16
+      ],
+      "position": "relative",
+      "filled": true,
+      "outlined": false,
+      "inHeader": false,
+      "y": 2714
+    },
+    {
+      "tag": "a",
+      "text": "Demo buchen",
+      "color": "rgb(0, 0, 238)",
+      "background": "rgb(27, 25, 23)",
+      "backgroundImage": null,
+      "textFill": "rgb(0, 0, 238)",
+      "fontFamily": "sans-serif",
+      "fontWeight": "400",
+      "fontSize": 12,
+      "letterSpacing": "normal",
+      "lineHeight": "normal",
+      "borderColor": "rgb(0, 0, 238)",
+      "borderWidth": 0,
+      "radius": 99,
+      "padding": [
+        8,
+        14
+      ],
+      "position": "relative",
+      "filled": true,
+      "outlined": false,
+      "inHeader": false,
+      "y": 50
     }
   ],
   "css_color_vars": {
-    "--acme-card": {
-      "raw": "#ffffff",
+    "--token-45fbbbf9-3fd2-40fe-bf2c-93f5cb8c5701": {
+      "raw": "#fefcfb",
+      "rgba": "rgba(254, 252, 251, 1.000)"
+    },
+    "--token-54409749-4a0a-462e-a592-0c1ebd680fd9": {
+      "raw": "#696665",
+      "rgba": "rgba(105, 102, 101, 1.000)"
+    },
+    "--token-db29ee5c-2d20-4daa-86c7-339652ee5a56": {
+      "raw": "#fff",
       "rgba": "rgba(255, 255, 255, 1.000)"
     },
-    "--acme-line": {
-      "raw": "#e9e3da",
-      "rgba": "rgba(233, 227, 218, 1.000)"
+    "--token-2f185cbb-bdd0-4b67-9868-3cf1c2211b5d": {
+      "raw": "#1b1917cc",
+      "rgba": "rgba(27, 25, 22, 0.800)"
     },
-    "--acme-coral-ink": {
-      "raw": "#ffffff",
-      "rgba": "rgba(255, 255, 255, 1.000)"
+    "--token-02e93144-4ad5-4f79-aa58-2d56145a4b15": {
+      "raw": "#1b1917b3",
+      "rgba": "rgba(27, 26, 23, 0.702)"
     },
-    "--acme-night": {
-      "raw": "#17130f",
-      "rgba": "rgba(23, 19, 15, 1.000)"
+    "--token-3b120e3e-2316-4f08-9fc6-10cf3ebd5afa": {
+      "raw": "#1b1917e6",
+      "rgba": "rgba(27, 26, 23, 0.902)"
     },
-    "--acme-ink": {
-      "raw": "#1b1713",
-      "rgba": "rgba(27, 23, 19, 1.000)"
+    "--token-de2bfb8a-b389-46c4-99db-fc55993752ae": {
+      "raw": "#137447",
+      "rgba": "rgba(19, 116, 71, 1.000)"
     },
-    "--acme-paper": {
-      "raw": "#faf7f2",
-      "rgba": "rgba(250, 247, 242, 1.000)"
+    "--token-98f3eef5-9df8-474e-b8c8-fb927049406a": {
+      "raw": "#1b191799",
+      "rgba": "rgba(27, 25, 23, 0.600)"
     },
-    "--acme-success": {
-      "raw": "#1f8a5b",
-      "rgba": "rgba(31, 138, 91, 1.000)"
+    "--token-32c5933b-0a2e-4c8e-af02-41b3c95fc299": {
+      "raw": "#1b1917",
+      "rgba": "rgba(27, 25, 23, 1.000)"
     },
-    "--acme-muted": {
-      "raw": "#6b645c",
-      "rgba": "rgba(107, 100, 92, 1.000)"
+    "--token-5ba32087-b1a1-4a77-9a24-ff22901c1287": {
+      "raw": "#f7f4f2",
+      "rgba": "rgba(247, 244, 242, 1.000)"
     },
-    "--acme-coral": {
-      "raw": "#ff5b35",
-      "rgba": "rgba(255, 91, 53, 1.000)"
-    },
-    "--acme-danger": {
-      "raw": "#d2432f",
-      "rgba": "rgba(210, 67, 47, 1.000)"
+    "--token-bb3730f1-cc30-44a9-aa1f-c981e88ffbdc": {
+      "raw": "#1b191780",
+      "rgba": "rgba(28, 26, 24, 0.502)"
     }
   },
   "histogram": {
     "hero": [
       {
-        "hex": "#faf7f2",
-        "share": 0.7943
+        "hex": "#f6f3f1",
+        "share": 0.2671
       },
       {
-        "hex": "#ffffff",
-        "share": 0.0952
+        "hex": "#f1eeec",
+        "share": 0.151
       },
       {
-        "hex": "#f4efe7",
-        "share": 0.0279
+        "hex": "#fefcfb",
+        "share": 0.1507
       },
       {
-        "hex": "#1b1713",
-        "share": 0.0173
+        "hex": "#f3f1ef",
+        "share": 0.1372
       },
       {
-        "hex": "#f5f2ed",
-        "share": 0.0114
+        "hex": "#efecea",
+        "share": 0.1271
       },
       {
-        "hex": "#ff5b35",
-        "share": 0.0062
+        "hex": "#f8f6f4",
+        "share": 0.1015
       },
       {
-        "hex": "#eeeae4",
-        "share": 0.0059
+        "hex": "#1b1917",
+        "share": 0.0376
       },
       {
-        "hex": "#f1eee9",
-        "share": 0.0039
+        "hex": "#ebe8e6",
+        "share": 0.0097
       },
       {
-        "hex": "#fbd2c5",
-        "share": 0.0038
+        "hex": "#eae7e5",
+        "share": 0.0022
       },
       {
-        "hex": "#fdebe5",
-        "share": 0.0023
+        "hex": "#faf8f6",
+        "share": 0.0018
       },
       {
-        "hex": "#faf3ed",
-        "share": 0.0017
+        "hex": "#878583",
+        "share": 0.0009
       },
       {
-        "hex": "#eae4db",
-        "share": 0.0015
-      },
-      {
-        "hex": "#6b645c",
-        "share": 0.001
-      },
-      {
-        "hex": "#f4f4f3",
-        "share": 0.0008
-      },
-      {
-        "hex": "#e8edfa",
-        "share": 0.0008
-      },
-      {
-        "hex": "#fbd8cc",
-        "share": 0.0008
-      },
-      {
-        "hex": "#e5e2dc",
-        "share": 0.0008
-      },
-      {
-        "hex": "#eae7e2",
+        "hex": "#000000",
         "share": 0.0007
       },
       {
-        "hex": "#d5d1cc",
-        "share": 0.0005
+        "hex": "#e4e3e1",
+        "share": 0.0006
       },
       {
-        "hex": "#ddd9d4",
-        "share": 0.0005
-      },
-      {
-        "hex": "#cdc9c4",
-        "share": 0.0005
-      },
-      {
-        "hex": "#a5a29c",
+        "hex": "#c5c3c2",
         "share": 0.0004
       },
       {
-        "hex": "#7a746c",
+        "hex": "#bebcba",
         "share": 0.0004
       },
       {
-        "hex": "#f7eede",
+        "hex": "#1d1c1a",
         "share": 0.0004
+      },
+      {
+        "hex": "#e1dfdd",
+        "share": 0.0004
+      },
+      {
+        "hex": "#d4d2d1",
+        "share": 0.0003
+      },
+      {
+        "hex": "#757472",
+        "share": 0.0003
+      },
+      {
+        "hex": "#9d9c9a",
+        "share": 0.0003
+      },
+      {
+        "hex": "#7d7c7a",
+        "share": 0.0003
+      },
+      {
+        "hex": "#949392",
+        "share": 0.0003
+      },
+      {
+        "hex": "#353433",
+        "share": 0.0003
+      },
+      {
+        "hex": "#8d8c8a",
+        "share": 0.0003
       }
     ],
     "full": [
       {
-        "hex": "#faf7f2",
-        "share": 0.6409
+        "hex": "#fefcfb",
+        "share": 0.4891
       },
       {
-        "hex": "#17130f",
-        "share": 0.1222
+        "hex": "#f6f4f2",
+        "share": 0.1291
       },
       {
-        "hex": "#ffffff",
-        "share": 0.111
+        "hex": "#edecea",
+        "share": 0.0672
       },
       {
-        "hex": "#f4efe7",
-        "share": 0.0357
+        "hex": "#f2f0ef",
+        "share": 0.0431
       },
       {
-        "hex": "#f5f2ed",
-        "share": 0.0208
+        "hex": "#f1eeec",
+        "share": 0.0349
       },
       {
-        "hex": "#1b1713",
-        "share": 0.0101
+        "hex": "#e4e5e2",
+        "share": 0.03
       },
       {
-        "hex": "#edeae5",
-        "share": 0.0074
+        "hex": "#f8f6f4",
+        "share": 0.0298
       },
       {
-        "hex": "#f1eee9",
-        "share": 0.0073
+        "hex": "#e4e1de",
+        "share": 0.0257
       },
       {
-        "hex": "#ff5b35",
-        "share": 0.0034
+        "hex": "#eae9e6",
+        "share": 0.0188
       },
       {
-        "hex": "#e5e2dd",
-        "share": 0.0034
+        "hex": "#1b1917",
+        "share": 0.0094
       },
       {
-        "hex": "#dedad6",
+        "hex": "#eae5e3",
+        "share": 0.0092
+      },
+      {
+        "hex": "#cacbc4",
+        "share": 0.0081
+      },
+      {
+        "hex": "#faf8f7",
+        "share": 0.0078
+      },
+      {
+        "hex": "#c3c4bd",
+        "share": 0.007
+      },
+      {
+        "hex": "#d2d3cd",
+        "share": 0.0068
+      },
+      {
+        "hex": "#ddddda",
+        "share": 0.0058
+      },
+      {
+        "hex": "#dadad5",
+        "share": 0.0054
+      },
+      {
+        "hex": "#d5d6d1",
+        "share": 0.0038
+      },
+      {
+        "hex": "#cdcec9",
+        "share": 0.0033
+      },
+      {
+        "hex": "#e6e8ea",
+        "share": 0.0027
+      },
+      {
+        "hex": "#e5e7e8",
         "share": 0.0023
       },
       {
-        "hex": "#e9e6e1",
-        "share": 0.0022
+        "hex": "#c5c5c2",
+        "share": 0.0019
       },
       {
-        "hex": "#d5d2cd",
-        "share": 0.002
+        "hex": "#bcd3e2",
+        "share": 0.0019
       },
       {
-        "hex": "#eae4db",
-        "share": 0.002
-      },
-      {
-        "hex": "#fcfaf7",
+        "hex": "#d3e3ea",
         "share": 0.0018
-      },
-      {
-        "hex": "#d9d6d1",
-        "share": 0.0016
-      },
-      {
-        "hex": "#e1ded9",
-        "share": 0.0014
-      },
-      {
-        "hex": "#feebe5",
-        "share": 0.0013
-      },
-      {
-        "hex": "#cecac5",
-        "share": 0.0011
-      },
-      {
-        "hex": "#d2cfca",
-        "share": 0.001
-      },
-      {
-        "hex": "#fbd2c5",
-        "share": 0.001
-      },
-      {
-        "hex": "#c9c6c1",
-        "share": 0.0008
-      },
-      {
-        "hex": "#6b645d",
-        "share": 0.0007
-      },
-      {
-        "hex": "#f5f4f3",
-        "share": 0.0006
       }
     ]
   },
   "block_backgrounds": [
     {
-      "hex": "#faf7f2",
-      "share": 1.0001
+      "hex": "#fefcfb",
+      "share": 2.1433
     },
     {
-      "hex": "#17130f",
-      "share": 0.1269
+      "hex": "#fdfcfb",
+      "share": 0.1293
+    },
+    {
+      "hex": "#f7f4f2",
+      "share": 0.1141
     },
     {
       "hex": "#ffffff",
-      "share": 0.1097
-    }
-  ],
-  "accent_candidates": [
-    {
-      "hex": "#ff5b35",
-      "weight": 27.75,
-      "why": [
-        "button background",
-        "theme-color",
-        "hero pixels",
-        "page pixels",
-        "logo colour"
-      ]
+      "share": 0.0692
     },
     {
-      "hex": "#fbd2c5",
-      "weight": 0.18,
-      "why": [
-        "hero pixels",
-        "page pixels"
-      ]
-    },
-    {
-      "hex": "#3f6fd8",
-      "weight": 0.03,
-      "why": [
-        "hero pixels"
-      ]
+      "hex": "#0d0c0b",
+      "share": 0.0688
     }
   ],
+  "accent_candidates": [],
   "fonts": {
     "usage": [
       {
-        "stack": "\"Plus Jakarta Sans\", system-ui, sans-serif",
-        "weight": 32593
+        "stack": "Inter, \"Inter Placeholder\", sans-serif",
+        "weight": 41754
+      },
+      {
+        "stack": "\"GT America Regular\", \"GT America Regular Placeholder\", sans-serif",
+        "weight": 38789
+      },
+      {
+        "stack": "\"GT Alpina Light\", \"GT Alpina Light Placeholder\", sans-serif",
+        "weight": 16272
+      },
+      {
+        "stack": "Inter",
+        "weight": 9464
+      },
+      {
+        "stack": "Inter-Medium, Inter, sans-serif",
+        "weight": 5603
+      },
+      {
+        "stack": "\"GT America\", \"GT America Placeholder\", sans-serif",
+        "weight": 150
       }
     ],
     "loaded": [
       {
-        "family": "Plus Jakarta Sans",
-        "weight": "400 800",
+        "family": "GT America Regular",
+        "weight": "400",
         "style": "normal",
-        "unicodeRange": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
-      }
-    ],
-    "faces_found": 2,
-    "downloaded": [
-      {
-        "family": "Plus Jakarta Sans",
-        "url": "http://localhost:5199/fonts/PlusJakartaSans-latin.woff2",
-        "ok": true,
-        "file": "fonts/plus-jakarta-sans-400-800.woff2"
+        "unicodeRange": "U+0-10FFFF"
       },
       {
-        "family": "Plus Jakarta Sans",
-        "url": "http://localhost:5199/fonts/PlusJakartaSans-latin.woff2",
-        "ok": true,
-        "file": "fonts/plus-jakarta-sans-400-800.woff2"
+        "family": "GT Alpina Light",
+        "weight": "300",
+        "style": "normal",
+        "unicodeRange": "U+0-10FFFF"
+      },
+      {
+        "family": "GT Alpina Light",
+        "weight": "normal",
+        "style": "normal",
+        "unicodeRange": "U+0-10FFFF"
+      },
+      {
+        "family": "Inter",
+        "weight": "400",
+        "style": "normal",
+        "unicodeRange": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+2000-206F, U+2070, U+2074-207E, U+2080-208E, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+      },
+      {
+        "family": "Inter",
+        "weight": "500",
+        "style": "normal",
+        "unicodeRange": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+2000-206F, U+2070, U+2074-207E, U+2080-208E, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
       }
     ],
-    "display_stack": "\"Plus Jakarta Sans\", system-ui, sans-serif",
-    "body_stack": "\"Plus Jakarta Sans\", system-ui, sans-serif",
+    "faces_found": 71,
+    "downloaded": [
+      {
+        "family": "GT Alpina Light",
+        "url": "https://framerusercontent.com/assets/pD4GI4DrpJfgFFLZPgJhL0OAgcY.woff2",
+        "ok": true,
+        "file": "fonts/gt-alpina-light-300.woff2"
+      },
+      {
+        "family": "GT America Regular",
+        "url": "https://framerusercontent.com/assets/aEvydZHUJ4EThHPkyGaEUhw9g.woff2",
+        "ok": true,
+        "file": "fonts/gt-america-regular-400.woff2"
+      }
+    ],
+    "display_stack": "\"GT Alpina Light\", \"GT Alpina Light Placeholder\", sans-serif",
+    "body_stack": "\"GT America Regular\", \"GT America Regular Placeholder\", sans-serif",
     "mono_stack": ""
   },
   "logo": {
-    "candidates": [
-      {
-        "id": "bfu-0",
-        "score": 19,
-        "why": [
-          "in header",
-          "links home",
-          "named logo",
-          "names the site",
-          "top left",
-          "svg",
-          "logo sized"
-        ],
-        "tag": "a",
-        "rect": {
-          "x": 360,
-          "y": 19,
-          "w": 112,
-          "h": 39
-        },
-        "svgs": 1,
-        "imgs": [],
-        "text": "Acme",
-        "backdrop": "rgba(250, 247, 242, 0.92)",
-        "label": "Acme home"
-      }
-    ],
-    "chosen": "bfu-0"
+    "candidates": [],
+    "chosen": null
   },
-  "images_considered": [
-    {
-      "src": "http://localhost:5199/img/inbox.png",
-      "w": 1920,
-      "h": 1200,
-      "alt": "The Acme inbox with tagged customer requests",
-      "shown": 867303
-    },
-    {
-      "src": "http://localhost:5199/img/roadmap.png",
-      "w": 1920,
-      "h": 1200,
-      "alt": "Acme roadmap",
-      "shown": 231543
-    },
-    {
-      "src": "http://localhost:5199/img/board.png",
-      "w": 1920,
-      "h": 1200,
-      "alt": "Acme board",
-      "shown": 231537
-    }
-  ],
+  "images_considered": [],
   "icons": [
     {
       "rel": "icon",
-      "href": "http://localhost:5199/favicon.svg",
+      "href": "https://framerusercontent.com/images/Je7xBWD4ufXyLo9QazNtfqL8M.png",
       "sizes": "",
-      "type": "image/svg+xml"
+      "type": ""
+    },
+    {
+      "rel": "icon",
+      "href": "https://framerusercontent.com/images/PAY7lxc9FRUv1rV9EJxKwUSQRdk.png",
+      "sizes": "",
+      "type": ""
     }
   ]
 }

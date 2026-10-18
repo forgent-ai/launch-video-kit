@@ -378,7 +378,7 @@ for i, r in enumerate(R):
             chip_html = ""
         is_video = os.path.splitext(src)[1].lower() in (".mp4", ".webm", ".mov")
         if is_video:
-            media = (f'<video id="pv{i}" class="pmedia" src="{src}" data-start="{a:.3f}" data-duration="{e - a + 0.4:.3f}" '
+            media = (f'<video id="pv{i}" class="pmedia" src="{src}" data-start="{a:.3f}" data-duration="{e - a:.3f}" '
                      f'data-media-start="{float(b.get("from", 0)):.3f}" muted playsinline></video>')
         else:
             media = f'<img class="pmedia" src="{src}" alt="">'
