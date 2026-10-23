@@ -96,32 +96,28 @@
         .blab { position: absolute; left: 0; right: 0; top: 215px; display: flex; justify-content: center; gap: 0.24em; font-size: 88px;
           font-weight: var(--weight); letter-spacing: var(--tracking); line-height: 1.05; white-space: nowrap; opacity: 0; transform-origin: 50% 50%; }
         .bw { color: var(--ink-soft); }
-        /* Forgent: block fills (search, score ring, writing document) and the lock frame; one type system: body font, ink-soft, accent for the result */
+        /* Forgent: block pictograms (search, score ring with check, writing document) and the lock frame; one stroke, one grey, green for the result */
         .brow { border-radius: 30px; }
-        .fl { position: relative; width: 320px; height: 200px; font-family: var(--font-body); }
-        .fs-bar { position: absolute; left: 0; right: 0; top: 0; height: 48px; border-radius: 24px; background: var(--ground); opacity: 0; }
-        .fs-bar i { position: absolute; left: 18px; top: 15px; width: 13px; height: 13px; border-radius: 50%; border: 2.5px solid var(--ink-soft); }
-        .fs-bar i::after { content: ""; position: absolute; left: 12px; top: 12px; width: 7px; height: 2.5px; background: var(--ink-soft); transform: rotate(45deg); transform-origin: 0 50%; }
-        .blk .fs-q { position: absolute; left: 46px; top: 0; line-height: 48px; font-size: 19px; font-weight: 400; letter-spacing: 0; color: var(--ink); white-space: nowrap; }
-        .fs-bar u, .fl-write u { position: absolute; width: 2px; height: 22px; background: var(--accent); opacity: 0; }
+        .fl { position: relative; width: 300px; height: 200px; }
+        .fs-bar { position: absolute; left: 0; right: 0; top: 0; height: 50px; border-radius: 25px; background: var(--ground); opacity: 0; }
+        .fs-bar i { position: absolute; left: 19px; top: 15px; width: 14px; height: 14px; border-radius: 50%; border: 3px solid var(--ink-soft); }
+        .fs-bar i::after { content: ""; position: absolute; left: 13px; top: 13px; width: 8px; height: 3px; border-radius: 2px; background: var(--ink-soft); transform: rotate(45deg); transform-origin: 0 50%; }
+        .fs-bar b { position: absolute; left: 52px; top: 21px; height: 9px; width: 0; border-radius: 5px; background: var(--ink-soft); }
+        .fs-bar u, .fl-write u { position: absolute; width: 3px; height: 24px; border-radius: 2px; background: var(--accent); opacity: 0; }
         .fs-bar u { top: 13px; }
-        .fs-row { position: absolute; left: 6px; right: 6px; height: 44px; display: flex; align-items: center; justify-content: space-between; gap: 12px;
-          border-bottom: 1.5px solid var(--line); opacity: 0; }
-        .fs-row:nth-child(2) { top: 62px; } .fs-row:nth-child(3) { top: 108px; } .fs-row:nth-child(4) { top: 154px; border-bottom: 0; }
-        .blk .fs-row span { font-size: 17px; font-weight: 400; letter-spacing: 0; color: var(--ink-soft); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-        .fs-row em { font-style: normal; font-size: 16px; font-weight: 600; color: var(--accent); font-variant-numeric: tabular-nums; }
-        .fl-score svg { position: absolute; left: 65px; top: 0; width: 190px; height: 190px; transform: rotate(-90deg); }
-        .sc-bg, .sc-fg { fill: none; stroke-width: 7; }
+        .fs-row { position: absolute; left: 8px; right: 8px; height: 46px; display: flex; align-items: center; justify-content: space-between; opacity: 0; }
+        .fs-row:nth-child(2) { top: 64px; } .fs-row:nth-child(3) { top: 110px; } .fs-row:nth-child(4) { top: 156px; }
+        .fs-row b { display: block; height: 9px; border-radius: 5px; background: var(--line); }
+        .fs-row em { display: block; width: 44px; height: 18px; border-radius: 9px; background: var(--accent); }
+        .fs-row:nth-child(3) em { opacity: 0.55; } .fs-row:nth-child(4) em { opacity: 0.3; }
+        .fl-score svg { position: absolute; left: 50px; top: 0; width: 200px; height: 200px; }
+        .sc-bg, .sc-fg, .sc-ck { fill: none; stroke-width: 9; stroke-linecap: round; stroke-linejoin: round; }
         .sc-bg { stroke: var(--line); }
-        .sc-fg { stroke: var(--accent); stroke-linecap: round; stroke-dasharray: 552.92; stroke-dashoffset: 552.92; }
-        .sc-mid { position: absolute; left: 65px; top: 0; width: 190px; height: 190px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; }
-        .sc-num { display: flex; align-items: baseline; gap: 3px; color: var(--ink); font-variant-numeric: tabular-nums; }
-        .sc-num b { font-family: var(--font); font-weight: var(--weight); font-size: 54px; letter-spacing: -0.03em; line-height: 1; }
-        .sc-num i { font-style: normal; font-size: 22px; color: var(--ink-soft); }
-        .sc-lab { font-size: 15px; color: var(--ink-soft); letter-spacing: 0.02em; }
-        .fl-write { padding: 4px 8px 0; box-sizing: border-box; }
-        .fw-h { font-family: var(--font); font-weight: var(--weight); font-size: 30px; letter-spacing: -0.02em; color: var(--ink); line-height: 1; margin: 6px 0 26px; opacity: 0; }
-        .fl-write b { display: block; height: 9px; width: 0; margin: 0 0 20px; border-radius: 5px; background: var(--line); }
+        .sc-fg { stroke: var(--accent); stroke-dasharray: 502.65; stroke-dashoffset: 502.65; transform: rotate(-90deg); transform-origin: 100px 100px; }
+        .sc-ck { stroke: var(--accent); stroke-dasharray: 100; stroke-dashoffset: 100; }
+        .fl-write { padding: 10px 12px 0; box-sizing: border-box; }
+        .fl-write b { display: block; height: 9px; width: 0; margin: 0 0 24px; border-radius: 5px; background: var(--line); }
+        .fl-write b:first-child { height: 14px; margin-bottom: 30px; background: var(--ink-soft); }
         .bw.k { color: var(--accent); }
 
         /* switch: a card that turns on */
@@ -355,28 +351,26 @@
               var p = t - d.items[k], fl = b.querySelector(".fl"), blink = (Math.floor(p / 0.28) % 2) ? 0 : 1;
               if (!fl) return;
               if (fl.classList.contains("fl-search")) {
-                var bar = fl.querySelector(".fs-bar"), q = fl.querySelector(".fs-q"), txt = q.getAttribute("data-q"), car = bar.querySelector("u");
+                var bar = fl.querySelector(".fs-bar"), q = bar.querySelector("b"), car = bar.querySelector("u"), qw = 150 * cl((p - 0.1) / 0.45);
                 bar.style.opacity = out3(cl(p / 0.25)).toFixed(3);
-                var nch = Math.round(txt.length * cl((p - 0.1) / 0.45));
-                q.textContent = txt.slice(0, nch);
-                car.style.left = (46 + q.offsetWidth + 3) + "px"; car.style.opacity = p > 0.05 && p < 0.75 ? blink : 0;
+                q.style.width = qw.toFixed(1) + "px";
+                car.style.left = (52 + qw + 5).toFixed(1) + "px"; car.style.opacity = p > 0.05 && p < 0.8 ? blink : 0;
                 Array.prototype.forEach.call(fl.querySelectorAll(".fs-row"), function (r, j) {
                   var e = out3(cl((p - 0.55 - 0.1 * j) / 0.35));
                   r.style.opacity = e.toFixed(3); r.style.transform = "translateY(" + (8 * (1 - e)).toFixed(1) + "px)";
                 });
               } else if (fl.classList.contains("fl-score")) {
-                var u = out3(cl((p - 0.1) / 0.9));
-                fl.querySelector(".sc-fg").style.strokeDashoffset = (552.92 * (1 - u)).toFixed(2);
-                fl.querySelector(".sc-num b").textContent = Math.round(100 * u);
+                var u = out3(cl((p - 0.1) / 0.8)), ck = out3(cl((p - 0.85) / 0.3));
+                fl.querySelector(".sc-fg").style.strokeDashoffset = (502.65 * (1 - u)).toFixed(2);
+                fl.querySelector(".sc-ck").style.strokeDashoffset = (100 * (1 - ck)).toFixed(2);
               } else if (fl.classList.contains("fl-write")) {
-                var h = fl.querySelector(".fw-h"), car2 = fl.querySelector("u"), W_ = [280, 300, 260, 170], cur = null;
-                h.style.opacity = out3(cl(p / 0.25)).toFixed(3);
+                var car2 = fl.querySelector("u"), W_ = [180, 270, 250, 270, 150], cur = null;
                 Array.prototype.forEach.call(fl.querySelectorAll("b"), function (l, j) {
-                  var e = cl((p - 0.2 - 0.22 * j) / 0.22);
+                  var e = cl((p - 0.05 - 0.2 * j) / 0.2);
                   l.style.width = (W_[j] * e).toFixed(1) + "px";
                   if (e > 0 && e < 1) cur = l;
                 });
-                if (cur) { car2.style.left = (8 + cur.offsetWidth + 4) + "px"; car2.style.top = (cur.offsetTop - 7) + "px"; car2.style.opacity = 1; } else car2.style.opacity = 0;
+                if (cur) { car2.style.left = (12 + cur.offsetWidth + 5) + "px"; car2.style.top = (cur.offsetTop + cur.offsetHeight / 2 - 12) + "px"; car2.style.opacity = 1; } else car2.style.opacity = 0;
               }
             });
             var lock = out4(cl((t - d.merge - 0.3) / 0.25)), pulse = Math.sin(Math.PI * cl((t - d.merge - 0.3) / 0.4));

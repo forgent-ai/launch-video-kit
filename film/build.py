@@ -388,12 +388,12 @@ for i, r in enumerate(R):
         EVENTS.append({"t": push, "ev": "push"})
     elif typ == "blocks":
         # Forgent: a block can carry a small animation that fills it once it lands (Tom 2026-10-23)
-        FILLS = {
-            "search": '<div class="fl fl-search"><div class="fs-bar"><i></i><span class="fs-q" data-q="IT-Service"></span><u></u></div>'
-                      + "".join(f'<div class="fs-row"><span>{n}</span><em>{pc} %</em></div>' for n, pc in (("Rahmenvertrag IT-Betrieb", 92), ("Service-Desk Kreisverwaltung", 85), ("Netzwerk Stadtwerke", 78))) + '</div>',
-            "score": '<div class="fl fl-score"><svg viewBox="0 0 200 200"><circle class="sc-bg" cx="100" cy="100" r="88"/>'
-                     '<circle class="sc-fg" cx="100" cy="100" r="88"/></svg><div class="sc-mid"><div class="sc-num"><b>0</b><i>%</i></div><div class="sc-lab">Passung</div></div></div>',
-            "write": '<div class="fl fl-write"><div class="fw-h">Angebot</div>' + "".join('<b></b>' for _ in range(4)) + '<u></u></div>',
+        FILLS = {   # pictograms only, no words (Tom 2026-10-23: "too much text, I like the pictograms")
+            "search": '<div class="fl fl-search"><div class="fs-bar"><i></i><b></b><u></u></div>'
+                      + "".join(f'<div class="fs-row"><b style="width:{w}px"></b><em></em></div>' for w in (170, 140, 155)) + '</div>',
+            "score": '<div class="fl fl-score"><svg viewBox="0 0 200 200"><circle class="sc-bg" cx="100" cy="100" r="80"/>'
+                     '<circle class="sc-fg" cx="100" cy="100" r="80"/><path class="sc-ck" d="M68 102 L91 125 L134 80"/></svg></div>',
+            "write": '<div class="fl fl-write">' + "".join('<b></b>' for _ in range(5)) + '<u></u></div>',
         }
         items = [x if isinstance(x, dict) else {"label": x} for x in b["items"]]
         parts = [(it["label"].lstrip("*"), it["label"].startswith("*")) for it in items]
