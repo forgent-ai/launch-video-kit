@@ -147,7 +147,8 @@ cues = [{"t": 0.0, **c} if "t" not in c else dict(c) for c in HOOK.get("sfx", []
 for c in cues:   # hook cue files are relative to the hook folder
     if c.get("file") and not os.path.isabs(c["file"]):
         c["file"] = os.path.relpath(os.path.join("hooks", HOOK_NAME, c["file"]), "sfx")
-cues.append({"t": round(D - 0.28, 3), "sound": "air", "gain_db": -17, "args": {"dur": 0.5}})
+if D >= 0.28:   # a near-zero hook (Forgent: logo on frame 1) has nothing to swoosh out of
+    cues.append({"t": round(D - 0.28, 3), "sound": "air", "gain_db": -17, "args": {"dur": 0.5}})
 for ev in T["events"]:
     for k, (name, gain, a) in enumerate(PALETTE.get(ev["ev"], [])):
         a = dict(a)

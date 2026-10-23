@@ -80,7 +80,7 @@
         .pcov { position: absolute; inset: 0; background: var(--surface); display: flex; align-items: flex-end; justify-content: center; opacity: 0; }
         .pcov span { position: absolute; left: 0; right: 0; bottom: 0; height: 160px; display: flex; align-items: center; justify-content: center;
           font-size: 66px; font-weight: var(--weight); letter-spacing: -0.03em; color: var(--ink); white-space: nowrap; }
-        .pmedia { position: absolute; left: 0; top: 0; width: 100%; height: 100%; object-fit: cover; }
+        .pmedia { position: absolute; left: 0; top: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 0; }
         .chip { position: absolute; left: 0; top: 0; display: flex; align-items: center; gap: 14px; padding: 18px 30px 18px 22px; border-radius: 999px;
           background: var(--surface); color: var(--ink); font-size: 34px; font-weight: var(--weight); letter-spacing: -0.02em; white-space: nowrap; opacity: 0;
           box-shadow: 0 34px 80px -28px var(--shadow), 0 0 0 1px var(--line); }
@@ -146,7 +146,7 @@
         .eword span { display: inline-block; opacity: 0; }
         .etag .nw { color: var(--ink); } .etag .nw.k { color: var(--accent); }
         .etag { position: absolute; left: 0; right: 0; top: 585px; text-align: center; display: flex; justify-content: center; gap: 0.24em; font-size: 52px; font-weight: var(--weight); letter-spacing: -0.03em; color: var(--ink2); opacity: 0; }
-        .eurl { position: absolute; left: 0; right: 0; bottom: 92px; text-align: center; font-family: var(--mono); font-size: 26px; letter-spacing: 0.02em; color: var(--ink-soft); opacity: 0; }
+        .eurl { position: absolute; left: 0; right: 0; top: 690px; text-align: center; font-size: 40px; font-weight: var(--weight); letter-spacing: -0.01em; color: var(--accent); opacity: 0; }
       </style>
       <div id="root" data-composition-id="film" data-width="1920" data-height="1080">
         <div class="hook">
@@ -271,10 +271,12 @@
           var XD = { dive: 0.26, collapse: 0.32, cut: 0 };
           function renderName(d, t) {
             var sn = out4(cl((t - d.a) / 0.42));
-            d.row.style.opacity = t < d.a ? 0 : Math.min(1, (t - d.a) / 0.05).toFixed(3);
+            d.row.style.opacity = t < d.a ? 0 : (Math.min(1, (t - d.a) / 0.05) * (1 - out3(cl((t - d.b + 0.05) / 0.3)))).toFixed(3);
             d.row.style.transform = "scale(" + mix(4, 1, sn).toFixed(4) + ")";
             d.row.style.filter = blur(16 * (1 - out3(cl((t - d.a) / 0.25))));
             d.words.forEach(function (w, wi) { writeWord(w, t, wi + 3); });
+            if (d.wrapEl === undefined) d.wrapEl = d.words.length ? d.words[0].el.parentNode : null;
+            if (d.wrapEl) d.wrapEl.style.opacity = (1 - out3(cl((t - d.b + 0.05) / 0.3))).toFixed(3);
           }
           function renderHero(d, t) {
             var xd = XD[d.exit] || 0, x = cl((t - d.b) / Math.max(xd, 0.001));
@@ -327,7 +329,7 @@
               pw.style.left = ((Rs[0] - c.tx) / c.s).toFixed(2) + "px"; pw.style.top = ((Rs[1] - c.ty) / c.s).toFixed(2) + "px";
               pw.style.width = (Rs[2] / c.s).toFixed(2) + "px"; pw.style.height = (Rs[3] / c.s).toFixed(2) + "px";
               pw.style.borderRadius = (mix(30, 18 * c1.s, m) / c.s).toFixed(2) + "px";
-              cv.style.opacity = Math.max(1 - cl((t - d.a - 0.75) / 0.3), cl((t - (d.b - 1.0)) / 0.25)).toFixed(3);   // the product shows only once the window is open, and leaves before it closes
+              cv.style.opacity = Math.max(1 - cl((t - d.a - 0.1) / 0.3), cl((t - (d.b - 0.35)) / 0.25)).toFixed(3);   // the product shows while the window opens and stays until it is nearly closed (Tom 2026-10-23: no empty white card)
               (d.cvLab || (d.cvLab = cv.querySelector("span"))).style.opacity = 0;
             }
             d.cam.style.transform = "translate(" + c.tx.toFixed(2) + "px," + c.ty.toFixed(2) + "px) scale(" + c.s.toFixed(4) + ")";
@@ -411,7 +413,7 @@
             var lock = out4(cl((t - d.merge - 0.5) / 0.4)), pulse = Math.sin(Math.PI * cl((t - d.merge - 0.5) / 0.6));
             d.row.style.boxShadow = lock > 0 ? "0 0 0 " + (4 * lock).toFixed(2) + "px var(--accent)" : "none";
             d.row.style.transform = "translate(calc(-50% + " + rowX.toFixed(1) + "px),-50%) scale(" + ((1 + 0.03 * pulse) * (d.merge < 1e5 ? 1 - 0.04 * cl((t - (d.b - 0.35)) / 0.35) : 1)).toFixed(4) + ")";   // ONE writer for the row transform (two writers made the slide a 1-frame jump)
-            if (d.merge < 1e5) { var fo = (1 - out3(cl((t - (d.b - 0.35)) / 0.35))).toFixed(3); d.row.style.opacity = fo; d.lab.style.opacity = Math.min(parseFloat(d.lab.style.opacity || 1), fo); }   // the panel leaves soft into the end card
+            if (d.merge < 1e5) { var fo = (1 - out3(cl((t - (d.b - 0.05)) / 0.35))).toFixed(3); d.row.style.opacity = fo; d.lab.style.opacity = Math.min(parseFloat(d.lab.style.opacity || 1), fo); }   // the panel leaves soft into the end card
           }
           function renderSwitch(d, t) {
             var e = out4(cl((t - d.a) / 0.35)), g = out4(cl((t - d.flip) / 0.26));
@@ -434,6 +436,7 @@
             var ta = t0 + d.letters.length * 0.035 + 0.2, te = out3(cl((t - ta) / 0.35)), ue = out3(cl((t - ta - 0.3) / 0.4));
             if (d.tagWords && d.tagWords.length) { d.tag.style.opacity = 1; d.tagWords.forEach(function (w, wi) { writeWord(w, t, wi + 41); }); }
             else { d.tag.style.opacity = te.toFixed(3); d.tag.style.filter = blur(8 * (1 - te)); d.tag.style.transform = "translateY(" + (10 * (1 - te)).toFixed(1) + "px)"; }
+            if (d.tagWords && d.tagWords.length) { var ua = Math.max.apply(null, d.tagWords.map(function (w) { return w.at; })) + 0.35; ue = out3(cl((t - ua) / 0.45)); d.url.style.transform = "translateY(" + (10 * (1 - ue)).toFixed(1) + "px)"; }
             d.url.style.opacity = ue.toFixed(3);
             if (d.plate) {
               var p = io(cl((t - (d.a + 0.9)) / 0.9)), z = out3(cl((t - (d.a + 0.9)) / Math.max(1, d.b - d.a - 0.9)));
@@ -474,7 +477,7 @@
             if (!body) { renderHook(t); return; }
             world(t);
             beats.forEach(function (d) {
-              var xd = d.type === "hero" ? (XD[d.exit] || 0) : d.type === "overlay" ? 0.16 : 0;
+              var xd = d.type === "hero" ? (XD[d.exit] || 0) : d.type === "overlay" ? 0.16 : d.type === "name" ? 0.3 : d.type === "blocks" && d.merge < 1e5 ? 0.3 : 0;   // name and lock overlap the next beat (no empty frames)
               var vis = t >= d.a && t < d.b + xd;
               d.el.style.visibility = vis ? "visible" : "hidden";
               if (vis) R[d.type](d, t);

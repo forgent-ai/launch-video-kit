@@ -13,7 +13,7 @@
   "music": {
     "file": "score/el/B-minimal-pulse-cut.wav",
     "bpm": 120,
-    "drop": 0.321,
+    "drop": 0.061,
     "gain_db": -9,
     "push": {"line": "06", "db": 2.5}
   },
