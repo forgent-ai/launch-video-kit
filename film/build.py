@@ -334,6 +334,8 @@ for i, r in enumerate(R):
     if typ == "name":
         parts = words_of(b.get("tagline", BRAND.get("tagline", "")))
         times = match_words(lid, parts, 0.03, 0.03, a) if parts else []
+        if b.get("even") and times:   # Forgent: the tagline flows at an even pace from its first spoken word (no stall on a voice pause)
+            times = [round(times[0] + j * float(b["even"]), 3) for j in range(len(times))]
         mark = logo_img("nmk") if LOCKUP in ("mark+name", "logo") else ""
         word_html = f'<div class="nword">{NAME}</div>' if LOCKUP in ("mark+name", "name") else ""
         beats_html.append(f'<div class="beat name" data-i="{i}"><div class="nrow{" only" if LOCKUP == "logo" else ""}">{mark}{word_html}</div>'

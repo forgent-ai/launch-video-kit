@@ -4,11 +4,11 @@
   "gap": 0.25,
   "lines": {
     "02": "Forgent. Die KI-Plattform für öffentliche Ausschreibungen.",
-    "03": "Findet mehr passende Ausschreibungen. Vorsortiert in Ihrem Postfach.",
+    "03": "Findet mehr öffentliche Aufträge. Vorsortiert in Ihrem Postfach.",
     "04": "Bewertet Bid, No-Bid in Minuten. Ihr Team bietet nur noch, wo es zählt.",
-    "05": "Und schreibt konforme Angebote aus Ihrem Wissen. Fünfmal so oft bieten. Ohne Abstriche.",
+    "05": "Forgent schreibt konforme Angebote aus Ihrem Wissen. Fünfmal so oft bieten, ganz ohne Abstriche.",
     "06": "Finden, bewerten, schreiben. Alles auf einer Plattform.",
-    "07": "Jetzt mehr Ausschreibungen gewinnen."
+    "07": "Jetzt mehr Ausschreibungen gewinnen. Mit Forgent."
   },
   "music": {
     "file": "score/bed.wav",
@@ -24,7 +24,8 @@
     {
       "type": "name",
       "line": "02",
-      "tagline": "Die KI-Plattform für *öffentliche *Ausschreibungen."
+      "tagline": "Die KI-Plattform für *öffentliche *Ausschreibungen.",
+      "even": 0.14
     },
     {
       "type": "blocks",
@@ -38,7 +39,7 @@
       "pre": 0,
       "merge": false,
       "label": "",
-      "until": "ausschreibungen+0.5"
+      "until": "aufträge+0.5"
     },
     {
       "type": "product",
@@ -148,17 +149,14 @@
       "items": [
         {
           "label": "Finden",
-          "was": "Findet",
           "fill": "search"
         },
         {
           "label": "Bewerten",
-          "was": "Bewertet",
           "fill": "score"
         },
         {
           "label": "Schreiben",
-          "was": "Schreibt",
           "fill": "write"
         }
       ],
