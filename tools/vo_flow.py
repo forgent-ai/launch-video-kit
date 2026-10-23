@@ -1,14 +1,15 @@
 """Record every line as one continuous read: each ElevenLabs call gets the neighbouring lines as
 previous_text / next_text, so the prosody carries across lines (Tom 2026-10-23: the spliced takes sounded choppy).
 English words are respelled inline (vo_respell.json: {"Forgent": "Fordschent"}) instead of spliced in.
-usage: python3 tools/vo_flow.py <film-dir> <voice_id> [stability] [--only 03,05]
+usage: python3 tools/vo_flow.py <film-dir> <voice_id> [stability] [--only 03,05] [--speed 1.1]
 Writes <film-dir>/vo/body/line-<id>.wav (48 kHz mono), one file at a time."""
 import json, pathlib, subprocess, sys, tempfile
 sys.path.insert(0, str(pathlib.Path.home() / "reel-studio"))
 import eleven_vo as e
 
 only = set(sys.argv[sys.argv.index("--only") + 1].split(",")) if "--only" in sys.argv else None
-args = [a for i, a in enumerate(sys.argv) if a != "--only" and (i == 0 or sys.argv[i - 1] != "--only")]
+speed = float(sys.argv[sys.argv.index("--speed") + 1]) if "--speed" in sys.argv else None   # ElevenLabs speed, 0.7-1.2
+args = [a for i, a in enumerate(sys.argv) if a not in ("--only", "--speed") and (i == 0 or sys.argv[i - 1] not in ("--only", "--speed"))]
 film = pathlib.Path(args[1]); voice = args[2]; stab = float(args[3]) if len(args) > 3 else 0.55
 env = e.load_env()
 lines = json.load(open(film / "film.json"))["lines"]
@@ -23,7 +24,7 @@ TRIM = "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.02,a
 for k in todo:
     i = ids.index(k)
     body = {"text": say(lines[k]), "model_id": env.get("ELEVENLABS_MODEL", "eleven_multilingual_v2"),
-            "voice_settings": {"stability": stab, "similarity_boost": 0.75, "style": 0.0},
+            "voice_settings": {"stability": stab, "similarity_boost": 0.75, "style": 0.0, **({"speed": speed} if speed else {})},
             "previous_text": " ".join(say(lines[x]) for x in ids[max(0, i - 2):i]),
             "next_text": " ".join(say(lines[x]) for x in ids[i + 1:i + 2])}
     mp3 = e.api(env, f"/v1/text-to-speech/{voice}?output_format=mp3_44100_128", body).read()
