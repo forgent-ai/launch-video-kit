@@ -11,10 +11,10 @@
     "07": "Forgent, jetzt mehr Ausschreibungen gewinnen."
   },
   "music": {
-    "file": "score/el/take1.wav",
+    "file": "score/el/B-minimal-pulse-cut.wav",
     "bpm": 120,
-    "drop": 16.01,
-    "gain_db": -3
+    "drop": 0.321,
+    "gain_db": -9
   },
   "sound": {
     "kit": null,
