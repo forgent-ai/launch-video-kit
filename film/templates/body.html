@@ -331,12 +331,16 @@
           }
           function renderBlocks(d, t) {
             var n = d.blks.length, c = io(cl((t - d.merge) / 0.45)), R = 30, gap = mix(34, 0, c);
-            d.row.style.transform = "translate(-50%,-50%)";
+            // Forgent: blocks build up across beats; while the new block lands the row slides from the old centre to the new one
+            var pre = d.pre || 0, sz = d.blks[0] ? d.blks[0].offsetWidth : 440;
+            var shift = pre > 0 && pre < n ? (sz + 34) / 2 * (1 - io(cl((t - d.items[pre] + 0.05) / 0.45))) : 0;
+            d.row.style.transform = "translate(calc(-50% + " + shift.toFixed(1) + "px),-50%)";
             d.blks.forEach(function (b, k) {
-              var e = out4(cl((t - d.items[k]) / 0.32)), r = mix(R, 0, c);
-              b.style.opacity = t < d.items[k] ? 0 : Math.min(1, e * 3).toFixed(3);
+              var e = k < pre ? 1 : out4(cl((t - d.items[k]) / 0.32)), r = mix(R, 0, c);
+              var pl = d.pulse ? Math.sin(Math.PI * cl((t - d.items[k]) / 0.35)) : 0;
+              b.style.opacity = k >= pre && t < d.items[k] ? 0 : Math.min(1, e * 3).toFixed(3);
               b.style.filter = blur(10 * (1 - e));
-              b.style.transform = "translateY(" + (26 * (1 - e)).toFixed(1) + "px) scale(" + mix(1.25, 1, e).toFixed(4) + ")";
+              b.style.transform = "translateY(" + (26 * (1 - e)).toFixed(1) + "px) scale(" + (mix(1.25, 1, e) * (1 + 0.05 * pl)).toFixed(4) + ")";
               b.style.marginLeft = k ? gap.toFixed(2) + "px" : "0";
               var tl_ = k === 0 ? R : r, tr = k === n - 1 ? R : r;
               b.style.borderRadius = tl_ + "px " + tr + "px " + tr + "px " + tl_ + "px";
@@ -348,25 +352,25 @@
             d.words.forEach(function (w, wi) { writeWord(w, t, wi + 17); });
             // Forgent: each block fills once it lands (one easing, one stagger); on the merge the row locks into 1 panel with a green frame
             d.blks.forEach(function (b, k) {
-              var p = t - d.items[k], fl = b.querySelector(".fl"), blink = (Math.floor(p / 0.28) % 2) ? 0 : 1;
+              var p = k < (d.pre || 0) ? 99 : t - d.items[k], fl = b.querySelector(".fl"), blink = (Math.floor(p / 0.28) % 2) ? 0 : 1;
               if (!fl) return;
               if (fl.classList.contains("fl-search")) {
-                var bar = fl.querySelector(".fs-bar"), q = bar.querySelector("b"), car = bar.querySelector("u"), qw = 150 * cl((p - 0.1) / 0.45);
+                var bar = fl.querySelector(".fs-bar"), q = bar.querySelector("b"), car = bar.querySelector("u"), qw = 150 * cl((p - 0.08) / 0.35);
                 bar.style.opacity = out3(cl(p / 0.25)).toFixed(3);
                 q.style.width = qw.toFixed(1) + "px";
-                car.style.left = (52 + qw + 5).toFixed(1) + "px"; car.style.opacity = p > 0.05 && p < 0.8 ? blink : 0;
+                car.style.left = (52 + qw + 5).toFixed(1) + "px"; car.style.opacity = p > 0.05 && p < 0.6 ? blink : 0;
                 Array.prototype.forEach.call(fl.querySelectorAll(".fs-row"), function (r, j) {
-                  var e = out3(cl((p - 0.55 - 0.1 * j) / 0.35));
+                  var e = out3(cl((p - 0.4 - 0.09 * j) / 0.28));
                   r.style.opacity = e.toFixed(3); r.style.transform = "translateY(" + (8 * (1 - e)).toFixed(1) + "px)";
                 });
               } else if (fl.classList.contains("fl-score")) {
-                var u = out3(cl((p - 0.1) / 0.8)), ck = out3(cl((p - 0.85) / 0.3));
+                var u = out3(cl((p - 0.05) / 0.6)), ck = out3(cl((p - 0.6) / 0.25));
                 fl.querySelector(".sc-fg").style.strokeDashoffset = (502.65 * (1 - u)).toFixed(2);
                 fl.querySelector(".sc-ck").style.strokeDashoffset = (100 * (1 - ck)).toFixed(2);
               } else if (fl.classList.contains("fl-write")) {
                 var car2 = fl.querySelector("u"), W_ = [180, 270, 250, 270, 150], cur = null;
                 Array.prototype.forEach.call(fl.querySelectorAll("b"), function (l, j) {
-                  var e = cl((p - 0.05 - 0.2 * j) / 0.2);
+                  var e = cl((p - 0.05 - 0.14 * j) / 0.16);
                   l.style.width = (W_[j] * e).toFixed(1) + "px";
                   if (e > 0 && e < 1) cur = l;
                 });

@@ -398,17 +398,19 @@ for i, r in enumerate(R):
         items = [x if isinstance(x, dict) else {"label": x} for x in b["items"]]
         parts = [(it["label"].lstrip("*"), it["label"].startswith("*")) for it in items]
         times = match_words(lid, parts, 0.06, 0.06, a)
-        merge = word(lid, b["merge_at"])[0] - 0.02 if b.get("merge_at") else times[-1] + 0.55
+        merge = word(lid, b["merge_at"])[0] - 0.02 if b.get("merge_at") else 1e6 if b.get("merge") is False else times[-1] + 0.55
         label = words_of(b.get("label", ""))
         lt = round(merge + 0.32, 3)
-        d.update({"items": times, "merge": round(merge, 3), "label": lt})
+        pre = int(b.get("pre", 0))   # Forgent: the first `pre` blocks are already on screen (built up over earlier beats), filled, no entrance
+        d.update({"items": times, "merge": round(merge, 3), "label": lt, "pre": pre, "pulse": bool(b.get("pulse"))})
         blocks = ""
         for it, p in zip(items, parts):
             icon = f'<img src="{html.escape(it["icon"])}" alt="">' if it.get("icon") else ""
             blocks += f'<div class="blk">{icon}{FILLS.get(it.get("fill"), "")}<span>{html.escape(p[0])}</span><i class="div"></i></div>'
         beats_html.append(f'<div class="beat blocks" data-i="{i}"><div class="brow">{blocks}</div><div class="blab">{key_spans(label, "bw")}</div></div>')
-        EVENTS += [{"t": tt, "ev": "block", "n": k, "pan": ((k + 0.5) / len(times) * 2 - 1) * 0.45} for k, tt in enumerate(times)]
-        EVENTS += [{"t": merge, "ev": "merge"}, {"t": lt, "ev": "label"}]
+        EVENTS += [{"t": tt, "ev": "block", "n": k, "pan": ((k + 0.5) / len(times) * 2 - 1) * 0.45} for k, tt in enumerate(times) if k >= pre or b.get("pulse")]
+        if merge < 1e5:
+            EVENTS += [{"t": merge, "ev": "merge"}, {"t": lt, "ev": "label"}]
     elif typ == "switch":
         parts = words_of(b["text"])
         flip = word(lid, b["flip_at"])[0] - 0.09 if b.get("flip_at") else a + 0.9

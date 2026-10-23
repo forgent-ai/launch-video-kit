@@ -27,12 +27,18 @@
       "tagline": "Die KI-Plattform für *öffentliche *Aufträge."
     },
     {
-      "type": "hero",
+      "type": "blocks",
       "line": "03",
-      "ground": "accent",
-      "text": "*Finden.",
-      "exit": "dive",
-      "until": "findet+0.65"
+      "items": [
+        {
+          "label": "Finden",
+          "fill": "search"
+        }
+      ],
+      "pre": 0,
+      "merge": false,
+      "label": "",
+      "until": "ausschreibungen"
     },
     {
       "type": "product",
@@ -44,18 +50,27 @@
         0.94,
         0.55
       ],
-      "push_at": "passenden",
       "from": 0.0,
       "width": 0.86,
       "max_zoom": 1.8
     },
     {
-      "type": "hero",
+      "type": "blocks",
       "line": "04",
-      "ground": "dark",
-      "text": "Bid. *No-Bid.",
-      "exit": "collapse",
-      "until": "nobid+0.3"
+      "items": [
+        {
+          "label": "Finden",
+          "fill": "search"
+        },
+        {
+          "label": "Bewerten",
+          "fill": "score"
+        }
+      ],
+      "pre": 1,
+      "merge": false,
+      "label": "",
+      "until": "nobid"
     },
     {
       "type": "product",
@@ -73,12 +88,26 @@
       "max_zoom": 1.8
     },
     {
-      "type": "hero",
+      "type": "blocks",
       "line": "05",
-      "ground": "accent",
-      "text": "Konforme *Angebote.",
-      "exit": "dive",
-      "until": "angebote+0.3"
+      "items": [
+        {
+          "label": "Finden",
+          "fill": "search"
+        },
+        {
+          "label": "Bewerten",
+          "fill": "score"
+        },
+        {
+          "label": "Schreiben",
+          "fill": "write"
+        }
+      ],
+      "pre": 2,
+      "merge": false,
+      "label": "",
+      "until": "angebote+0.2"
     },
     {
       "type": "product",
@@ -114,7 +143,9 @@
       ],
       "merge_at": "einer",
       "label": "Eine *Plattform.",
-      "pad": 0.45
+      "pad": 0.45,
+      "pre": 3,
+      "pulse": true
     },
     {
       "type": "hero",
