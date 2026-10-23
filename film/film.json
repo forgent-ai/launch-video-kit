@@ -99,11 +99,20 @@
       "type": "blocks",
       "line": "06",
       "items": [
-        "Finden",
-        "Bewerten",
-        "Schreiben"
+        {
+          "label": "Finden",
+          "fill": "search"
+        },
+        {
+          "label": "Bewerten",
+          "fill": "score"
+        },
+        {
+          "label": "Schreiben",
+          "fill": "write"
+        }
       ],
-      "merge_at": "ganze",
+      "merge_at": "einer",
       "label": "Eine *Plattform.",
       "pad": 0.45
     },

@@ -96,6 +96,26 @@
         .blab { position: absolute; left: 0; right: 0; top: 215px; display: flex; justify-content: center; gap: 0.24em; font-size: 88px;
           font-weight: var(--weight); letter-spacing: var(--tracking); line-height: 1.05; white-space: nowrap; opacity: 0; transform-origin: 50% 50%; }
         .bw { color: var(--ink-soft); }
+        /* Forgent: block fills (search, score ring, writing document) and the lock frame */
+        .brow { border-radius: 30px; }
+        .fl { position: relative; width: 300px; height: 200px; }
+        .fs-bar { position: absolute; left: 0; right: 0; top: 0; height: 46px; border-radius: 23px; box-shadow: 0 0 0 2px var(--line); opacity: 0; }
+        .fs-bar i { position: absolute; left: 16px; top: 12px; width: 16px; height: 16px; border-radius: 50%; border: 3px solid var(--ink-soft); }
+        .fs-bar b { position: absolute; left: 48px; top: 20px; height: 7px; width: 0; border-radius: 4px; background: var(--ink-soft); }
+        .fs-row { position: absolute; left: 0; right: 0; height: 40px; border-radius: 12px; background: var(--ground); opacity: 0; }
+        .fs-row:nth-child(2) { top: 62px; } .fs-row:nth-child(3) { top: 110px; } .fs-row:nth-child(4) { top: 158px; }
+        .fs-row b { position: absolute; left: 14px; top: 16px; height: 8px; width: 150px; border-radius: 4px; background: var(--line); }
+        .fs-row em { position: absolute; right: 10px; top: 8px; height: 24px; padding: 0 10px; border-radius: 6px; font: 600 15px/24px var(--font-body, sans-serif);
+          font-style: normal; color: #fff; background: var(--accent); }
+        .fl-score svg { position: absolute; left: 50px; top: 0; width: 200px; height: 200px; transform: rotate(-90deg); }
+        .sc-bg, .sc-fg { fill: none; stroke-width: 16; }
+        .sc-bg { stroke: var(--line); }
+        .sc-fg { stroke: var(--accent); stroke-linecap: round; stroke-dasharray: 502.65; stroke-dashoffset: 502.65; }
+        .sc-num { position: absolute; left: 0; right: 0; top: 0; height: 200px; display: flex; align-items: center; justify-content: center;
+          font-size: 52px; font-weight: var(--weight); letter-spacing: -0.03em; color: var(--ink); }
+        .fl-write { padding: 14px 20px; box-sizing: border-box; border-radius: 12px; box-shadow: 0 0 0 2px var(--line); }
+        .fl-write b { display: block; height: 10px; width: 0; margin: 0 0 22px; border-radius: 5px; background: var(--line); }
+        .fl-write b:first-child { height: 14px; background: var(--ink-soft); }
         .bw.k { color: var(--accent); }
 
         /* switch: a card that turns on */
@@ -324,6 +344,32 @@
             d.lab.style.opacity = t < d.label ? 0 : Math.min(1, le * 3).toFixed(3);
             d.lab.style.transform = "scale(" + mix(1.4, 1, le).toFixed(4) + ")"; d.lab.style.filter = blur(10 * (1 - le));
             d.words.forEach(function (w, wi) { writeWord(w, t, wi + 17); });
+            // Forgent: each block fills once it lands; on the merge the row locks into 1 panel with a green frame
+            d.blks.forEach(function (b, k) {
+              var p = t - d.items[k], fl = b.querySelector(".fl");
+              if (!fl) return;
+              if (fl.classList.contains("fl-search")) {
+                var bar = fl.querySelector(".fs-bar");
+                bar.style.opacity = out4(cl(p / 0.2)).toFixed(3);
+                bar.querySelector("b").style.width = (150 * out3(cl((p - 0.08) / 0.4))).toFixed(1) + "px";
+                Array.prototype.forEach.call(fl.querySelectorAll(".fs-row"), function (r, j) {
+                  var e = out4(cl((p - 0.35 - 0.13 * j) / 0.3));
+                  r.style.opacity = e.toFixed(3); r.style.transform = "translateY(" + (16 * (1 - e)).toFixed(1) + "px)";
+                });
+              } else if (fl.classList.contains("fl-score")) {
+                var u = io(cl((p - 0.1) / 0.85));
+                fl.querySelector(".sc-fg").style.strokeDashoffset = (502.65 * (1 - u)).toFixed(2);
+                fl.querySelector(".sc-num").textContent = Math.round(100 * u) + " %";
+              } else if (fl.classList.contains("fl-write")) {
+                var W_ = [210, 250, 230, 255, 140];
+                Array.prototype.forEach.call(fl.querySelectorAll("b"), function (l, j) {
+                  l.style.width = (W_[j] * out3(cl((p - 0.08 - 0.16 * j) / 0.26))).toFixed(1) + "px";
+                });
+              }
+            });
+            var lock = out4(cl((t - d.merge - 0.3) / 0.25)), pulse = Math.sin(Math.PI * cl((t - d.merge - 0.3) / 0.4));
+            d.row.style.boxShadow = lock > 0 ? "0 0 0 " + (4 * lock).toFixed(2) + "px var(--accent)" : "none";
+            d.row.style.transform = "translate(-50%,-50%) scale(" + (1 + 0.03 * pulse).toFixed(4) + ")";
           }
           function renderSwitch(d, t) {
             var e = out4(cl((t - d.a) / 0.35)), g = out4(cl((t - d.flip) / 0.26));

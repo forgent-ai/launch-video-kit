@@ -387,6 +387,13 @@ for i, r in enumerate(R):
         EVENTS.append({"t": a, "ev": "rise" if d["enter"] == "rise" else "land"})
         EVENTS.append({"t": push, "ev": "push"})
     elif typ == "blocks":
+        # Forgent: a block can carry a small animation that fills it once it lands (Tom 2026-10-23)
+        FILLS = {
+            "search": '<div class="fl fl-search"><div class="fs-bar"><i></i><b></b></div>' + "".join(f'<div class="fs-row"><b></b><em>{pc} %</em></div>' for pc in (92, 85, 78)) + '</div>',
+            "score": '<div class="fl fl-score"><svg viewBox="0 0 200 200"><circle class="sc-bg" cx="100" cy="100" r="80"/>'
+                     '<circle class="sc-fg" cx="100" cy="100" r="80"/></svg><div class="sc-num">0 %</div></div>',
+            "write": '<div class="fl fl-write">' + "".join('<b></b>' for _ in range(5)) + '</div>',
+        }
         items = [x if isinstance(x, dict) else {"label": x} for x in b["items"]]
         parts = [(it["label"].lstrip("*"), it["label"].startswith("*")) for it in items]
         times = match_words(lid, parts, 0.06, 0.06, a)
@@ -397,7 +404,7 @@ for i, r in enumerate(R):
         blocks = ""
         for it, p in zip(items, parts):
             icon = f'<img src="{html.escape(it["icon"])}" alt="">' if it.get("icon") else ""
-            blocks += f'<div class="blk">{icon}<span>{html.escape(p[0])}</span><i class="div"></i></div>'
+            blocks += f'<div class="blk">{icon}{FILLS.get(it.get("fill"), "")}<span>{html.escape(p[0])}</span><i class="div"></i></div>'
         beats_html.append(f'<div class="beat blocks" data-i="{i}"><div class="brow">{blocks}</div><div class="blab">{key_spans(label, "bw")}</div></div>')
         EVENTS += [{"t": tt, "ev": "block", "n": k, "pan": ((k + 0.5) / len(times) * 2 - 1) * 0.45} for k, tt in enumerate(times)]
         EVENTS += [{"t": merge, "ev": "merge"}, {"t": lt, "ev": "label"}]
