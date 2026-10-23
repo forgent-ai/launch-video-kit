@@ -163,15 +163,16 @@
       "label": "Eine *Plattform.",
       "pad": 0.45,
       "pre": 3,
-      "pulse": true
+      "pulse": true,
+      "until_line": "07"
     },
     {
       "type": "hero",
       "line": "07",
-      "ground": "accent",
-      "text": "Jetzt mehr Ausschreibungen *gewinnen.",
-      "exit": "cut",
-      "until": "gewinnen+0.9"
+      "ground": "clear",
+      "top": 150,
+      "size": 96,
+      "text": "Jetzt mehr Ausschreibungen *gewinnen."
     },
     {
       "type": "end",
