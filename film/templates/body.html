@@ -80,6 +80,7 @@
         .pcov { position: absolute; inset: 0; background: var(--surface); display: flex; align-items: flex-end; justify-content: center; opacity: 0; }
         .pcov span { position: absolute; left: 0; right: 0; bottom: 0; height: 160px; display: flex; align-items: center; justify-content: center;
           font-size: 66px; font-weight: var(--weight); letter-spacing: -0.03em; color: var(--ink); white-space: nowrap; }
+        .smedia { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; }
         .pmedia { position: absolute; left: 0; top: 0; width: 100%; height: auto; }   /* full width at every window size: while the card grows the screen scales with it, never cropped at the sides */
         .chip { position: absolute; left: 0; top: 0; display: flex; align-items: center; gap: 14px; padding: 18px 30px 18px 22px; border-radius: 999px;
           background: var(--surface); color: var(--ink); font-size: 34px; font-weight: var(--weight); letter-spacing: -0.02em; white-space: nowrap; opacity: 0;
@@ -463,7 +464,8 @@
               d.plate.style.opacity = p.toFixed(3); d.plateImg.style.transform = "scale(" + mix(1.1, 1, z).toFixed(4) + ")"; d.plateImg.style.filter = blur(14 * (1 - p));
             }
           }
-          var R = { name: renderName, hero: renderHero, overlay: renderHero, product: renderProduct, blocks: renderBlocks, "switch": renderSwitch, end: renderEnd };
+          function renderScene(d, t) { d.el.style.opacity = Math.min(out3(cl((t - d.a) / 0.3)), 1 - out3(cl((t - d.b + 0.05) / 0.3))).toFixed(3); }   // Forgent: a recorded scene fades in over the name and out into the first card
+          var R = { name: renderName, hero: renderHero, overlay: renderHero, product: renderProduct, blocks: renderBlocks, scene: renderScene, "switch": renderSwitch, end: renderEnd };
 
           // the hook's lines: each word lands soft and sharpens on the voice; a line blurs out at its end
           var hlines = all(".htx").map(function (el) {
@@ -497,7 +499,7 @@
             if (!body) { renderHook(t); return; }
             world(t);
             beats.forEach(function (d) {
-              var xd = d.type === "hero" ? (XD[d.exit] || 0) : d.type === "overlay" ? 0.16 : d.type === "name" ? 0.3 : d.type === "blocks" && d.merge < 1e5 ? 0.3 : 0;   // name and lock overlap the next beat (no empty frames)
+              var xd = d.type === "hero" ? (XD[d.exit] || 0) : d.type === "overlay" ? 0.16 : d.type === "name" ? 0.3 : d.type === "scene" ? 0.3 : d.type === "blocks" && d.merge < 1e5 ? 0.3 : 0;   // name and lock overlap the next beat (no empty frames)
               var vis = t >= d.a && t < d.b + xd;
               d.el.style.visibility = vis ? "visible" : "hidden";
               if (vis) R[d.type](d, t);

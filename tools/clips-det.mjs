@@ -4,6 +4,7 @@
 // 1/fps apart, unlike page.screencast, which captures on paint and drops frames (Tom 2026-10-23: the
 // screencast Finden clip "doesn't move cleanly or smoothly").
 // usage: node tools/clips-det.mjs <seconds> <fps> <name>=<page.html> [...]  -> film/assets/screens/<name>.frames/%04d.png
+// FULL=1: a full-frame 1920x1080 scene page (no zoom, no crop) -> film/assets/scenes/<name>.frames/
 import puppeteer from 'puppeteer';
 import fs from 'node:fs';
 import path from 'node:path';
@@ -52,14 +53,14 @@ const CLOCK = () => {
 const browser = await puppeteer.launch({ headless: true });
 for (const { n, p } of pairs) {
   const page = await browser.newPage();
-  const Z = 2.5;   // same framing as clips-from-html.mjs: zoom the page, 1x device pixels
-  await page.setViewport({ width: 1920 * Z, height: 1200 * Z, deviceScaleFactor: 1 });
+  const FULL = !!process.env.FULL, Z = FULL ? 1 : 2.5;   // same framing as clips-from-html.mjs: zoom the page, 1x device pixels
+  await page.setViewport(FULL ? { width: 1920, height: 1080, deviceScaleFactor: 1 } : { width: 1920 * Z, height: 1200 * Z, deviceScaleFactor: 1 });
   await page.evaluateOnNewDocument(CLOCK);
-  await page.evaluateOnNewDocument(z => { document.addEventListener('DOMContentLoaded', () => { document.documentElement.style.zoom = z; }); }, Z);
+  if (!FULL) await page.evaluateOnNewDocument(z => { document.addEventListener('DOMContentLoaded', () => { document.documentElement.style.zoom = z; }); }, Z);
   await page.goto(pathToFileURL(path.resolve(p)).href, { waitUntil: 'networkidle0' });
   await page.evaluate(() => document.fonts.ready);
   await new Promise(r => setTimeout(r, 800));   // real time: lets the IntersectionObserver start the timeline at virtual t=0
-  const box = await page.evaluate(() => {
+  const box = FULL ? null : await page.evaluate(() => {
     let best = null;
     for (const el of document.querySelectorAll('body *')) {
       const r = el.getBoundingClientRect();
@@ -69,8 +70,8 @@ for (const { n, p } of pairs) {
     return best;
   });
   const pad = 24 * Z, even = v => Math.round(v / 2) * 2;
-  const clip = { x: Math.round(box.x - pad), y: Math.round(box.y - pad), width: even(box.w + 2 * pad), height: Math.min(even(box.h + 2 * pad), 1200 * Z - Math.round(box.y - pad)) };
-  const dir = path.resolve('film/assets/screens', `${n}.frames`);
+  const clip = FULL ? { x: 0, y: 0, width: 1920, height: 1080 } : { x: Math.round(box.x - pad), y: Math.round(box.y - pad), width: even(box.w + 2 * pad), height: Math.min(even(box.h + 2 * pad), 1200 * Z - Math.round(box.y - pad)) };
+  const dir = path.resolve(FULL ? 'film/assets/scenes' : 'film/assets/screens', `${n}.frames`);
   fs.rmSync(dir, { recursive: true, force: true }); fs.mkdirSync(dir, { recursive: true });
   const N = Math.round(secs * fps);
   for (let i = 0; i < N; i++) {

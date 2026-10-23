@@ -1,0 +1,212 @@
+{
+  "brand": "../brand",
+  "voice_dir": "vo/v2",
+  "gap": 0.25,
+  "lines": {
+    "02": "Forgent, die KI-Plattform für öffentliche Ausschreibungen.",
+    "02p": "Zweiundvierzig Prozent aller Ausschreibungen bekommen nur ein oder gar kein Angebot.",
+    "03": "Findet mehr öffentliche Aufträge, vorsortiert in Ihrem Postfach.",
+    "04": "Bewertet Bid-No-Bid in Minuten, Ihr Team bietet nur noch, wo es zählt.",
+    "05": "Forgent schreibt konforme Angebote aus Ihrem Wissen, fünfmal so oft bieten, ganz ohne Abstriche.",
+    "06": "Finden, bewerten, schreiben, alles auf einer Plattform.",
+    "07": "Forgent, jetzt mehr Ausschreibungen gewinnen."
+  },
+  "music": {
+    "file": "score/el/B-minimal-pulse-cut.wav",
+    "bpm": 120,
+    "drop": 0.061,
+    "gain_db": -9,
+    "push": {
+      "line": "06",
+      "db": 2.5
+    }
+  },
+  "sound": {
+    "kit": null,
+    "key": "A"
+  },
+  "beats": [
+    {
+      "type": "name",
+      "line": "02",
+      "tagline": "Die KI-Plattform für *öffentliche *Ausschreibungen.",
+      "even": 0.14
+    },
+    {
+      "type": "scene",
+      "line": "02p",
+      "src": "assets/scenes/v2-42.mp4"
+    },
+    {
+      "type": "blocks",
+      "line": "03",
+      "items": [
+        {
+          "label": "Findet",
+          "fill": "search"
+        }
+      ],
+      "pre": 0,
+      "merge": false,
+      "label": "",
+      "until": "aufträge+0.5"
+    },
+    {
+      "type": "product",
+      "line": "03",
+      "src": "assets/screens/finden.mp4",
+      "focus": [
+        0.03,
+        0.08,
+        0.94,
+        0.55
+      ],
+      "from": 0.0,
+      "width": 0.86,
+      "max_zoom": 1.15,
+      "from_card": [
+        0,
+        1
+      ],
+      "card_label": "Findet",
+      "pad": 1.6,
+      "rest_at": 3.15,
+      "center": true,
+      "zoom": 1.08
+    },
+    {
+      "type": "blocks",
+      "line": "04",
+      "items": [
+        {
+          "label": "Findet",
+          "fill": "search"
+        },
+        {
+          "label": "Bewertet",
+          "fill": "score"
+        }
+      ],
+      "pre": 1,
+      "merge": false,
+      "label": "",
+      "until": "minuten+0.3"
+    },
+    {
+      "type": "product",
+      "line": "04",
+      "src": "assets/screens/qualifizieren.mp4",
+      "focus": [
+        0.03,
+        0.03,
+        0.94,
+        0.6
+      ],
+      "push_at": "in",
+      "from": 0.4,
+      "width": 0.86,
+      "max_zoom": 1.15,
+      "from_card": [
+        1,
+        2
+      ],
+      "card_label": "Bewertet",
+      "pad": 1.2,
+      "rest_at": 2.5,
+      "center": true,
+      "zoom": 1.08
+    },
+    {
+      "type": "blocks",
+      "line": "05",
+      "items": [
+        {
+          "label": "Findet",
+          "fill": "search"
+        },
+        {
+          "label": "Bewertet",
+          "fill": "score"
+        },
+        {
+          "label": "Schreibt",
+          "fill": "write"
+        }
+      ],
+      "pre": 2,
+      "merge": false,
+      "label": "",
+      "until": "angebote+0.6"
+    },
+    {
+      "type": "product",
+      "line": "05",
+      "src": "assets/screens/schreiben.mp4",
+      "focus": [
+        0.36,
+        0.1,
+        0.62,
+        0.75
+      ],
+      "push_at": "aus",
+      "from": 2.27,
+      "width": 0.86,
+      "max_zoom": 1.15,
+      "from_card": [
+        2,
+        3
+      ],
+      "card_label": "Schreibt",
+      "pad": 0.8,
+      "rest_at": 4.55,
+      "center": true,
+      "zoom": 1.08
+    },
+    {
+      "type": "blocks",
+      "line": "06",
+      "items": [
+        {
+          "label": "Finden",
+          "fill": "search"
+        },
+        {
+          "label": "Bewerten",
+          "fill": "score"
+        },
+        {
+          "label": "Schreiben",
+          "fill": "write"
+        }
+      ],
+      "merge_at": "alles",
+      "label": "Alles auf einer *Plattform.",
+      "pad": 0.45,
+      "pre": 3,
+      "pulse": true
+    },
+    {
+      "type": "end",
+      "hold": 4.5,
+      "url": "www.forgent.ai",
+      "proof": {
+        "trust": {
+          "iso": "ISO 27001 zertifiziert",
+          "gdpr": "DSGVO-konform"
+        },
+        "logos": [
+          "randstad",
+          "p3",
+          "avelios",
+          "arsipa",
+          "timetoact",
+          "trenkwalder"
+        ]
+      },
+      "line": "07",
+      "tagline": "Jetzt mehr Ausschreibungen *gewinnen.",
+      "lead": 0.45
+    }
+  ],
+  "lockup": "logo"
+}

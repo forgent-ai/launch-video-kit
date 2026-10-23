@@ -24,8 +24,8 @@ os.chdir(HERE)
 SK = os.path.normpath(os.path.join(HERE, "..", "skills"))
 PY = sys.executable
 HOOK_NAME = sys.argv[1] if len(sys.argv) > 1 else "type-only"
-FILM = json.load(open("film.json"))
 HOOK = json.load(open(f"hooks/{HOOK_NAME}/hook.json"))
+FILM = json.load(open(HOOK.get("film", "film.json")))   # same body as build.py
 T = json.load(open(f"timing-{HOOK_NAME}.json"))
 D, END = T["D"], T["END"]
 SR = 48000

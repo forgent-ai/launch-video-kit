@@ -33,11 +33,11 @@ ap.add_argument("hook", nargs="?", default="type-only")
 ap.add_argument("--brand", help="brand kit folder (default: film.json brand, else ../brand)")
 args = ap.parse_args()
 
-FILM = json.load(open("film.json"))
 HOOK_NAME = args.hook
 if not os.path.exists(f"hooks/{HOOK_NAME}/hook.json"):
     sys.exit(f"no hooks/{HOOK_NAME}/hook.json (hooks: {', '.join(sorted(os.listdir('hooks')))})")
 HOOK = json.load(open(f"hooks/{HOOK_NAME}/hook.json"))
+FILM = json.load(open(HOOK.get("film", "film.json")))   # Forgent: a hook can carry its own body (film-v2.json: a pain scene after the name)
 BRAND_DIR = os.path.normpath(os.path.join(HERE, args.brand or FILM.get("brand", "../brand")))
 if not os.path.exists(os.path.join(BRAND_DIR, "brand.json")):
     sys.exit(f"no brand kit at {BRAND_DIR}: run `npm run brand -- <your-url>` from the repo root first")
@@ -211,7 +211,7 @@ def norm(w):
 
 
 BEATS = FILM["beats"]
-PAD = {"name": 0.15, "hero": 0.0, "product": 0.35, "blocks": 0.7, "switch": 0.45}
+PAD = {"name": 0.15, "hero": 0.0, "product": 0.35, "blocks": 0.7, "switch": 0.45, "scene": 0.35}
 order = []
 for b in BEATS:
     if b.get("line") and b["line"] not in order:
@@ -436,8 +436,15 @@ for i, r in enumerate(R):
         beats_html.append(f'<div class="beat switch" data-i="{i}"><div class="card"><div class="clab">{key_spans(parts, "cw")}</div>'
                           f'<div class="sw"><div class="knob"></div></div></div></div>')
         EVENTS += [{"t": a, "ev": "card"}, {"t": flip, "ev": "flip"}]
+    elif typ == "scene":   # Forgent: a full-frame animation recorded from HTML (tools/clips-det.mjs --full); its t=0 sits on the beat's start
+        src = b["src"]
+        if not os.path.exists(src):
+            sys.exit(f"scene beat {i + 1}: no file {src}")
+        beats_html.append(f'<div class="beat scene" data-i="{i}"><video id="sv{i}" class="smedia" src="{src}" data-start="{a:.3f}" '
+                          f'data-duration="{e - a + 0.3:.3f}" data-media-start="0" muted playsinline></video></div>')   # +0.3: the scene fades out over the next beat's entrance
+        EVENTS.append({"t": a, "ev": "land"})
     else:
-        sys.exit(f"beat {i + 1}: unknown type {typ!r} (name, hero, product, blocks, switch, end)")
+        sys.exit(f"beat {i + 1}: unknown type {typ!r} (name, hero, product, blocks, switch, scene, end)")
     prev_exit = b.get("exit") if typ == "hero" else None
     data.append(d)
 
