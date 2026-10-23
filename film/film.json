@@ -5,8 +5,8 @@
   "lines": {
     "02": "Forgent. Die KI-Plattform für öffentliche Aufträge.",
     "03": "Findet mehr passende Ausschreibungen. Vorsortiert in Ihrem Postfach.",
-    "04": "Bewertet Bid, No-Bid in Minuten. Jedes Kriterium gegen Ihr Profil geprüft.",
-    "05": "Und schreibt konforme Angebote aus Ihrem Wissen. KI-Agenten entwerfen, Sie entscheiden.",
+    "04": "Bewertet Bid, No-Bid in Minuten. Ihr Team bietet nur noch, wo es zählt.",
+    "05": "Und schreibt konforme Angebote aus Ihrem Wissen. Fünfmal so oft bieten. Ohne Abstriche.",
     "06": "Finden, bewerten, schreiben. Alles auf einer Plattform.",
     "07": "Jetzt mehr Ausschreibungen gewinnen."
   },
@@ -31,7 +31,7 @@
       "line": "03",
       "items": [
         {
-          "label": "Finden",
+          "label": "Findet",
           "fill": "search"
         }
       ],
@@ -57,7 +57,7 @@
         0,
         1
       ],
-      "card_label": "Finden",
+      "card_label": "Findet",
       "pad": 0.7
     },
     {
@@ -65,11 +65,11 @@
       "line": "04",
       "items": [
         {
-          "label": "Finden",
+          "label": "Findet",
           "fill": "search"
         },
         {
-          "label": "Bewerten",
+          "label": "Bewertet",
           "fill": "score"
         }
       ],
@@ -96,7 +96,7 @@
         1,
         2
       ],
-      "card_label": "Bewerten",
+      "card_label": "Bewertet",
       "pad": 0.5
     },
     {
@@ -104,15 +104,15 @@
       "line": "05",
       "items": [
         {
-          "label": "Finden",
+          "label": "Findet",
           "fill": "search"
         },
         {
-          "label": "Bewerten",
+          "label": "Bewertet",
           "fill": "score"
         },
         {
-          "label": "Schreiben",
+          "label": "Schreibt",
           "fill": "write"
         }
       ],
@@ -139,7 +139,7 @@
         2,
         3
       ],
-      "card_label": "Schreiben",
+      "card_label": "Schreibt",
       "pad": 0.4
     },
     {
@@ -147,15 +147,15 @@
       "line": "06",
       "items": [
         {
-          "label": "Finden",
+          "label": "Findet",
           "fill": "search"
         },
         {
-          "label": "Bewerten",
+          "label": "Bewertet",
           "fill": "score"
         },
         {
-          "label": "Schreiben",
+          "label": "Schreibt",
           "fill": "write"
         }
       ],
