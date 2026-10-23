@@ -218,6 +218,7 @@ for b in BEATS:
         order.append(b["line"])
 START, t = {}, D - 0.02    # the first body line lands on the cut
 for lid in order:
+    t += max([float(b.get("lead", 0)) for b in BEATS if b.get("line") == lid] + [0])   # Forgent: silence before a line (end card: logo first, then the voice)
     START[lid] = round(t, 3)
     pad = max([b.get("pad", PAD.get(b["type"], 0.3)) for b in BEATS if b.get("line") == lid] + [0])
     t += LINES[lid]["dur"] + GAP + pad
@@ -450,8 +451,12 @@ letters = "".join(f"<span>{html.escape(ch) if ch != ' ' else '&nbsp;'}</span>" f
 plate_html = f'<div class="endp"><img src="{plate}" alt=""></div>' if plate else ""
 end_mark = logo_img("emk") if LOCKUP in ("mark+name", "logo") else ""
 end_word = f'<div class="eword">{letters}</div>' if LOCKUP in ("mark+name", "name") else ""
+if end_beat.get("line"):   # Forgent: a spoken tagline falls in word by word on the voice, key words (*) in the accent
+    tparts = words_of(end_beat["tagline"]); end_tag = key_spans(tparts, "nw", match_words(end_beat["line"], tparts))
+else:
+    end_tag = html.escape(end_beat.get("tagline", BRAND.get("tagline", "")))
 beats_html.append(f'<div class="beat end" data-i="end">{plate_html}<div class="erow{" only" if LOCKUP == "logo" else ""}">{end_mark}{end_word}</div>'
-                  f'<div class="etag">{html.escape(end_beat.get("tagline", BRAND.get("tagline", "")))}</div>'
+                  f'<div class="etag">{end_tag}</div>'
                   f'<div class="eurl">{html.escape(end_beat.get("url", BRAND.get("domain", "")))}</div></div>')
 data.append({"type": "end", "a": round(EA, 3), "b": END, "logo": round(EA + 0.25, 3)})
 EVENTS.append({"t": round(EA + 0.25, 3), "ev": "logo"})

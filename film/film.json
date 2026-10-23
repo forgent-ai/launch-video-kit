@@ -52,13 +52,13 @@
       ],
       "from": 0.0,
       "width": 0.86,
-      "max_zoom": 1.25,
+      "max_zoom": 1.8,
       "from_card": [
         0,
         1
       ],
       "card_label": "Finden",
-      "pad": 2.9
+      "pad": 3.5
     },
     {
       "type": "blocks",
@@ -91,13 +91,13 @@
       "push_at": "in",
       "from": 0.4,
       "width": 0.86,
-      "max_zoom": 1.25,
+      "max_zoom": 1.8,
       "from_card": [
         1,
         2
       ],
       "card_label": "Bewerten",
-      "pad": 2.4
+      "pad": 3.0
     },
     {
       "type": "blocks",
@@ -134,13 +134,13 @@
       "push_at": "aus",
       "from": 2.27,
       "width": 0.86,
-      "max_zoom": 1.25,
+      "max_zoom": 1.8,
       "from_card": [
         2,
         3
       ],
       "card_label": "Schreiben",
-      "pad": 1.7
+      "pad": 2.3
     },
     {
       "type": "blocks",
@@ -170,7 +170,8 @@
       "hold": 3.5,
       "url": "forgent.ai",
       "line": "07",
-      "tagline": "Jetzt mehr Ausschreibungen gewinnen."
+      "tagline": "Jetzt mehr Ausschreibungen *gewinnen.",
+      "lead": 0.9
     }
   ],
   "lockup": "logo"

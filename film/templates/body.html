@@ -143,7 +143,7 @@
         .erow.only .emk { height: 170px; }
         .eword { display: flex; font-size: 150px; font-weight: var(--weight); letter-spacing: var(--tracking); line-height: 1; white-space: nowrap; color: var(--ink); }
         .eword span { display: inline-block; opacity: 0; }
-        .etag { position: absolute; left: 0; right: 0; top: 585px; text-align: center; font-size: 52px; font-weight: var(--weight); letter-spacing: -0.03em; color: var(--ink2); opacity: 0; }
+        .etag { position: absolute; left: 0; right: 0; top: 585px; text-align: center; display: flex; justify-content: center; gap: 0.24em; font-size: 52px; font-weight: var(--weight); letter-spacing: -0.03em; color: var(--ink2); opacity: 0; }
         .eurl { position: absolute; left: 0; right: 0; bottom: 92px; text-align: center; font-family: var(--mono); font-size: 26px; letter-spacing: 0.02em; color: var(--ink-soft); opacity: 0; }
       </style>
       <div id="root" data-composition-id="film" data-width="1920" data-height="1080">
@@ -248,7 +248,7 @@
               d.keys = Array.prototype.slice.call(el.querySelectorAll(".cw.k"));
             } else if (d.type === "end") {
               d.mk = el.querySelector(".emk"); d.letters = Array.prototype.slice.call(el.querySelectorAll(".eword span"));
-              d.tag = el.querySelector(".etag"); d.url = el.querySelector(".eurl"); d.plate = el.querySelector(".endp"); d.plateImg = el.querySelector(".endp img");
+              d.tag = el.querySelector(".etag"); d.tagWords = Array.prototype.map.call(el.querySelectorAll(".etag .nw"), function (w) { return { el: w, at: parseFloat(w.getAttribute("data-at")), k: w.classList.contains("k") ? keyWord(w) : null }; }); d.url = el.querySelector(".eurl"); d.plate = el.querySelector(".endp"); d.plateImg = el.querySelector(".endp img");
             }
           });
           function measure() {
@@ -304,24 +304,29 @@
             var s = z * Math.pow(d.zoom / z, pp), cx = mix(960, fx, pp), cy = mix(540, fy, pp);
             return { s: s, tx: 960 - s * cx, ty: 540 - s * cy };
           }
+          function camAt(d, t, pp) {   // the camera with the push progress given (Forgent match cut)
+            var z = 1 + 0.03 * cl((t - d.a) / 4), fx = d.focus[0] + d.focus[2] / 2, fy = d.focus[1] + d.focus[3] / 2;
+            var s = z * Math.pow(d.zoom / z, pp), cx = mix(960, fx, pp), cy = mix(540, fy, pp);
+            return { s: s, tx: 960 - s * cx, ty: 540 - s * cy };
+          }
           function renderProduct(d, t) {
             var k;
             if (d.enter === "pop") { k = 1 - out4(cl((t - d.a - 0.04) / 0.5)); d.ent.style.transform = "scale(" + (1 + 0.22 * k).toFixed(4) + ")"; d.ent.style.opacity = 1; d.ent.style.filter = "none"; }
             else if (d.enter === "settle") { k = 1 - out4(cl((t - d.a) / 0.45)); d.ent.style.transform = "scale(" + (1 + 0.1 * k).toFixed(4) + ")"; d.ent.style.filter = blur(6 * k); d.ent.style.opacity = 1; }
             else { var e = out3(cl((t - d.a) / 0.42)); d.ent.style.transform = "translateY(" + (90 * (1 - e)).toFixed(1) + "px) scale(" + (0.96 + 0.04 * e).toFixed(4) + ")"; d.ent.style.opacity = Math.min(1, e * 1.6).toFixed(3); d.ent.style.filter = blur(14 * (1 - e)); }
             var c = camera(d, t);
-            if (d.enter === "grow") {   // Forgent match cut: card rect -> window -> card rect; the camera eases home before the shrink
+            if (d.enter === "grow") {   // Forgent match cut: the empty card opens straight into the focused framing, holds, and closes back (one move each way)
               d.ent.style.transform = "none"; d.ent.style.opacity = 1; d.ent.style.filter = "none";
-              var g = io(cl((t - d.a) / 0.9)), x = io(cl((t - (d.b - 0.8)) / 0.8)), m = Math.min(g, 1 - x), C_ = d.cardr, Wn = d.win;
+              var gi = cl((t - d.a) / 0.9), xi = cl((t - (d.b - 0.8)) / 0.8), m = Math.min(io(gi), 1 - io(xi)), C_ = d.cardr, Wn = d.win;
               var pw = d.pwEl || (d.pwEl = d.el.querySelector(".pw")), cv = d.cvEl || (d.cvEl = d.el.querySelector(".pcov"));
-              pw.style.left = mix(C_[0], Wn[0], m).toFixed(1) + "px"; pw.style.top = mix(C_[1], Wn[1], m).toFixed(1) + "px";
-              pw.style.width = mix(C_[2], Wn[2], m).toFixed(1) + "px"; pw.style.height = mix(C_[3], Wn[3], m).toFixed(1) + "px";
-              pw.style.borderRadius = mix(30, 18, m).toFixed(1) + "px";
-              cv.style.opacity = Math.max(1 - cl((t - d.a - 0.1) / 0.45), cl((t - (d.b - 0.65)) / 0.45)).toFixed(3);
-              var cl_ = d.cvLab || (d.cvLab = cv.querySelector("span"));   // the card label leaves before the window opens, returns once it is card-sized
-              cl_.style.opacity = Math.max(1 - cl((t - d.a) / 0.16), cl((t - (d.b - 0.14)) / 0.12)).toFixed(3);
-              var hx = io(cl((t - (d.b - 1.4)) / 0.6));
-              c = { s: mix(c.s, 1, hx), tx: mix(c.tx, 0, hx), ty: mix(c.ty, 0, hx) };
+              var c1 = camAt(d, t, 1); c = camAt(d, t, m);
+              var S1 = [c1.tx + c1.s * Wn[0], c1.ty + c1.s * Wn[1], c1.s * Wn[2], c1.s * Wn[3]];   // the window on screen, fully open
+              var Rs = [0, 1, 2, 3].map(function (q) { return mix(C_[q], S1[q], m); });
+              pw.style.left = ((Rs[0] - c.tx) / c.s).toFixed(2) + "px"; pw.style.top = ((Rs[1] - c.ty) / c.s).toFixed(2) + "px";
+              pw.style.width = (Rs[2] / c.s).toFixed(2) + "px"; pw.style.height = (Rs[3] / c.s).toFixed(2) + "px";
+              pw.style.borderRadius = (mix(30, 18 * c1.s, m) / c.s).toFixed(2) + "px";
+              cv.style.opacity = Math.max(1 - cl((gi - 0.12) / 0.33), cl((xi - 0.45) / 0.3)).toFixed(3);   // white while small: never two contents at once
+              (d.cvLab || (d.cvLab = cv.querySelector("span"))).style.opacity = 0;
             }
             d.cam.style.transform = "translate(" + c.tx.toFixed(2) + "px," + c.ty.toFixed(2) + "px) scale(" + c.s.toFixed(4) + ")";
             if (d.chip && d.chipEl) {
@@ -369,9 +374,10 @@
             // Forgent: each block fills once it lands (one easing, one stagger); on the merge the row locks into 1 panel with a green frame
             d.blks.forEach(function (b, k) {
               var flo = 1;
-              if (d.merge > 1e5 && k === n - 1) flo = 1 - cl((t - (d.b - 0.35)) / 0.3);
-              if (k === (d.pre || 0) - 1) flo = Math.min(flo, cl((t - d.a - 0.05) / 0.5));
+              if (d.merge > 1e5 && k === n - 1) flo = 1 - cl((t - (d.b - 0.2)) / 0.18);
+              if (k === (d.pre || 0) - 1) flo = Math.min(flo, cl((t - d.a - 0.02) / 0.3));
               if (b.querySelector(".fl")) b.querySelector(".fl").style.opacity = flo.toFixed(3);
+              var lb = b.querySelector(":scope > span"); if (lb) lb.style.opacity = flo.toFixed(3);   // the label leaves and returns with its pictogram
               var p = k < (d.pre || 0) ? 99 : t - d.items[k], fl = b.querySelector(".fl"), blink = (Math.floor(p / 0.28) % 2) ? 0 : 1;
               if (!fl) return;
               if (fl.classList.contains("fl-search")) {
@@ -399,7 +405,8 @@
             });
             var lock = out4(cl((t - d.merge - 0.5) / 0.4)), pulse = Math.sin(Math.PI * cl((t - d.merge - 0.5) / 0.6));
             d.row.style.boxShadow = lock > 0 ? "0 0 0 " + (4 * lock).toFixed(2) + "px var(--accent)" : "none";
-            d.row.style.transform = "translate(-50%,-50%) scale(" + (1 + 0.03 * pulse).toFixed(4) + ")";
+            d.row.style.transform = "translate(-50%,-50%) scale(" + ((1 + 0.03 * pulse) * (d.merge < 1e5 ? 1 - 0.04 * cl((t - (d.b - 0.35)) / 0.35) : 1)).toFixed(4) + ")";
+            if (d.merge < 1e5) { var fo = (1 - out3(cl((t - (d.b - 0.35)) / 0.35))).toFixed(3); d.row.style.opacity = fo; d.lab.style.opacity = Math.min(parseFloat(d.lab.style.opacity || 1), fo); }   // the panel leaves soft into the end card
           }
           function renderSwitch(d, t) {
             var e = out4(cl((t - d.a) / 0.35)), g = out4(cl((t - d.flip) / 0.26));
@@ -420,7 +427,8 @@
               s.style.opacity = t < at ? 0 : Math.min(1, 0.3 + le).toFixed(3); s.style.filter = blur(8 * (1 - le)); s.style.transform = "translateY(" + (10 * (1 - le)).toFixed(1) + "px)";
             });
             var ta = t0 + d.letters.length * 0.035 + 0.2, te = out3(cl((t - ta) / 0.35)), ue = out3(cl((t - ta - 0.3) / 0.4));
-            d.tag.style.opacity = te.toFixed(3); d.tag.style.filter = blur(8 * (1 - te)); d.tag.style.transform = "translateY(" + (10 * (1 - te)).toFixed(1) + "px)";
+            if (d.tagWords && d.tagWords.length) { d.tag.style.opacity = 1; d.tagWords.forEach(function (w, wi) { writeWord(w, t, wi + 41); }); }
+            else { d.tag.style.opacity = te.toFixed(3); d.tag.style.filter = blur(8 * (1 - te)); d.tag.style.transform = "translateY(" + (10 * (1 - te)).toFixed(1) + "px)"; }
             d.url.style.opacity = ue.toFixed(3);
             if (d.plate) {
               var p = io(cl((t - (d.a + 0.9)) / 0.9)), z = out3(cl((t - (d.a + 0.9)) / Math.max(1, d.b - d.a - 0.9)));
