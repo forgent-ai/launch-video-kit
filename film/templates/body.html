@@ -80,7 +80,7 @@
         .pcov { position: absolute; inset: 0; background: var(--surface); display: flex; align-items: flex-end; justify-content: center; opacity: 0; }
         .pcov span { position: absolute; left: 0; right: 0; bottom: 0; height: 160px; display: flex; align-items: center; justify-content: center;
           font-size: 66px; font-weight: var(--weight); letter-spacing: -0.03em; color: var(--ink); white-space: nowrap; }
-        .pmedia { position: absolute; left: 0; top: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 0; }
+        .pmedia { position: absolute; left: 0; top: 0; width: 100%; height: auto; }   /* full width at every window size: while the card grows the screen scales with it, never cropped at the sides */
         .chip { position: absolute; left: 0; top: 0; display: flex; align-items: center; gap: 14px; padding: 18px 30px 18px 22px; border-radius: 999px;
           background: var(--surface); color: var(--ink); font-size: 34px; font-weight: var(--weight); letter-spacing: -0.02em; white-space: nowrap; opacity: 0;
           box-shadow: 0 34px 80px -28px var(--shadow), 0 0 0 1px var(--line); }
