@@ -481,7 +481,7 @@ else:
     end_tag = html.escape(end_beat.get("tagline", BRAND.get("tagline", "")))
 beats_html.append(f'<div class="beat end" data-i="end">{plate_html}<div class="erow{" only" if LOCKUP == "logo" else ""}">{end_mark}{end_word}</div>'
                   f'<div class="etag">{end_tag}</div>'
-                  f'<div class="eurl"><span class="ecard">{html.escape(end_beat.get("url", BRAND.get("domain", "")))}{ARROW}</span></div>{proof_html(end_beat.get("proof"))}</div>')
+                  f'<div class="eurl"><span class="ecard">{html.escape(end_beat.get("url", BRAND.get("domain", "")))}</span></div>{proof_html(end_beat.get("proof"))}</div>')
 LOGO_T = round(EA + 0.25, 3)
 if end_beat.get("line") and any(norm(w[0]).startswith(norm(BRAND.get("name", "x"))[:5]) for w in LINES[end_beat["line"]]["words"]):
     LOGO_T = round(max(EA + 0.1, word(end_beat["line"], norm(BRAND["name"]))[0] - 0.12), 3)   # Forgent: the logo lands on the spoken brand name

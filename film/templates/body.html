@@ -147,7 +147,7 @@
         .etag .nw { color: var(--ink); } .etag .nw.k { color: var(--accent); }
         .etag { position: absolute; left: 0; right: 0; top: 585px; text-align: center; display: flex; justify-content: center; gap: 0.24em; font-size: 52px; font-weight: var(--weight); letter-spacing: -0.03em; color: var(--ink2); opacity: 0; }
         .eurl { position: absolute; left: 0; right: 0; top: 672px; display: flex; justify-content: center; opacity: 0; }
-        .ecard { display: inline-flex; align-items: center; gap: 14px; padding: 14px 26px 14px 30px; border-radius: 22px; background: var(--surface);
+        .ecard { display: inline-flex; align-items: center; gap: 14px; padding: 14px 32px; border-radius: 22px; background: var(--surface);
           font-family: var(--font-body); font-size: 36px; letter-spacing: -0.01em; color: var(--ink); box-shadow: 0 34px 80px -40px var(--shadow), 0 0 0 1px var(--line); }
         .ecard svg { width: 34px; height: 34px; }
         .etrust { position: absolute; left: 0; right: 0; top: 220px; display: flex; justify-content: center; align-items: center; gap: 56px; font-family: var(--font-body); }
@@ -454,7 +454,7 @@
               d.url.style.transform = "scale(" + mix(0.82, 1, pb).toFixed(4) + ")"; d.url.style.filter = blur(6 * (1 - pk));
               d.pops.forEach(function (el, i) {
                 var at = u0 + 0.45 + (i < nt ? 0.16 * i : 0.16 * nt + 0.15 + 0.11 * (i - nt)), x = cl((t - at) / 0.42);
-                el.style.opacity = (t < at ? 0 : Math.min(1, x * 3) * (i < nt ? 1 : 0.55)).toFixed(3);
+                el.style.opacity = (t < at ? 0 : Math.min(1, x * 3) * (i < nt ? 1 : 0.85)).toFixed(3);
                 el.style.transform = "translateY(" + (14 * (1 - out3(x))).toFixed(1) + "px) scale(" + mix(0.8, 1, backOut(x)).toFixed(4) + ")";
               });
             }
