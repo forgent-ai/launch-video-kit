@@ -357,13 +357,14 @@
             // Forgent: blocks build up across beats; while the new block lands the row slides from the old centre to the new one
             var pre = d.pre || 0, sz = d.blks[0] ? d.blks[0].offsetWidth : 440;
             var shift = pre > 0 && pre < n ? (sz + 34) / 2 * (1 - io(cl((t - d.items[pre] + 0.05) / 0.8))) : 0;
-            d.row.style.transform = "translate(calc(-50% + " + shift.toFixed(1) + "px),-50%)";
+            var rowX = shift;   // applied once, together with the lock pulse, at the end of renderBlocks
             d.blks.forEach(function (b, k) {
-              var e = k < pre ? 1 : out4(cl((t - d.items[k]) / 0.55)), r = mix(R, 0, c);
+              var e = k < pre ? 1 : out3(cl((t - d.items[k]) / 0.7)), r = mix(R, 0, c);
               var pl = d.pulse ? Math.sin(Math.PI * cl((t - d.items[k]) / 0.5)) : 0;
-              b.style.opacity = k >= pre && t < d.items[k] ? 0 : Math.min(1, e * 3).toFixed(3);
+              var sib = (k < pre - 1 ? out3(cl((t - d.a) / 0.35)) : 1) * (d.merge > 1e5 && k < n - 1 ? 1 - cl((t - (d.b - 0.3)) / 0.3) : 1);   // the other cards leave as one opens and come back as it closes
+              b.style.opacity = k < pre ? sib.toFixed(3) : t < d.items[k] ? 0 : (out3(cl((t - d.items[k]) / 0.45)) * sib).toFixed(3);
               b.style.filter = blur(10 * (1 - e));
-              b.style.transform = "translateY(" + (26 * (1 - e)).toFixed(1) + "px) scale(" + (mix(1.25, 1, e) * (1 + 0.05 * pl)).toFixed(4) + ")";
+              b.style.transform = "translateY(" + (16 * (1 - e)).toFixed(1) + "px) scale(" + (mix(0.96, 1, e) * (1 + 0.05 * pl)).toFixed(4) + ")";   // land soft: no 125 % pop
               b.style.marginLeft = k ? gap.toFixed(2) + "px" : "0";
               var tl_ = k === 0 ? R : r, tr = k === n - 1 ? R : r;
               b.style.borderRadius = tl_ + "px " + tr + "px " + tr + "px " + tl_ + "px";
@@ -409,7 +410,7 @@
             });
             var lock = out4(cl((t - d.merge - 0.5) / 0.4)), pulse = Math.sin(Math.PI * cl((t - d.merge - 0.5) / 0.6));
             d.row.style.boxShadow = lock > 0 ? "0 0 0 " + (4 * lock).toFixed(2) + "px var(--accent)" : "none";
-            d.row.style.transform = "translate(-50%,-50%) scale(" + ((1 + 0.03 * pulse) * (d.merge < 1e5 ? 1 - 0.04 * cl((t - (d.b - 0.35)) / 0.35) : 1)).toFixed(4) + ")";
+            d.row.style.transform = "translate(calc(-50% + " + rowX.toFixed(1) + "px),-50%) scale(" + ((1 + 0.03 * pulse) * (d.merge < 1e5 ? 1 - 0.04 * cl((t - (d.b - 0.35)) / 0.35) : 1)).toFixed(4) + ")";   // ONE writer for the row transform (two writers made the slide a 1-frame jump)
             if (d.merge < 1e5) { var fo = (1 - out3(cl((t - (d.b - 0.35)) / 0.35))).toFixed(3); d.row.style.opacity = fo; d.lab.style.opacity = Math.min(parseFloat(d.lab.style.opacity || 1), fo); }   // the panel leaves soft into the end card
           }
           function renderSwitch(d, t) {
