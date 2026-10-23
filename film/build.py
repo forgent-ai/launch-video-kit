@@ -369,6 +369,8 @@ for i, r in enumerate(R):
         zoom = min(W * 0.84 / (fw * ww), H * 0.8 / (fh * hh), float(b.get("max_zoom", 3.0)))
         d.update({"win": [x0, y0, ww, hh], "focus": [x0 + fx * ww, y0 + fy * hh, fw * ww, fh * hh], "zoom": round(zoom, 4),
                   "push": round(push, 3), "enter": "pop" if prev_exit == "dive" else "settle" if prev_exit == "collapse" else "rise"})
+        if b.get("center"):   # Forgent: the camera frames the whole window, centred, at a fixed zoom (Tom 2026-10-23: keep it in the middle)
+            d.update({"focus": [x0, y0, ww, hh], "zoom": float(b.get("zoom", 1.08))})
         if b.get("from_card"):   # Forgent match cut: the window grows out of card k of an n-card row and shrinks back into it (Tom 2026-10-23)
             k_, n_ = b["from_card"]; sz = 320 if n_ > 4 else 440; rw = n_ * sz + (n_ - 1) * 34
             d.update({"enter": "grow", "cardr": [960 - rw / 2 + k_ * (sz + 34), 610 - sz / 2, sz, sz],
@@ -465,8 +467,11 @@ else:
 beats_html.append(f'<div class="beat end" data-i="end">{plate_html}<div class="erow{" only" if LOCKUP == "logo" else ""}">{end_mark}{end_word}</div>'
                   f'<div class="etag">{end_tag}</div>'
                   f'<div class="eurl">{html.escape(end_beat.get("url", BRAND.get("domain", "")))}</div></div>')
-data.append({"type": "end", "a": round(EA, 3), "b": END, "logo": round(EA + 0.25, 3)})
-EVENTS.append({"t": round(EA + 0.25, 3), "ev": "logo"})
+LOGO_T = round(EA + 0.25, 3)
+if end_beat.get("line") and any(norm(w[0]).startswith(norm(BRAND.get("name", "x"))[:5]) for w in LINES[end_beat["line"]]["words"]):
+    LOGO_T = round(max(EA + 0.1, word(end_beat["line"], norm(BRAND["name"]))[0] - 0.12), 3)   # Forgent: the logo lands on the spoken brand name
+data.append({"type": "end", "a": round(EA, 3), "b": END, "logo": LOGO_T})
+EVENTS.append({"t": LOGO_T, "ev": "logo"})
 
 
 # ------------------------------------------------------------------ the hook

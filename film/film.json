@@ -60,7 +60,9 @@
       ],
       "card_label": "Findet",
       "pad": 1.6,
-      "rest_at": 3.0
+      "rest_at": 3.0,
+      "center": true,
+      "zoom": 1.08
     },
     {
       "type": "blocks",
@@ -100,7 +102,9 @@
       ],
       "card_label": "Bewertet",
       "pad": 1.2,
-      "rest_at": 4.0
+      "rest_at": 4.0,
+      "center": true,
+      "zoom": 1.08
     },
     {
       "type": "blocks",
@@ -144,7 +148,9 @@
       ],
       "card_label": "Schreibt",
       "pad": 0.8,
-      "rest_at": 5.0
+      "rest_at": 5.0,
+      "center": true,
+      "zoom": 1.08
     },
     {
       "type": "blocks",
@@ -175,7 +181,7 @@
       "url": "forgent.ai",
       "line": "07",
       "tagline": "Jetzt mehr Ausschreibungen *gewinnen.",
-      "lead": 0.9
+      "lead": 0.45
     }
   ],
   "lockup": "logo"
