@@ -38,7 +38,7 @@
       "pre": 0,
       "merge": false,
       "label": "",
-      "until": "ausschreibungen"
+      "until": "passenden"
     },
     {
       "type": "product",
@@ -52,7 +52,12 @@
       ],
       "from": 0.0,
       "width": 0.86,
-      "max_zoom": 1.8
+      "max_zoom": 1.4,
+      "from_card": [
+        0,
+        1
+      ],
+      "card_label": "Finden"
     },
     {
       "type": "blocks",
@@ -70,7 +75,7 @@
       "pre": 1,
       "merge": false,
       "label": "",
-      "until": "nobid"
+      "until": "bid"
     },
     {
       "type": "product",
@@ -85,7 +90,12 @@
       "push_at": "in",
       "from": 0.3,
       "width": 0.86,
-      "max_zoom": 1.8
+      "max_zoom": 1.4,
+      "from_card": [
+        1,
+        2
+      ],
+      "card_label": "Bewerten"
     },
     {
       "type": "blocks",
@@ -107,7 +117,7 @@
       "pre": 2,
       "merge": false,
       "label": "",
-      "until": "angebote+0.2"
+      "until": "konforme+0.15"
     },
     {
       "type": "product",
@@ -122,7 +132,12 @@
       "push_at": "aus",
       "from": 1.7,
       "width": 0.86,
-      "max_zoom": 1.8
+      "max_zoom": 1.4,
+      "from_card": [
+        2,
+        3
+      ],
+      "card_label": "Schreiben"
     },
     {
       "type": "blocks",

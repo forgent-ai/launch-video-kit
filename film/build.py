@@ -364,6 +364,10 @@ for i, r in enumerate(R):
         zoom = min(W * 0.84 / (fw * ww), H * 0.8 / (fh * hh), float(b.get("max_zoom", 3.0)))
         d.update({"win": [x0, y0, ww, hh], "focus": [x0 + fx * ww, y0 + fy * hh, fw * ww, fh * hh], "zoom": round(zoom, 4),
                   "push": round(push, 3), "enter": "pop" if prev_exit == "dive" else "settle" if prev_exit == "collapse" else "rise"})
+        if b.get("from_card"):   # Forgent match cut: the window grows out of card k of an n-card row and shrinks back into it (Tom 2026-10-23)
+            k_, n_ = b["from_card"]; sz = 320 if n_ > 4 else 440; rw = n_ * sz + (n_ - 1) * 34
+            d.update({"enter": "grow", "cardr": [960 - rw / 2 + k_ * (sz + 34), 610 - sz / 2, sz, sz],
+                      "push": round(max(push, a + 0.45), 3)})
         if b.get("cursor"):
             c = b["cursor"]
             d["cursor"] = {"t": round(word(lid, c["at"])[0] - 0.05, 3), "x": x0 + c["x"] * ww, "y": y0 + c["y"] * hh}
@@ -382,8 +386,9 @@ for i, r in enumerate(R):
                      f'data-media-start="{float(b.get("from", 0)):.3f}" muted playsinline></video>')
         else:
             media = f'<img class="pmedia" src="{src}" alt="">'
+        cover = f'<div class="pcov"><span>{html.escape(b["card_label"])}</span></div>' if b.get("from_card") else ""
         beats_html.append(f'<div class="beat product" data-i="{i}"><div class="ent"><div class="cam"><div class="pw" style="left:{x0}px;top:{y0}px;width:{ww}px;height:{hh}px">'
-                          f'{media}</div></div></div>{chip_html}</div>')
+                          f'{media}{cover}</div></div></div>{chip_html}</div>')
         EVENTS.append({"t": a, "ev": "rise" if d["enter"] == "rise" else "land"})
         EVENTS.append({"t": push, "ev": "push"})
     elif typ == "blocks":
