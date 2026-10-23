@@ -143,6 +143,7 @@
         .erow.only .emk { height: 170px; }
         .eword { display: flex; font-size: 150px; font-weight: var(--weight); letter-spacing: var(--tracking); line-height: 1; white-space: nowrap; color: var(--ink); }
         .eword span { display: inline-block; opacity: 0; }
+        .etag .nw { color: var(--ink); } .etag .nw.k { color: var(--accent); }
         .etag { position: absolute; left: 0; right: 0; top: 585px; text-align: center; display: flex; justify-content: center; gap: 0.24em; font-size: 52px; font-weight: var(--weight); letter-spacing: -0.03em; color: var(--ink2); opacity: 0; }
         .eurl { position: absolute; left: 0; right: 0; bottom: 92px; text-align: center; font-family: var(--mono); font-size: 26px; letter-spacing: 0.02em; color: var(--ink-soft); opacity: 0; }
       </style>
@@ -317,7 +318,7 @@
             var c = camera(d, t);
             if (d.enter === "grow") {   // Forgent match cut: the empty card opens straight into the focused framing, holds, and closes back (one move each way)
               d.ent.style.transform = "none"; d.ent.style.opacity = 1; d.ent.style.filter = "none";
-              var gi = cl((t - d.a) / 0.9), xi = cl((t - (d.b - 0.8)) / 0.8), m = Math.min(io(gi), 1 - io(xi)), C_ = d.cardr, Wn = d.win;
+              var gi = cl((t - d.a) / 0.9), xi = cl((t - (d.b - 0.75)) / 0.75), m = Math.min(io(gi), 1 - io(xi)), C_ = d.cardr, Wn = d.win;
               var pw = d.pwEl || (d.pwEl = d.el.querySelector(".pw")), cv = d.cvEl || (d.cvEl = d.el.querySelector(".pcov"));
               var c1 = camAt(d, t, 1); c = camAt(d, t, m);
               var S1 = [c1.tx + c1.s * Wn[0], c1.ty + c1.s * Wn[1], c1.s * Wn[2], c1.s * Wn[3]];   // the window on screen, fully open
@@ -325,7 +326,7 @@
               pw.style.left = ((Rs[0] - c.tx) / c.s).toFixed(2) + "px"; pw.style.top = ((Rs[1] - c.ty) / c.s).toFixed(2) + "px";
               pw.style.width = (Rs[2] / c.s).toFixed(2) + "px"; pw.style.height = (Rs[3] / c.s).toFixed(2) + "px";
               pw.style.borderRadius = (mix(30, 18 * c1.s, m) / c.s).toFixed(2) + "px";
-              cv.style.opacity = Math.max(1 - cl((gi - 0.12) / 0.33), cl((xi - 0.45) / 0.3)).toFixed(3);   // white while small: never two contents at once
+              cv.style.opacity = Math.max(1 - cl((t - d.a - 0.75) / 0.3), cl((t - (d.b - 1.0)) / 0.25)).toFixed(3);   // the product shows only once the window is open, and leaves before it closes
               (d.cvLab || (d.cvLab = cv.querySelector("span"))).style.opacity = 0;
             }
             d.cam.style.transform = "translate(" + c.tx.toFixed(2) + "px," + c.ty.toFixed(2) + "px) scale(" + c.s.toFixed(4) + ")";

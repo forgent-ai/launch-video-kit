@@ -7,7 +7,7 @@
     "03": "Findet die passenden Ausschreibungen.",
     "04": "Bewertet Bid, No-Bid in Minuten.",
     "05": "Und schreibt konforme Angebote aus Ihrem Wissen.",
-    "06": "Finden, bewerten, schreiben. Eine Plattform.",
+    "06": "Finden, bewerten, schreiben. Alles auf einer Plattform.",
     "07": "Jetzt mehr Ausschreibungen gewinnen."
   },
   "music": {
@@ -159,8 +159,8 @@
           "fill": "write"
         }
       ],
-      "merge_at": "eine",
-      "label": "Eine *Plattform.",
+      "merge_at": "alles",
+      "label": "Alles auf einer *Plattform.",
       "pad": 0.45,
       "pre": 3,
       "pulse": true
