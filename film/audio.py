@@ -39,7 +39,7 @@ if music.get("file") and os.path.exists(music["file"]):
     y, sr = sf.read(music["file"], always_2d=True)
     if y.shape[1] == 1:
         y = np.repeat(y, 2, axis=1)
-    bpm, drop = float(music["bpm"]), float(music["drop"])
+    bpm, drop = float(music["bpm"]), float(HOOK.get("music_drop", music["drop"]))   # a hook can re-anchor the take (Forgent: downbeat on frame 0 under a spoken hook)
     bar = 240.0 / bpm
     need = END - D + 0.5                     # seconds of music after the drop
     after = y[int(drop * sr):]

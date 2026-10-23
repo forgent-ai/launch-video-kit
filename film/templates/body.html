@@ -474,14 +474,14 @@
           });
           var hook = one(".hook"), late = all(".late");
           function renderHook(t) {
-            hlines.forEach(function (L) {
+            hlines.forEach(function (L, li) {
               var o = cl((t - L.out) / 0.16);
               L.el.style.opacity = (1 - o).toFixed(3); L.el.style.filter = blur(12 * o);
               L.words.forEach(function (w, wi) {
                 var e = out4(cl((t - w.at) / (wi === 0 ? 0.36 : 0.24)));
                 w.el.style.opacity = t < w.at ? 0 : Math.min(1, e * 2.5).toFixed(3);
                 w.el.style.filter = blur(9 * (1 - e));
-                w.el.style.transform = "scale(" + (wi === 0 ? mix(1.8, 1, e) : mix(1.25, 1, e)).toFixed(4) + ")";
+                w.el.style.transform = "scale(" + (wi === 0 && li === 0 ? mix(1.8, 1, e) : mix(1.06, 1, e)).toFixed(4) + ")";   // only the hook's first word makes the big entrance; the rest land gently and never overlap a neighbour
                 if (w.key) w.el.style.setProperty("--hlp", io(cl((t - w.at - 0.12) / 0.3)).toFixed(3));
               });
             });

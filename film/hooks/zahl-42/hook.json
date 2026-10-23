@@ -1,0 +1,69 @@
+{
+ "about": "v2: opportunity hook (Tom 2026-10-23, from the mass mailing)",
+ "duration": 4.5,
+ "video": null,
+ "ground": "light",
+ "push": false,
+ "music_drop": 4.521,
+ "voice": {
+  "at": 0.15,
+  "file": "assets/hook/vo-42.wav"
+ },
+ "text": [
+  {
+   "words": [
+    [
+     "*42 %",
+     0.17
+    ],
+    [
+     "aller",
+     1.27
+    ],
+    [
+     "Ausschreibungen",
+     1.52
+    ]
+   ],
+   "out": 4.32,
+   "y": 470,
+   "size": 100
+  },
+  {
+   "words": [
+    [
+     "bekommen",
+     2.34
+    ],
+    [
+     "nur",
+     2.66
+    ],
+    [
+     "ein",
+     2.94
+    ],
+    [
+     "oder",
+     3.2
+    ],
+    [
+     "gar",
+     3.4
+    ],
+    [
+     "kein",
+     3.61
+    ],
+    [
+     "Angebot.",
+     3.89
+    ]
+   ],
+   "out": 4.32,
+   "y": 600,
+   "size": 100
+  }
+ ],
+ "sfx": []
+}
