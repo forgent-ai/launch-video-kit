@@ -452,6 +452,21 @@ for j, b in enumerate(overlays):
     data.append({"type": "overlay", "a": times[0], "b": round(until, 3), "o": j})
     EVENTS.append({"t": times[0], "ev": "overlay"})
 
+# Forgent: proof on the end card, popping in one by one after the URL card (Tom 2026-10-23): trust seals, then customer logos
+ARROW = '<svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8.25" stroke="currentColor" stroke-width="1.5"/><path d="M9.5 12h5m-2-2.5 2.5 2.5-2.5 2.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>'
+def proof_html(pr):
+    if not pr:
+        return ""
+    out, d = "", pr.get("dir", "assets/endcard")
+    if pr.get("trust"):
+        tr = pr["trust"]
+        out += ('<div class="etrust">'
+                f'<span class="epop"><img class="eseal" src="{d}/iso-seal.svg" alt="">{html.escape(tr["iso"])}</span>'
+                f'<span class="epop"><img class="eomr" src="{d}/omr-logo.svg" alt=""><img class="eomr" src="{d}/omr-stars.svg" alt=""></span>'
+                f'<span class="epop"><img class="eseal" src="{d}/gdpr-seal.svg" alt="">{html.escape(tr["gdpr"])}</span></div>')
+    if pr.get("logos"):
+        out += '<div class="elogos">' + "".join(f'<img class="epop" src="{d}/{s}.svg" alt="">' for s in pr["logos"]) + "</div>"
+    return out
 # the end: the lockup, then a quiet hold
 plate = end_beat.get("plate")    # an optional still behind the lockup, a path under film/
 if plate and not os.path.exists(plate):
@@ -466,7 +481,7 @@ else:
     end_tag = html.escape(end_beat.get("tagline", BRAND.get("tagline", "")))
 beats_html.append(f'<div class="beat end" data-i="end">{plate_html}<div class="erow{" only" if LOCKUP == "logo" else ""}">{end_mark}{end_word}</div>'
                   f'<div class="etag">{end_tag}</div>'
-                  f'<div class="eurl">{html.escape(end_beat.get("url", BRAND.get("domain", "")))}</div></div>')
+                  f'<div class="eurl"><span class="ecard">{html.escape(end_beat.get("url", BRAND.get("domain", "")))}{ARROW}</span></div>{proof_html(end_beat.get("proof"))}</div>')
 LOGO_T = round(EA + 0.25, 3)
 if end_beat.get("line") and any(norm(w[0]).startswith(norm(BRAND.get("name", "x"))[:5]) for w in LINES[end_beat["line"]]["words"]):
     LOGO_T = round(max(EA + 0.1, word(end_beat["line"], norm(BRAND["name"]))[0] - 0.12), 3)   # Forgent: the logo lands on the spoken brand name

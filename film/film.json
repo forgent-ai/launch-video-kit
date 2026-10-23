@@ -178,8 +178,9 @@
     },
     {
       "type": "end",
-      "hold": 3.5,
+      "hold": 4.5,
       "url": "forgent.ai",
+      "proof": {"trust": {"iso": "ISO 27001 zertifiziert", "gdpr": "DSGVO-konform"}, "logos": ["randstad", "p3", "avelios", "arsipa", "timetoact", "trenkwalder"]},
       "line": "07",
       "tagline": "Jetzt mehr Ausschreibungen *gewinnen.",
       "lead": 0.45

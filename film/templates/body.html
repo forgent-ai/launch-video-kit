@@ -146,7 +146,15 @@
         .eword span { display: inline-block; opacity: 0; }
         .etag .nw { color: var(--ink); } .etag .nw.k { color: var(--accent); }
         .etag { position: absolute; left: 0; right: 0; top: 585px; text-align: center; display: flex; justify-content: center; gap: 0.24em; font-size: 52px; font-weight: var(--weight); letter-spacing: -0.03em; color: var(--ink2); opacity: 0; }
-        .eurl { position: absolute; left: 0; right: 0; top: 690px; text-align: center; font-size: 40px; font-weight: var(--weight); letter-spacing: -0.01em; color: var(--accent); opacity: 0; }
+        .eurl { position: absolute; left: 0; right: 0; top: 672px; display: flex; justify-content: center; opacity: 0; }
+        .ecard { display: inline-flex; align-items: center; gap: 14px; padding: 14px 26px 14px 30px; border-radius: 22px; background: var(--surface);
+          font-size: 40px; font-weight: var(--weight); letter-spacing: -0.02em; color: var(--accent); box-shadow: 0 34px 80px -40px var(--shadow), 0 0 0 1px var(--line); }
+        .ecard svg { width: 34px; height: 34px; }
+        .etrust { position: absolute; left: 0; right: 0; top: 806px; display: flex; justify-content: center; align-items: center; gap: 56px; font-family: var(--font-body); }
+        .etrust .epop { display: inline-flex; align-items: center; gap: 12px; font-size: 27px; color: var(--ink2); white-space: nowrap; opacity: 0; }
+        .etrust .eseal { width: 38px; height: 38px; opacity: .75; } .etrust .eomr { height: 22px; width: auto; }
+        .elogos { position: absolute; left: 0; right: 0; top: 912px; display: flex; justify-content: center; align-items: center; gap: 64px; }
+        .elogos img { height: 34px; width: auto; max-width: 210px; object-fit: contain; filter: grayscale(1); opacity: 0; }
       </style>
       <div id="root" data-composition-id="film" data-width="1920" data-height="1080">
         <div class="hook">
@@ -425,6 +433,7 @@
             d.sw.style.background = "rgb(" + [0, 1, 2].map(function (i) { return Math.round(mix(off[i], on[i], g)); }).join(",") + ")";
             d.keys.forEach(function (k) { k.style.setProperty("--hlp", io(cl((t - d.flip - 0.08) / 0.3)).toFixed(3)); });
           }
+          function backOut(x) { var c1 = 1.4, c3 = c1 + 1; return x <= 0 ? 0 : 1 + c3 * Math.pow(x - 1, 3) + c1 * Math.pow(x - 1, 2); }   // a small overshoot for the end-card pops
           function renderEnd(d, t) {
             var e = out4(cl((t - d.logo) / 0.5));
             if (d.mk) { d.mk.style.opacity = Math.min(1, e * 2).toFixed(3); d.mk.style.transform = "scale(" + mix(0.5, 1, e).toFixed(4) + ")"; d.mk.style.filter = blur(12 * (1 - e)); }
@@ -436,8 +445,19 @@
             var ta = t0 + d.letters.length * 0.035 + 0.2, te = out3(cl((t - ta) / 0.35)), ue = out3(cl((t - ta - 0.3) / 0.4));
             if (d.tagWords && d.tagWords.length) { d.tag.style.opacity = 1; d.tagWords.forEach(function (w, wi) { writeWord(w, t, wi + 41); }); }
             else { d.tag.style.opacity = te.toFixed(3); d.tag.style.filter = blur(8 * (1 - te)); d.tag.style.transform = "translateY(" + (10 * (1 - te)).toFixed(1) + "px)"; }
-            if (d.tagWords && d.tagWords.length) { var ua = Math.max.apply(null, d.tagWords.map(function (w) { return w.at; })) + 0.35; ue = out3(cl((t - ua) / 0.45)); d.url.style.transform = "translateY(" + (10 * (1 - ue)).toFixed(1) + "px)"; }
+            if (d.tagWords && d.tagWords.length) { var ua = Math.max.apply(null, d.tagWords.map(function (w) { return w.at; })) + 0.35; ue = out3(cl((t - ua) / 0.45)); }
             d.url.style.opacity = ue.toFixed(3);
+            if (d.pops === undefined) d.pops = Array.prototype.slice.call(d.el.querySelectorAll(".epop"));
+            if (d.tagWords && d.tagWords.length && d.pops.length) {   // Forgent: the URL card, then each seal and logo pops in, one after another
+              var u0 = Math.max.apply(null, d.tagWords.map(function (w) { return w.at; })) + 0.35, nt = d.el.querySelectorAll(".etrust .epop").length;
+              var pk = out3(cl((t - u0) / 0.45)), pb = backOut(cl((t - u0) / 0.5));
+              d.url.style.transform = "scale(" + mix(0.82, 1, pb).toFixed(4) + ")"; d.url.style.filter = blur(6 * (1 - pk));
+              d.pops.forEach(function (el, i) {
+                var at = u0 + 0.45 + (i < nt ? 0.16 * i : 0.16 * nt + 0.15 + 0.11 * (i - nt)), x = cl((t - at) / 0.42);
+                el.style.opacity = (t < at ? 0 : Math.min(1, x * 3) * (i < nt ? 1 : 0.55)).toFixed(3);
+                el.style.transform = "translateY(" + (14 * (1 - out3(x))).toFixed(1) + "px) scale(" + mix(0.8, 1, backOut(x)).toFixed(4) + ")";
+              });
+            }
             if (d.plate) {
               var p = io(cl((t - (d.a + 0.9)) / 0.9)), z = out3(cl((t - (d.a + 0.9)) / Math.max(1, d.b - d.a - 0.9)));
               d.plate.style.opacity = p.toFixed(3); d.plateImg.style.transform = "scale(" + mix(1.1, 1, z).toFixed(4) + ")"; d.plateImg.style.filter = blur(14 * (1 - p));
