@@ -61,7 +61,7 @@
       ],
       "card_label": "Findet",
       "pad": 1.6,
-      "rest_at": 3.0,
+      "rest_at": 2.75,
       "center": true,
       "zoom": 1.08
     },
@@ -103,7 +103,7 @@
       ],
       "card_label": "Bewertet",
       "pad": 1.2,
-      "rest_at": 4.0,
+      "rest_at": 2.4,
       "center": true,
       "zoom": 1.08
     },
@@ -149,7 +149,7 @@
       ],
       "card_label": "Schreibt",
       "pad": 0.8,
-      "rest_at": 5.0,
+      "rest_at": 4.5,
       "center": true,
       "zoom": 1.08
     },
