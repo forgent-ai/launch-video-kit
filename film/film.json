@@ -3,7 +3,7 @@
   "voice_dir": "vo/body",
   "gap": 0.25,
   "lines": {
-    "02": "Forgent. Die KI-Plattform für öffentliche Aufträge.",
+    "02": "Forgent. Die KI-Plattform für öffentliche Ausschreibungen.",
     "03": "Findet mehr passende Ausschreibungen. Vorsortiert in Ihrem Postfach.",
     "04": "Bewertet Bid, No-Bid in Minuten. Ihr Team bietet nur noch, wo es zählt.",
     "05": "Und schreibt konforme Angebote aus Ihrem Wissen. Fünfmal so oft bieten. Ohne Abstriche.",
@@ -24,7 +24,7 @@
     {
       "type": "name",
       "line": "02",
-      "tagline": "Die KI-Plattform für *öffentliche *Aufträge."
+      "tagline": "Die KI-Plattform für *öffentliche *Ausschreibungen."
     },
     {
       "type": "blocks",
@@ -147,15 +147,18 @@
       "line": "06",
       "items": [
         {
-          "label": "Findet",
+          "label": "Finden",
+          "was": "Findet",
           "fill": "search"
         },
         {
-          "label": "Bewertet",
+          "label": "Bewerten",
+          "was": "Bewertet",
           "fill": "score"
         },
         {
-          "label": "Schreibt",
+          "label": "Schreiben",
+          "was": "Schreibt",
           "fill": "write"
         }
       ],

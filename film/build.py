@@ -415,7 +415,9 @@ for i, r in enumerate(R):
         blocks = ""
         for it, p in zip(items, parts):
             icon = f'<img src="{html.escape(it["icon"])}" alt="">' if it.get("icon") else ""
-            blocks += f'<div class="blk">{icon}{FILLS.get(it.get("fill"), "")}<span>{html.escape(p[0])}</span><i class="div"></i></div>'
+            lab = (f'<span class="lbw"><b class="l0">{html.escape(it["was"])}</b><b class="l1">{html.escape(p[0])}</b></span>' if it.get("was")
+                   else f'<span>{html.escape(p[0])}</span>')   # Forgent: "was" = the label it carries in from the earlier beats, swapped on its word
+            blocks += f'<div class="blk">{icon}{FILLS.get(it.get("fill"), "")}{lab}<i class="div"></i></div>'
         beats_html.append(f'<div class="beat blocks" data-i="{i}"><div class="brow">{blocks}</div><div class="blab">{key_spans(label, "bw")}</div></div>')
         EVENTS += [{"t": tt, "ev": "block", "n": k, "pan": ((k + 0.5) / len(times) * 2 - 1) * 0.45} for k, tt in enumerate(times) if k >= pre or b.get("pulse")]
         if merge < 1e5:

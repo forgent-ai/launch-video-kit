@@ -101,6 +101,7 @@
         .bw { color: var(--ink-soft); }
         /* Forgent: block pictograms (search, score ring with check, writing document) and the lock frame; one stroke, one grey, green for the result */
         .brow { border-radius: 30px; }
+        .lbw { display: inline-grid; } .lbw b { grid-area: 1 / 1; font-weight: inherit; text-align: center; }
         .fl { position: relative; width: 300px; height: 200px; }
         .fs-bar { position: absolute; left: 0; right: 0; top: 0; height: 50px; border-radius: 25px; background: var(--ground); opacity: 0; }
         .fs-bar i { position: absolute; left: 19px; top: 15px; width: 14px; height: 14px; border-radius: 50%; border: 3px solid var(--ink-soft); }
@@ -212,10 +213,10 @@
           // a key word: scrambles into place, then the highlight sweeps in behind it
           function keyWord(el) { var txt = el.getAttribute("data-text"); el.innerHTML = '<span class="real">' + el.innerHTML + '</span><span class="scr"></span>'; return { real: el.firstChild, scr: el.lastChild, text: txt }; }
           function writeWord(w, t, seed, soft) {
-            var e = out3(cl((t - w.at) / 0.18));
-            w.el.style.opacity = t < w.at ? 0 : Math.min(1, 0.35 + e).toFixed(3);
+            var e = out3(cl((t - w.at) / 0.45)), o = io(cl((t - w.at) / 0.38));   // Forgent: a soft fade and rise, no opacity jump (Tom 2026-10-23)
+            w.el.style.opacity = t < w.at ? 0 : o.toFixed(3);
             w.el.style.filter = blur(6 * (1 - e));
-            w.el.style.transform = "translateY(" + (8 * (1 - e)).toFixed(2) + "px)";
+            w.el.style.transform = "translateY(" + (14 * (1 - e)).toFixed(2) + "px)";
             if (!w.k) return;
             var p = cl((t - w.at) / 0.3);
             w.k.real.style.opacity = 1; // Forgent: no scramble (Tom 2026-10-16), the real word fades in
@@ -379,6 +380,8 @@
               if (k === (d.pre || 0) - 1) flo = Math.min(flo, cl((t - d.a - 0.02) / 0.3));
               if (b.querySelector(".fl")) b.querySelector(".fl").style.opacity = flo.toFixed(3);
               var lb = b.querySelector(":scope > span"); if (lb) lb.style.opacity = flo.toFixed(3);   // the label leaves and returns with its pictogram
+              var l0 = b.querySelector(".l0"), l1 = b.querySelector(".l1");
+              if (l0 && l1) { var sw = io(cl((t - d.items[k] + 0.05) / 0.3)); l0.style.opacity = (1 - sw).toFixed(3); l1.style.opacity = sw.toFixed(3); }
               var p = k < (d.pre || 0) ? 99 : t - d.items[k], fl = b.querySelector(".fl"), blink = (Math.floor(p / 0.28) % 2) ? 0 : 1;
               if (!fl) return;
               if (fl.classList.contains("fl-search")) {
