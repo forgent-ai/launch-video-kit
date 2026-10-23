@@ -4,9 +4,9 @@
   "gap": 0.25,
   "lines": {
     "02": "Forgent. Die KI-Plattform für öffentliche Aufträge.",
-    "03": "Findet die passenden Ausschreibungen.",
-    "04": "Bewertet Bid, No-Bid in Minuten.",
-    "05": "Und schreibt konforme Angebote aus Ihrem Wissen.",
+    "03": "Findet mehr passende Ausschreibungen. Vorsortiert in Ihrem Postfach.",
+    "04": "Bewertet Bid, No-Bid in Minuten. Jedes Kriterium gegen Ihr Profil geprüft.",
+    "05": "Und schreibt konforme Angebote aus Ihrem Wissen. KI-Agenten entwerfen, Sie entscheiden.",
     "06": "Finden, bewerten, schreiben. Alles auf einer Plattform.",
     "07": "Jetzt mehr Ausschreibungen gewinnen."
   },
@@ -38,7 +38,7 @@
       "pre": 0,
       "merge": false,
       "label": "",
-      "until": "ausschreibungen+1.0"
+      "until": "ausschreibungen+0.5"
     },
     {
       "type": "product",
@@ -58,7 +58,7 @@
         1
       ],
       "card_label": "Finden",
-      "pad": 3.5
+      "pad": 0.7
     },
     {
       "type": "blocks",
@@ -76,7 +76,7 @@
       "pre": 1,
       "merge": false,
       "label": "",
-      "until": "nobid+0.9"
+      "until": "minuten+0.3"
     },
     {
       "type": "product",
@@ -97,7 +97,7 @@
         2
       ],
       "card_label": "Bewerten",
-      "pad": 3.0
+      "pad": 0.5
     },
     {
       "type": "blocks",
@@ -119,7 +119,7 @@
       "pre": 2,
       "merge": false,
       "label": "",
-      "until": "angebote+1.0"
+      "until": "angebote+0.6"
     },
     {
       "type": "product",
@@ -140,7 +140,7 @@
         3
       ],
       "card_label": "Schreiben",
-      "pad": 2.3
+      "pad": 0.4
     },
     {
       "type": "blocks",
