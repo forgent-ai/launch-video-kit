@@ -1,0 +1,48 @@
+{
+ "about": "Idee 2: one line on brand green",
+ "duration": 2.4,
+ "video": null,
+ "ground": "accent",
+ "push": true,
+ "voice": null,
+ "text": [
+  {
+   "words": [
+    [
+     "Von",
+     0.2
+    ],
+    [
+     "der",
+     0.32
+    ],
+    [
+     "Suche",
+     0.44
+    ],
+    [
+     "bis",
+     0.7
+    ],
+    [
+     "zum",
+     0.82
+    ],
+    [
+     "*Zuschlag.",
+     0.94
+    ]
+   ],
+   "out": 2.2,
+   "y": 520,
+   "size": 124
+  }
+ ],
+ "sfx": [
+  {
+   "t": 0.2,
+   "sound": "felt_thump",
+   "gain_db": -18
+  }
+ ]
+}

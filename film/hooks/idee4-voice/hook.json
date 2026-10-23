@@ -1,0 +1,45 @@
+{
+ "about": "Idee 4: spoken line over the dimmed montage",
+ "duration": 3.0,
+ "video": "assets/hook/montage-dim.mp4",
+ "ground": "dark",
+ "push": true,
+ "voice": {
+  "at": 0.3,
+  "file": "assets/hook/vo-zuschlag.wav"
+ },
+ "text": [
+  {
+   "words": [
+    [
+     "Von",
+     0.36
+    ],
+    [
+     "der",
+     0.54
+    ],
+    [
+     "Suche",
+     0.78
+    ],
+    [
+     "bis",
+     1.31
+    ],
+    [
+     "zum",
+     1.48
+    ],
+    [
+     "*Zuschlag.",
+     1.68
+    ]
+   ],
+   "out": 2.75,
+   "y": 520,
+   "size": 112
+  }
+ ],
+ "sfx": []
+}

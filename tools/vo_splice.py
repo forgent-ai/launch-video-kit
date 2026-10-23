@@ -1,17 +1,19 @@
 """Record lines as German/English segments in ONE ElevenLabs voice and splice them, so brand and
 English terms ("Forgent", "bid, no-bid") are spoken in English inside German lines (Tom 2026-10-16).
-usage: python3 tools/vo_splice.py <film-dir> <voice_id> [stability]
+usage: python3 tools/vo_splice.py <film-dir> <voice_id> [stability] [--only 03,06]
 Segments come from <film-dir>/vo_segments.json: {"02": [["en","Forgent."],["de","Die KI-Plattform ..."]], ...}
 Lines without an entry are recorded whole. Writes <film-dir>/vo/body/line-<id>.wav (48 kHz mono) one file at a time."""
 import json, pathlib, subprocess, sys, tempfile
 sys.path.insert(0, str(pathlib.Path.home() / "reel-studio"))
 import eleven_vo as e
 
-film = pathlib.Path(sys.argv[1]); voice = sys.argv[2]; stab = sys.argv[3] if len(sys.argv) > 3 else "0.8"
+only = set(sys.argv[sys.argv.index("--only") + 1].split(",")) if "--only" in sys.argv else None   # re-record just these lines
+args = [a for i, a in enumerate(sys.argv) if a != "--only" and (i == 0 or sys.argv[i - 1] != "--only")]
+film = pathlib.Path(args[1]); voice = args[2]; stab = args[3] if len(args) > 3 else "0.8"
 env = e.load_env(); env["ELEVENLABS_STABILITY"] = stab; env["ELEVENLABS_STYLE"] = "0"
 lines = json.load(open(film / "film.json"))["lines"]
 segs = json.load(open(film / "vo_segments.json")) if (film / "vo_segments.json").exists() else {}
-plan = {k: segs.get(k, [["de", t]]) for k, t in lines.items()}
+plan = {k: segs.get(k, [["de", t]]) for k, t in lines.items() if only is None or k in only}
 e.budget_gate(env, sum(len(s[1]) * (4 if s[0] == 'en' else 1) for v in plan.values() for s in v))
 import re
 def norm(t): return re.sub(r"[^a-z ]", " ", t.lower().replace("-", ""))

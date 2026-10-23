@@ -1,0 +1,48 @@
+{
+ "about": "Idee 1: one line over a dimmed product montage",
+ "duration": 3.0,
+ "video": "assets/hook/montage-dim.mp4",
+ "ground": "dark",
+ "push": true,
+ "voice": null,
+ "text": [
+  {
+   "words": [
+    [
+     "Von",
+     0.25
+    ],
+    [
+     "der",
+     0.38
+    ],
+    [
+     "Suche",
+     0.5
+    ],
+    [
+     "bis",
+     0.78
+    ],
+    [
+     "zum",
+     0.9
+    ],
+    [
+     "*Zuschlag.",
+     1.04
+    ]
+   ],
+   "out": 2.75,
+   "y": 520,
+   "size": 112
+  }
+ ],
+ "sfx": [
+  {
+   "t": 0.25,
+   "sound": "felt_thump",
+   "gain_db": -18
+  }
+ ]
+}
