@@ -355,10 +355,10 @@ for i, r in enumerate(R):
         if not os.path.exists(src):
             sys.exit(f"product beat {i + 1}: no file {b['src']} (put screenshots or recordings under film/assets/)")
         mw, mh = media_size(src)
-        box_w, box_h = W * float(b.get("width", 0.8)), H * 0.76
+        box_w, box_h = W * float(b.get("width", 0.8)), H * float(b.get("height", 0.76))   # height < 0.76 leaves room for a clear title
         s = min(box_w / mw, box_h / mh)
         ww, hh = round(mw * s), round(mh * s)
-        x0, y0 = round((W - ww) / 2), round(565 - hh / 2)
+        x0, y0 = round((W - ww) / 2), round(float(b.get("cy", 565)) - hh / 2)
         fx, fy, fw, fh = b.get("focus", [0.25, 0.2, 0.5, 0.5])
         push = word(lid, b["push_at"])[0] - 0.15 if b.get("push_at") else a + 0.55
         zoom = min(W * 0.84 / (fw * ww), H * 0.8 / (fh * hh), float(b.get("max_zoom", 3.0)))
@@ -419,7 +419,8 @@ for j, b in enumerate(overlays):
     times = match_words(b["line"], parts)
     until = word(b["line"], b["until"])[0] if b.get("until") else START[b["line"]] + LINES[b["line"]]["dur"] + 0.2
     size = b.get("size") or min(120, int(1500 / max(6, 0.56 * len(b["text"]))))
-    beats_html.append(f'<div class="beat hero hg-clear" data-o="{j}"><div class="hl" style="font-size:{size}px">{key_spans(parts, "hp", times)}</div></div>')
+    top = f";top:{int(b['top'])}px" if b.get("top") else ""
+    beats_html.append(f'<div class="beat hero hg-clear" data-o="{j}"><div class="hl" style="font-size:{size}px{top}">{key_spans(parts, "hp", times)}</div></div>')
     data.append({"type": "overlay", "a": times[0], "b": round(until, 3), "o": j})
     EVENTS.append({"t": times[0], "ev": "overlay"})
 

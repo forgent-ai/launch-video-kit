@@ -1,0 +1,125 @@
+{
+  "brand": "../brand",
+  "voice_dir": "vo/body",
+  "gap": 0.25,
+  "lines": {
+    "02": "Forgent. Die KI-Plattform für öffentliche Aufträge.",
+    "03": "Findet die passenden Ausschreibungen.",
+    "04": "Bewertet Bid, No-Bid in Minuten.",
+    "05": "Und schreibt konforme Angebote aus Ihrem Wissen.",
+    "06": "Finden, bewerten, schreiben. Der ganze Prozess auf einer Plattform.",
+    "07": "Jetzt mehr Ausschreibungen gewinnen."
+  },
+  "music": {
+    "file": "score/bed.wav",
+    "bpm": 120,
+    "drop": 6.0,
+    "gain_db": -3
+  },
+  "sound": {
+    "kit": null,
+    "key": "A"
+  },
+  "beats": [
+    {
+      "type": "name",
+      "line": "02",
+      "tagline": "Die KI-Plattform für *öffentliche *Aufträge."
+    },
+    {
+      "type": "hero",
+      "line": "03",
+      "ground": "accent",
+      "text": "*Finden.",
+      "exit": "dive",
+      "until": "findet+0.65"
+    },
+    {
+      "type": "product",
+      "line": "03",
+      "src": "assets/screens/finden.mp4",
+      "focus": [
+        0.03,
+        0.08,
+        0.94,
+        0.55
+      ],
+      "push_at": "passenden",
+      "from": 0.0,
+      "width": 0.86,
+      "max_zoom": 1.8
+    },
+    {
+      "type": "hero",
+      "line": "04",
+      "ground": "dark",
+      "text": "Bid. *No-Bid.",
+      "exit": "collapse",
+      "until": "nobid+0.3"
+    },
+    {
+      "type": "product",
+      "line": "04",
+      "src": "assets/screens/qualifizieren.mp4",
+      "focus": [
+        0.03,
+        0.03,
+        0.94,
+        0.6
+      ],
+      "push_at": "in",
+      "from": 0.3,
+      "width": 0.86,
+      "max_zoom": 1.8
+    },
+    {
+      "type": "hero",
+      "line": "05",
+      "ground": "accent",
+      "text": "Konforme *Angebote.",
+      "exit": "dive",
+      "until": "angebote+0.3"
+    },
+    {
+      "type": "product",
+      "line": "05",
+      "src": "assets/screens/schreiben.mp4",
+      "focus": [
+        0.36,
+        0.1,
+        0.62,
+        0.75
+      ],
+      "push_at": "aus",
+      "from": 1.7,
+      "width": 0.86,
+      "max_zoom": 1.8
+    },
+    {
+      "type": "blocks",
+      "line": "06",
+      "items": [
+        "Finden",
+        "Bewerten",
+        "Schreiben"
+      ],
+      "merge_at": "ganze",
+      "label": "Eine *Plattform.",
+      "pad": 0.45
+    },
+    {
+      "type": "hero",
+      "line": "07",
+      "ground": "accent",
+      "text": "Jetzt mehr Ausschreibungen *gewinnen.",
+      "exit": "cut",
+      "until": "gewinnen+0.9"
+    },
+    {
+      "type": "end",
+      "hold": 3.5,
+      "url": "forgent.ai"
+    }
+  ],
+  "lockup": "logo"
+}
