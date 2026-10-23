@@ -386,9 +386,12 @@ for i, r in enumerate(R):
         else:
             chip_html = ""
         is_video = os.path.splitext(src)[1].lower() in (".mp4", ".webm", ".mov")
+        media_from = float(b.get("from", 0))
+        if b.get("rest_at") is not None:   # Forgent: the clip lands on its resting state 2 s before the window closes and holds it (Tom 2026-10-23)
+            media_from = max(0.0, float(b["rest_at"]) - (e - a - 2.0))
         if is_video:
             media = (f'<video id="pv{i}" class="pmedia" src="{src}" data-start="{a:.3f}" data-duration="{e - a:.3f}" '
-                     f'data-media-start="{float(b.get("from", 0)):.3f}" muted playsinline></video>')
+                     f'data-media-start="{media_from:.3f}" muted playsinline></video>')
         else:
             media = f'<img class="pmedia" src="{src}" alt="">'
         cover = f'<div class="pcov"><span>{html.escape(b["card_label"])}</span></div>' if b.get("from_card") else ""
