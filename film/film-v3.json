@@ -4,7 +4,7 @@
   "gap": 0.25,
   "lines": {
     "02": "Forgent, die KI-Plattform für öffentliche Ausschreibungen.",
-    "02p": "Suche, Unterlagen, Angebot: neben dem Tagesgeschäft kaum zu schaffen.",
+    "02p": "Öffentliche Ausschreibungen sind lukrativ. Aber Suche und Prüfung fressen Ihren Arbeitstag. Forgent nimmt Ihnen das ab.",
     "03": "Findet mehr öffentliche Aufträge, vorsortiert in Ihrem Postfach.",
     "04": "Bewertet Bid-No-Bid in Minuten, Ihr Team bietet nur noch, wo es zählt.",
     "05": "Forgent schreibt konforme Angebote aus Ihrem Wissen, fünfmal so oft bieten, ganz ohne Abstriche.",
@@ -35,7 +35,7 @@
     {
       "type": "scene",
       "line": "02p",
-      "src": "assets/scenes/v3-tagesgeschaeft.mp4"
+      "src": "assets/scenes/v3-kalender.mp4"
     },
     {
       "type": "blocks",

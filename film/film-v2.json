@@ -4,7 +4,7 @@
   "gap": 0.25,
   "lines": {
     "02": "Forgent, die KI-Plattform für öffentliche Ausschreibungen.",
-    "02p": "Zweiundvierzig Prozent aller Ausschreibungen bekommen nur ein oder gar kein Angebot.",
+    "02p": "Kostet es Sie auch zu viel Zeit, passende Ausschreibungen zu finden? Forgent nimmt Ihnen das ab.",
     "03": "Findet mehr öffentliche Aufträge, vorsortiert in Ihrem Postfach.",
     "04": "Bewertet Bid-No-Bid in Minuten, Ihr Team bietet nur noch, wo es zählt.",
     "05": "Forgent schreibt konforme Angebote aus Ihrem Wissen, fünfmal so oft bieten, ganz ohne Abstriche.",
@@ -35,7 +35,7 @@
     {
       "type": "scene",
       "line": "02p",
-      "src": "assets/scenes/v2-42.mp4"
+      "src": "assets/scenes/v2-suche.mp4"
     },
     {
       "type": "blocks",
