@@ -68,6 +68,15 @@ if music.get("file") and os.path.exists(music["file"]):
     f0, f1 = int((END - 2.2) * sr), int((END - 0.3) * sr)
     env[f0:f1] = np.linspace(1, 0, f1 - f0) ** 2
     env[f1:] = 0
+    push = music.get("push")                 # {"line": "06", "db": 2.5}: the bed rises over 1 bar onto the downbeat at that line
+    if push:
+        at = next(L["start"] for L in T["lines"] if L["line"] == push["line"])
+        p1 = lead + np.ceil((at - lead) / bar) * bar
+        a0, a1 = int((p1 - bar) * sr), int(p1 * sr)
+        g = np.ones(n)
+        g[a0:a1] = 10 ** (push["db"] / 20 * np.linspace(0, 1, a1 - a0) ** 2)
+        g[a1:] = 10 ** (push["db"] / 20)
+        env *= g
     music_out = f"mix/music-{HOOK_NAME}.wav"
     sf.write(music_out, placed * env[:, None], sr)
 else:
