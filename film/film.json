@@ -7,7 +7,7 @@
     "03": "Findet die passenden Ausschreibungen.",
     "04": "Bewertet Bid, No-Bid in Minuten.",
     "05": "Und schreibt konforme Angebote aus Ihrem Wissen.",
-    "06": "Finden, bewerten, schreiben. Der ganze Prozess auf einer Plattform.",
+    "06": "Finden, bewerten, schreiben. Eine Plattform.",
     "07": "Jetzt mehr Ausschreibungen gewinnen."
   },
   "music": {
@@ -38,7 +38,7 @@
       "pre": 0,
       "merge": false,
       "label": "",
-      "until": "passenden"
+      "until": "ausschreibungen+0.6"
     },
     {
       "type": "product",
@@ -57,7 +57,8 @@
         0,
         1
       ],
-      "card_label": "Finden"
+      "card_label": "Finden",
+      "pad": 1.6
     },
     {
       "type": "blocks",
@@ -75,7 +76,7 @@
       "pre": 1,
       "merge": false,
       "label": "",
-      "until": "bid"
+      "until": "nobid+0.5"
     },
     {
       "type": "product",
@@ -95,7 +96,8 @@
         1,
         2
       ],
-      "card_label": "Bewerten"
+      "card_label": "Bewerten",
+      "pad": 1.4
     },
     {
       "type": "blocks",
@@ -117,7 +119,7 @@
       "pre": 2,
       "merge": false,
       "label": "",
-      "until": "konforme+0.15"
+      "until": "angebote+0.6"
     },
     {
       "type": "product",
@@ -137,7 +139,8 @@
         2,
         3
       ],
-      "card_label": "Schreiben"
+      "card_label": "Schreiben",
+      "pad": 1.0
     },
     {
       "type": "blocks",
@@ -156,7 +159,7 @@
           "fill": "write"
         }
       ],
-      "merge_at": "einer",
+      "merge_at": "eine",
       "label": "Eine *Plattform.",
       "pad": 0.45,
       "pre": 3,

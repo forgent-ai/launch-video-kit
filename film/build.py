@@ -297,6 +297,8 @@ for i, r in enumerate(R):
         lid = r["src"].get("line")
         pad = r["src"].get("pad", PAD.get(r["type"], 0.3))
         nxt = START[lid] + LINES[lid]["dur"] + pad + 0.3 if lid else r["a"] + 2
+        if r["src"].get("until_line"):   # Forgent: the last beat stays up under a later line (e.g. a clear title over the locked panel)
+            ul = r["src"]["until_line"]; nxt = START[ul] + LINES[ul]["dur"] + 0.6
     r["b"] = round(nxt, 3)
     if r["b"] - r["a"] < 0.35:
         print(f"warning: beat {i + 1} ({r['type']}) is only {r['b'] - r['a']:.2f} s long; check its line or `until`", file=sys.stderr)
@@ -367,7 +369,7 @@ for i, r in enumerate(R):
         if b.get("from_card"):   # Forgent match cut: the window grows out of card k of an n-card row and shrinks back into it (Tom 2026-10-23)
             k_, n_ = b["from_card"]; sz = 320 if n_ > 4 else 440; rw = n_ * sz + (n_ - 1) * 34
             d.update({"enter": "grow", "cardr": [960 - rw / 2 + k_ * (sz + 34), 610 - sz / 2, sz, sz],
-                      "push": round(max(push, a + 0.45), 3)})
+                      "push": round(max(push, a + 0.7), 3)})
         if b.get("cursor"):
             c = b["cursor"]
             d["cursor"] = {"t": round(word(lid, c["at"])[0] - 0.05, 3), "x": x0 + c["x"] * ww, "y": y0 + c["y"] * hh}
@@ -407,7 +409,8 @@ for i, r in enumerate(R):
         label = words_of(b.get("label", ""))
         lt = round(merge + 0.32, 3)
         pre = int(b.get("pre", 0))   # Forgent: the first `pre` blocks are already on screen (built up over earlier beats), filled, no entrance
-        d.update({"items": times, "merge": round(merge, 3), "label": lt, "pre": pre, "pulse": bool(b.get("pulse"))})
+        d.update({"items": times, "merge": round(merge, 3), "label": lt, "pre": pre, "pulse": bool(b.get("pulse")),
+                  "labout": round(START[b["until_line"]] - 0.15, 3) if b.get("until_line") else 1e6})
         blocks = ""
         for it, p in zip(items, parts):
             icon = f'<img src="{html.escape(it["icon"])}" alt="">' if it.get("icon") else ""
