@@ -213,10 +213,10 @@
           // a key word: scrambles into place, then the highlight sweeps in behind it
           function keyWord(el) { var txt = el.getAttribute("data-text"); el.innerHTML = '<span class="real">' + el.innerHTML + '</span><span class="scr"></span>'; return { real: el.firstChild, scr: el.lastChild, text: txt }; }
           function writeWord(w, t, seed, soft) {
-            var e = out3(cl((t - w.at) / 0.45)), o = io(cl((t - w.at) / 0.38));   // Forgent: a soft fade and rise, no opacity jump (Tom 2026-10-23)
-            w.el.style.opacity = t < w.at ? 0 : o.toFixed(3);
+            var e = out3(cl((t - w.at + 0.08) / 0.7)), o = out3(cl((t - w.at + 0.08) / 0.6));   // Forgent: one long ease-out fade and a small rise, so neighbouring words overlap (Tom 2026-10-23)
+            w.el.style.opacity = o.toFixed(3);
             w.el.style.filter = blur(6 * (1 - e));
-            w.el.style.transform = "translateY(" + (14 * (1 - e)).toFixed(2) + "px)";
+            w.el.style.transform = "translateY(" + (9 * (1 - e)).toFixed(2) + "px)";
             if (!w.k) return;
             var p = cl((t - w.at) / 0.3);
             w.k.real.style.opacity = 1; // Forgent: no scramble (Tom 2026-10-16), the real word fades in
