@@ -312,13 +312,15 @@
             var c = camera(d, t);
             if (d.enter === "grow") {   // Forgent match cut: card rect -> window -> card rect; the camera eases home before the shrink
               d.ent.style.transform = "none"; d.ent.style.opacity = 1; d.ent.style.filter = "none";
-              var g = io(cl((t - d.a) / 0.6)), x = io(cl((t - (d.b - 0.55)) / 0.55)), m = Math.min(g, 1 - x), C_ = d.cardr, Wn = d.win;
+              var g = io(cl((t - d.a) / 0.9)), x = io(cl((t - (d.b - 0.8)) / 0.8)), m = Math.min(g, 1 - x), C_ = d.cardr, Wn = d.win;
               var pw = d.pwEl || (d.pwEl = d.el.querySelector(".pw")), cv = d.cvEl || (d.cvEl = d.el.querySelector(".pcov"));
               pw.style.left = mix(C_[0], Wn[0], m).toFixed(1) + "px"; pw.style.top = mix(C_[1], Wn[1], m).toFixed(1) + "px";
               pw.style.width = mix(C_[2], Wn[2], m).toFixed(1) + "px"; pw.style.height = mix(C_[3], Wn[3], m).toFixed(1) + "px";
               pw.style.borderRadius = mix(30, 18, m).toFixed(1) + "px";
-              cv.style.opacity = Math.max(1 - cl((t - d.a - 0.06) / 0.34), cl((t - (d.b - 0.45)) / 0.34)).toFixed(3);
-              var hx = io(cl((t - (d.b - 1.0)) / 0.5));
+              cv.style.opacity = Math.max(1 - cl((t - d.a - 0.1) / 0.45), cl((t - (d.b - 0.65)) / 0.45)).toFixed(3);
+              var cl_ = d.cvLab || (d.cvLab = cv.querySelector("span"));   // the card label leaves before the window opens, returns once it is card-sized
+              cl_.style.opacity = Math.max(1 - cl((t - d.a) / 0.16), cl((t - (d.b - 0.14)) / 0.12)).toFixed(3);
+              var hx = io(cl((t - (d.b - 1.4)) / 0.6));
               c = { s: mix(c.s, 1, hx), tx: mix(c.tx, 0, hx), ty: mix(c.ty, 0, hx) };
             }
             d.cam.style.transform = "translate(" + c.tx.toFixed(2) + "px," + c.ty.toFixed(2) + "px) scale(" + c.s.toFixed(4) + ")";
@@ -344,14 +346,14 @@
             ring.style.transform = "translate(" + x.toFixed(1) + "px," + y.toFixed(1) + "px) scale(" + (0.4 + r).toFixed(3) + ")";
           }
           function renderBlocks(d, t) {
-            var n = d.blks.length, c = io(cl((t - d.merge) / 0.45)), R = 30, gap = mix(34, 0, c);
+            var n = d.blks.length, c = io(cl((t - d.merge) / 0.7)), R = 30, gap = mix(34, 0, c);
             // Forgent: blocks build up across beats; while the new block lands the row slides from the old centre to the new one
             var pre = d.pre || 0, sz = d.blks[0] ? d.blks[0].offsetWidth : 440;
-            var shift = pre > 0 && pre < n ? (sz + 34) / 2 * (1 - io(cl((t - d.items[pre] + 0.05) / 0.45))) : 0;
+            var shift = pre > 0 && pre < n ? (sz + 34) / 2 * (1 - io(cl((t - d.items[pre] + 0.05) / 0.8))) : 0;
             d.row.style.transform = "translate(calc(-50% + " + shift.toFixed(1) + "px),-50%)";
             d.blks.forEach(function (b, k) {
-              var e = k < pre ? 1 : out4(cl((t - d.items[k]) / 0.32)), r = mix(R, 0, c);
-              var pl = d.pulse ? Math.sin(Math.PI * cl((t - d.items[k]) / 0.35)) : 0;
+              var e = k < pre ? 1 : out4(cl((t - d.items[k]) / 0.55)), r = mix(R, 0, c);
+              var pl = d.pulse ? Math.sin(Math.PI * cl((t - d.items[k]) / 0.5)) : 0;
               b.style.opacity = k >= pre && t < d.items[k] ? 0 : Math.min(1, e * 3).toFixed(3);
               b.style.filter = blur(10 * (1 - e));
               b.style.transform = "translateY(" + (26 * (1 - e)).toFixed(1) + "px) scale(" + (mix(1.25, 1, e) * (1 + 0.05 * pl)).toFixed(4) + ")";
@@ -360,42 +362,42 @@
               b.style.borderRadius = tl_ + "px " + tr + "px " + tr + "px " + tl_ + "px";
               if (d.divs[k]) d.divs[k].style.opacity = k < n - 1 ? c.toFixed(3) : 0;
             });
-            var le = out4(cl((t - d.label) / 0.3));
+            var le = out4(cl((t - d.label) / 0.5));
             d.lab.style.opacity = t < d.label ? 0 : (Math.min(1, le * 3) * (1 - cl((t - (d.labout || 1e6)) / 0.25))).toFixed(3);
             d.lab.style.transform = "scale(" + mix(1.4, 1, le).toFixed(4) + ")"; d.lab.style.filter = blur(10 * (1 - le));
             d.words.forEach(function (w, wi) { writeWord(w, t, wi + 17); });
             // Forgent: each block fills once it lands (one easing, one stagger); on the merge the row locks into 1 panel with a green frame
             d.blks.forEach(function (b, k) {
               var flo = 1;
-              if (d.merge > 1e5 && k === n - 1) flo = 1 - cl((t - (d.b - 0.25)) / 0.22);
-              if (k === (d.pre || 0) - 1) flo = Math.min(flo, cl((t - d.a - 0.05) / 0.4));
+              if (d.merge > 1e5 && k === n - 1) flo = 1 - cl((t - (d.b - 0.35)) / 0.3);
+              if (k === (d.pre || 0) - 1) flo = Math.min(flo, cl((t - d.a - 0.05) / 0.5));
               if (b.querySelector(".fl")) b.querySelector(".fl").style.opacity = flo.toFixed(3);
               var p = k < (d.pre || 0) ? 99 : t - d.items[k], fl = b.querySelector(".fl"), blink = (Math.floor(p / 0.28) % 2) ? 0 : 1;
               if (!fl) return;
               if (fl.classList.contains("fl-search")) {
-                var bar = fl.querySelector(".fs-bar"), q = bar.querySelector("b"), car = bar.querySelector("u"), qw = 150 * cl((p - 0.12) / 0.5);
-                bar.style.opacity = out3(cl(p / 0.3)).toFixed(3);
+                var bar = fl.querySelector(".fs-bar"), q = bar.querySelector("b"), car = bar.querySelector("u"), qw = 150 * cl((p - 0.15) / 0.7);
+                bar.style.opacity = out3(cl(p / 0.4)).toFixed(3);
                 q.style.width = qw.toFixed(1) + "px";
-                car.style.left = (52 + qw + 5).toFixed(1) + "px"; car.style.opacity = p > 0.05 && p < 0.85 ? blink : 0;
+                car.style.left = (52 + qw + 5).toFixed(1) + "px"; car.style.opacity = p > 0.05 && p < 1.1 ? blink : 0;
                 Array.prototype.forEach.call(fl.querySelectorAll(".fs-row"), function (r, j) {
-                  var e = out3(cl((p - 0.5 - 0.14 * j) / 0.4));
+                  var e = out3(cl((p - 0.75 - 0.18 * j) / 0.5));
                   r.style.opacity = e.toFixed(3); r.style.transform = "translateY(" + (8 * (1 - e)).toFixed(1) + "px)";
                 });
               } else if (fl.classList.contains("fl-score")) {
-                var u = io(cl((p - 0.1) / 0.95)), ck = out3(cl((p - 1.0) / 0.35));
+                var u = io(cl((p - 0.1) / 1.3)), ck = out3(cl((p - 1.35) / 0.45));
                 fl.querySelector(".sc-fg").style.strokeDashoffset = (502.65 * (1 - u)).toFixed(2);
                 fl.querySelector(".sc-ck").style.strokeDashoffset = (100 * (1 - ck)).toFixed(2);
               } else if (fl.classList.contains("fl-write")) {
                 var car2 = fl.querySelector("u"), W_ = [180, 270, 250, 270, 150], cur = null;
                 Array.prototype.forEach.call(fl.querySelectorAll("b"), function (l, j) {
-                  var e = io(cl((p - 0.1 - 0.2 * j) / 0.28));
+                  var e = io(cl((p - 0.15 - 0.28 * j) / 0.38));
                   l.style.width = (W_[j] * e).toFixed(1) + "px";
                   if (e > 0 && e < 1) cur = l;
                 });
                 if (cur) { car2.style.left = (12 + cur.offsetWidth + 5) + "px"; car2.style.top = (cur.offsetTop + cur.offsetHeight / 2 - 12) + "px"; car2.style.opacity = 1; } else car2.style.opacity = 0;
               }
             });
-            var lock = out4(cl((t - d.merge - 0.3) / 0.25)), pulse = Math.sin(Math.PI * cl((t - d.merge - 0.3) / 0.4));
+            var lock = out4(cl((t - d.merge - 0.5) / 0.4)), pulse = Math.sin(Math.PI * cl((t - d.merge - 0.5) / 0.6));
             d.row.style.boxShadow = lock > 0 ? "0 0 0 " + (4 * lock).toFixed(2) + "px var(--accent)" : "none";
             d.row.style.transform = "translate(-50%,-50%) scale(" + (1 + 0.03 * pulse).toFixed(4) + ")";
           }

@@ -38,7 +38,7 @@
       "pre": 0,
       "merge": false,
       "label": "",
-      "until": "ausschreibungen+0.6"
+      "until": "ausschreibungen+1.0"
     },
     {
       "type": "product",
@@ -52,13 +52,13 @@
       ],
       "from": 0.0,
       "width": 0.86,
-      "max_zoom": 1.4,
+      "max_zoom": 1.25,
       "from_card": [
         0,
         1
       ],
       "card_label": "Finden",
-      "pad": 1.6
+      "pad": 2.9
     },
     {
       "type": "blocks",
@@ -76,7 +76,7 @@
       "pre": 1,
       "merge": false,
       "label": "",
-      "until": "nobid+0.5"
+      "until": "nobid+0.9"
     },
     {
       "type": "product",
@@ -89,15 +89,15 @@
         0.6
       ],
       "push_at": "in",
-      "from": 0.3,
+      "from": 0.4,
       "width": 0.86,
-      "max_zoom": 1.4,
+      "max_zoom": 1.25,
       "from_card": [
         1,
         2
       ],
       "card_label": "Bewerten",
-      "pad": 1.4
+      "pad": 2.4
     },
     {
       "type": "blocks",
@@ -119,7 +119,7 @@
       "pre": 2,
       "merge": false,
       "label": "",
-      "until": "angebote+0.6"
+      "until": "angebote+1.0"
     },
     {
       "type": "product",
@@ -132,15 +132,15 @@
         0.75
       ],
       "push_at": "aus",
-      "from": 1.7,
+      "from": 2.27,
       "width": 0.86,
-      "max_zoom": 1.4,
+      "max_zoom": 1.25,
       "from_card": [
         2,
         3
       ],
       "card_label": "Schreiben",
-      "pad": 1.0
+      "pad": 1.7
     },
     {
       "type": "blocks",
@@ -163,21 +163,14 @@
       "label": "Eine *Plattform.",
       "pad": 0.45,
       "pre": 3,
-      "pulse": true,
-      "until_line": "07"
-    },
-    {
-      "type": "hero",
-      "line": "07",
-      "ground": "clear",
-      "top": 150,
-      "size": 96,
-      "text": "Jetzt mehr Ausschreibungen *gewinnen."
+      "pulse": true
     },
     {
       "type": "end",
       "hold": 3.5,
-      "url": "forgent.ai"
+      "url": "forgent.ai",
+      "line": "07",
+      "tagline": "Jetzt mehr Ausschreibungen gewinnen."
     }
   ],
   "lockup": "logo"
